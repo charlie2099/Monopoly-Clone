@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a269d58552ccc6d45bc54e1f2c9f2192, type: 3}
+  m_Name: Placeholder
+  m_EditorClassIdentifier: 
+  name: Placeholder
+  colour: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
+  purchaseData:
+    purchaseCost: 0
+    mortgageValue: 0
+    housesCost: 0
+    hotelsCost: 0
+  rentData:
+    rentWithNoHouses: 0
+    rentWithOneHouse: 0
+    rentWithTwoHouses: 0
+    rentWithThreeHouses: 0
+    rentWithFourHouses: 0
+    rentWithHotels: 0
