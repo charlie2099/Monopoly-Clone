@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38473f54160c4c87a940e0e311c0b723, type: 3}
   m_Name: CommunityChest
   m_EditorClassIdentifier: 
-  isProperty: 0
+  name: Community Chest
+  reward: {fileID: 0}

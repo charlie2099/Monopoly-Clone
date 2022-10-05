@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BristolOldVic
   m_EditorClassIdentifier: 
   name: Bristol Old Vic
-  colour: {r: 0.2028302, g: 0.27396664, b: 1, a: 0}
+  colour: {r: 0.04705883, g: 0.19215688, b: 0.45882356, a: 1}
+  imageTexture: {fileID: 0}
   purchaseData:
     purchaseCost: 350
     mortgageValue: 250

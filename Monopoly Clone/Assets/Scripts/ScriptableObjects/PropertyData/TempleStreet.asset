@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TempleStreet
   m_EditorClassIdentifier: 
   name: Temple Street
-  colour: {r: 0.3584906, g: 0.2163198, b: 0, a: 0}
+  colour: {r: 0.454902, g: 0.21176472, b: 0.121568635, a: 1}
   imageTexture: {fileID: 2800000, guid: a8e9b91c1f7029e498f3ff91b21c5fa3, type: 3}
   purchaseData:
     purchaseCost: 60

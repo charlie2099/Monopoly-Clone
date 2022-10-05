@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: StAndrewsRoad
   m_EditorClassIdentifier: 
   name: St. Andrews Road
-  colour: {r: 0.3584906, g: 0.2163198, b: 0, a: 0}
+  colour: {r: 0.454902, g: 0.21176472, b: 0.121568635, a: 1}
+  imageTexture: {fileID: 0}
   purchaseData:
     purchaseCost: 60
     mortgageValue: 0

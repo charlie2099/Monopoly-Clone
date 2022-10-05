@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a269d58552ccc6d45bc54e1f2c9f2192, type: 3}
-  m_Name: AnchorRoad
+  m_Name: CliftonSuspensionBridge
   m_EditorClassIdentifier: 
-  name: Anchor Road
-  colour: {r: 0.04705883, g: 0.19215688, b: 0.45882356, a: 1}
+  name: Clifton Suspension Bridge
+  colour: {r: 0.003921569, g: 0.4901961, b: 0.7803922, a: 1}
   imageTexture: {fileID: 0}
   purchaseData:
-    purchaseCost: 400
-    mortgageValue: 250
-    housesCost: 200
-    hotelsCost: 300
+    purchaseCost: 0
+    mortgageValue: 0
+    housesCost: 0
+    hotelsCost: 0
   rentData:
-    rentWithNoHouses: 50
-    rentWithOneHouse: 100
-    rentWithTwoHouses: 200
-    rentWithThreeHouses: 400
-    rentWithFourHouses: 800
-    rentWithHotels: 1600
+    rentWithNoHouses: 0
+    rentWithOneHouse: 0
+    rentWithTwoHouses: 0
+    rentWithThreeHouses: 0
+    rentWithFourHouses: 0
+    rentWithHotels: 0
