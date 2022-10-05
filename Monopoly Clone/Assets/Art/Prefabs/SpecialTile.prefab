@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 1763907302715561943}
   - component: {fileID: 1763907302715561940}
   m_Layer: 0
-  m_Name: PropertyText
+  m_Name: TileText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Property Name
+  m_text: Tile Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -455,8 +455,9 @@ GameObject:
   - component: {fileID: 1763907303074552732}
   - component: {fileID: 1763907303074552733}
   - component: {fileID: 1763907303074552730}
+  - component: {fileID: 1782497276}
   m_Layer: 0
-  m_Name: CommunityChestTile
+  m_Name: SpecialTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +472,7 @@ Transform:
   m_GameObject: {fileID: 1763907303074552728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 58.485924, y: 0.024615047, z: 6.358025}
-  m_LocalScale: {x: 4.7428055, y: 0.04723, z: 2.91}
+  m_LocalScale: {x: 4.77, y: 0.047230013, z: 2.9100008}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1763907302715561942}
@@ -543,3 +544,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1782497276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763907303074552728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
