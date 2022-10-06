@@ -6,29 +6,31 @@ namespace Commands
     public class MoveCommand : ICommand
     {
         private readonly Piece _piece;
-        private readonly Tile oldPropertyTile;
-        private readonly Tile newPropertyTile;
+        private readonly Tile _previousTile;
+        private readonly Tile _newTile;
 
-        public MoveCommand(Piece piece, Tile oldPropertyTile, Tile newPropertyTile)
+        public MoveCommand(Piece piece, Tile previousTile, Tile newTile)
         {
             _piece = piece;
-            this.oldPropertyTile = oldPropertyTile;
-            this.newPropertyTile = newPropertyTile;
+            _previousTile = previousTile;
+            _newTile = newTile;
         }
     
         public void Execute()
         {
-            var newTilePos = newPropertyTile.transform.position;
-            //var speed = 1.0f * Time.deltaTime;
-            _piece.transform.position = new Vector3(newTilePos.x, _piece.transform.position.y, newTilePos.z);
+            var newTilePos = _newTile.transform.position;
+            var destination = new Vector3(newTilePos.x, _piece.transform.position.y, newTilePos.z);
+            _piece.transform.position = destination;
+            //_piece.MoveTo(destination);
 
+            //var speed = 1.0f * Time.deltaTime;
             /*_piece.transform.position = Vector3.Lerp(_piece.transform.position,
                 new Vector3(newTilePos.x, _piece.transform.position.y, newTilePos.z), speed);*/
         }
 
         public void Undo()
         {
-            var oldTilePos = oldPropertyTile.transform.position;
+            var oldTilePos = _previousTile.transform.position;
             _piece.transform.position = new Vector3(oldTilePos.x, _piece.transform.position.y, oldTilePos.z);
         }
     }
