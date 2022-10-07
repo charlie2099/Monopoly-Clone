@@ -6,7 +6,7 @@ public class Board : MonoBehaviour
 {
     public static Board Instance;
     
-    [SerializeField] private List<PropertyTile> tiles;
+    [SerializeField] private List<PropertyBlockTile> tiles;
     [SerializeField] private List<Piece> pieces;
     // public CommandInvoker _commandInvoker;
     // BoardData scriptable object?

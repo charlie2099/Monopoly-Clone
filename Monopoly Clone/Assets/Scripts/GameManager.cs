@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Tiles;
+using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Tile> tiles;
     private Player _currentPlayer;
     private int _turnIndex;
-    
+
     private void Awake()
     {
         if (Instance == null)

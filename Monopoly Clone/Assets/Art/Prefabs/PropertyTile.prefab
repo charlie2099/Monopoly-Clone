@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 5181724006189634367}
   - component: {fileID: 5181724006189634366}
   - component: {fileID: 5181724006189634361}
-  - component: {fileID: 5181724006189634360}
+  - component: {fileID: 2122384536}
   m_Layer: 0
   m_Name: PropertyTile
   m_TagString: Untagged
@@ -371,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 5181724006189634363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 60, y: 0.024615051, z: 5.01}
-  m_LocalScale: {x: 4.7428055, y: 0.04723001, z: 2.9100006}
+  m_LocalScale: {x: 4.7428055, y: 0.047230013, z: 2.91}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5181724005809381237}
@@ -444,7 +444,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5181724006189634360
+--- !u!114 &2122384536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,13 +453,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5181724006189634363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7003f2e0b3208247b0d468691ba35c0, type: 3}
+  m_Script: {fileID: 11500000, guid: e7b095271afd41dc8ec164accdc19898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propertyData: {fileID: 11400000, guid: 9956448679e3a0a4aa1c7387926c80fc, type: 2}
+  propertyData: {fileID: 11400000, guid: 4d54b590041b85c46a6f4be9f4e62f4d, type: 2}
   propertyTitleText: {fileID: 5181724005809381239}
   propertyCostText: {fileID: 5181724007606816377}
-  propertyColourBar: {fileID: 0}
   propertyImage: {fileID: 5181724006116039273}
 --- !u!1 &5181724006787050405
 GameObject:

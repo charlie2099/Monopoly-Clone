@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class Piece : MonoBehaviour
 {
     [SerializeField] private PieceData pieceData;
-    [FormerlySerializedAs("currentTile")] [SerializeField] private PropertyTile currentPropertyTile;
+    [FormerlySerializedAs("currentTile")] [SerializeField] private PropertyBlockTile currentPropertyBlockTile;
     
     private void Start()
     {
@@ -26,5 +26,5 @@ public class Piece : MonoBehaviour
     }
 
     public string PieceName() => pieceData.name;
-    public Tile CurrentTile() => currentPropertyTile;
+    public Tile CurrentTile() => currentPropertyBlockTile;
 }
