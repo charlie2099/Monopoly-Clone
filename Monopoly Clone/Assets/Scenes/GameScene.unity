@@ -511,7 +511,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1763907303074552728, guid: 83e9ce50817cc994dbb355658d1b624b, type: 3}
       propertyPath: m_Name
-      value: SpecialTile (7)
+      value: SpecialTile (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1763907303074552735, guid: 83e9ce50817cc994dbb355658d1b624b, type: 3}
       propertyPath: m_RootOrder
@@ -1276,45 +1276,45 @@ MonoBehaviour:
   - {fileID: 71863059}
   tiles:
   - {fileID: 1523062086}
-  - {fileID: 1039341548}
-  - {fileID: 1179283508}
-  - {fileID: 354042546}
-  - {fileID: 611201497}
-  - {fileID: 2093657830}
   - {fileID: 1297584234}
+  - {fileID: 947081833}
+  - {fileID: 1357883360}
+  - {fileID: 2385086447015010816}
+  - {fileID: 2037069337}
+  - {fileID: 1570924285}
+  - {fileID: 1108325630}
+  - {fileID: 1878909800}
+  - {fileID: 584507346}
+  - {fileID: 1039341548}
+  - {fileID: 611201497}
+  - {fileID: 2122384536}
+  - {fileID: 1241538018}
+  - {fileID: 1661516605}
+  - {fileID: 1356744376}
+  - {fileID: 1722098263}
+  - {fileID: 1589961730}
+  - {fileID: 1631820846}
+  - {fileID: 1648674263}
+  - {fileID: 1179283508}
+  - {fileID: 2093657830}
+  - {fileID: 1150105582}
+  - {fileID: 437591452}
+  - {fileID: 851409354}
+  - {fileID: 1839544987}
+  - {fileID: 876134414}
+  - {fileID: 1920485117}
+  - {fileID: 2047068149}
+  - {fileID: 1391328200}
+  - {fileID: 354042546}
   - {fileID: 1129282461}
   - {fileID: 1919349976}
-  - {fileID: 1241538018}
-  - {fileID: 437591452}
-  - {fileID: 1357883360}
-  - {fileID: 851409354}
-  - {fileID: 1661516605}
-  - {fileID: 1089009483}
-  - {fileID: 876134414}
-  - {fileID: 1722098263}
-  - {fileID: 1570924285}
-  - {fileID: 1819512108}
-  - {fileID: 1920485117}
-  - {fileID: 1878909800}
-  - {fileID: 1631820846}
-  - {fileID: 1391328200}
-  - {fileID: 1648674263}
-  - {fileID: 584507346}
-  - {fileID: 1998656043}
-  - {fileID: 1956677530}
-  - {fileID: 2122384536}
-  - {fileID: 2037069337}
-  - {fileID: 1356744376}
-  - {fileID: 1839544987}
-  - {fileID: 2047068149}
-  - {fileID: 947081833}
-  - {fileID: 1150105582}
-  - {fileID: 2096750814}
   - {fileID: 677483975}
-  - {fileID: 1108325630}
-  - {fileID: 1589961730}
-  - {fileID: 2385086447015010816}
+  - {fileID: 1089009483}
+  - {fileID: 1956677530}
+  - {fileID: 2096750814}
+  - {fileID: 1819512108}
   - {fileID: 1821033217}
+  - {fileID: 1998656043}
 --- !u!4 &480928924
 Transform:
   m_ObjectHideFlags: 0
@@ -3623,7 +3623,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5181724006189634363, guid: 4d67536a36d2de34ca1b921c05cb1c2f, type: 3}
       propertyPath: m_Name
-      value: PropertyTile
+      value: PropertyTile (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5181724006189634364, guid: 4d67536a36d2de34ca1b921c05cb1c2f, type: 3}
       propertyPath: m_RootOrder
@@ -4899,6 +4899,18 @@ MonoBehaviour:
       - m_Target: {fileID: 480928925}
         m_TargetAssemblyTypeName: DiceRoller, Assembly-CSharp
         m_MethodName: RollDice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 480928923}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Move
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,5 +8,10 @@ namespace Tiles
         {
             IsEmpty = true;
         }
+
+        public void ChargeTax(float tax, Player player)
+        {
+            player.Money -= tax;
+        }
     }
 }
