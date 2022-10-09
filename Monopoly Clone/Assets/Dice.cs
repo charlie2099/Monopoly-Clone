@@ -5,9 +5,9 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class DiceRoller : MonoBehaviour
+public class Dice : MonoBehaviour
 {
-    public static DiceRoller Instance;
+    public static Dice Instance;
 
     private void Awake()
     {
@@ -22,10 +22,9 @@ public class DiceRoller : MonoBehaviour
     [SerializeField] private TextMeshProUGUI diceRollText;
     private int _diceRoll;
     
-    public void RollDice()
+    public void Roll()
     {
         _diceRoll = Random.Range(1, 7);
-        Debug.Log("Dice Roll: " + _diceRoll);
         diceRollText.text = _diceRoll.ToString();
     }
 }

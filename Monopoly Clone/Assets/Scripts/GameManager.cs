@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private List<Player> players;
     [SerializeField] private List<Tile> tiles;
+    [SerializeField] private TextMeshProUGUI playerTurnText;
+    [SerializeField] private TextMeshProUGUI tileText;
+    
     private readonly CommandInvoker _commandInvoker = new();
-    private int _tileIndex;
     private Player _currentPlayer;
     private int _turnIndex;
     private int _turnCount;
@@ -29,17 +31,37 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        _currentPlayer = players[0];
     }
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        _currentPlayer = players[0];
+        playerTurnText.text = "Turn: <color=blue>" + _currentPlayer.name + "</color>";
+        tileText.text = "Tile: <color=blue>" + _currentPlayer.Piece.CurrentTile().name + "</color>";
+
+        for (int i = 0; i < tiles.Count; i++)
         {
-            //NextTurn();
+            tiles[i].TileID = i;
         }
     }
 
+    public void Move() 
+    {
+        var piece = _currentPlayer.Piece;
+        var currentTile = _currentPlayer.Piece.CurrentTile();
+        int tileIndex = currentTile.TileID + Dice.Instance.DiceRollOutput;
+        if (tileIndex >= Tiles.Count)
+        {
+            int remainder = Tiles.Count - currentTile.TileID;
+            tileIndex = Dice.Instance.DiceRollOutput - remainder;
+        }
+        
+        var newTile = Tiles[tileIndex];
+        _commandInvoker.AddCommand(new MoveCommand(piece, currentTile, newTile));
+        
+        NextTurn();
+    }
+    
     public void NextTurn()
     {
         _turnIndex++;
@@ -48,20 +70,8 @@ public class GameManager : MonoBehaviour
             _turnIndex = 0;
         }
         _currentPlayer = players[_turnIndex];
+        playerTurnText.text = "Turn: <color=blue>" + _currentPlayer.name + "</color>";
+        tileText.text = "Tile: <color=blue>" + _currentPlayer.Piece.CurrentTile().name + "</color>";
         _turnCount++;
-    }
-    
-    public void Move() 
-    {
-        //_commandInvoker.AddCommand(new MoveCommand(piece, piece.CurrentTile(), GameManager.Instance.Tiles[Random.Range(0, GameManager.Instance.Tiles.Count)]));
-        if (_tileIndex == Tiles.Count)
-        {
-            _tileIndex = 0;
-        }
-
-        // assign an id to each tile
-        // GameManager.Instance.Tiles[piece.CurrentTile().GetTileID + Dice.RollCount]
-        _commandInvoker.AddCommand(new MoveCommand(_currentPlayer.Piece, _currentPlayer.Piece.CurrentTile(),Tiles[_tileIndex+=DiceRoller.Instance.DiceRollOutput]));
-        NextTurn();
     }
 }
