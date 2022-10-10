@@ -17,22 +17,20 @@ namespace Commands
         }
     
         public void Execute()
-        {
+        { 
             var newTilePos = _newTile.transform.position;
             var destination = new Vector3(newTilePos.x, _piece.transform.position.y, newTilePos.z);
             _piece.transform.position = destination;
+            //AnimationController.Instance.MoveTo(_piece, destination);
             _piece.SetCurrentTile(_newTile);
             //_piece.MoveTo(destination);
-
-            //var speed = 1.0f * Time.deltaTime;
-            /*_piece.transform.position = Vector3.Lerp(_piece.transform.position,
-                new Vector3(newTilePos.x, _piece.transform.position.y, newTilePos.z), speed);*/
         }
 
         public void Undo()
         {
             var oldTilePos = _previousTile.transform.position;
-            _piece.transform.position = new Vector3(oldTilePos.x, _piece.transform.position.y, oldTilePos.z);
+            var destination = new Vector3(oldTilePos.x, _piece.transform.position.y, oldTilePos.z);
+            _piece.transform.position = destination;
             _piece.SetCurrentTile(_previousTile);
         }
     }

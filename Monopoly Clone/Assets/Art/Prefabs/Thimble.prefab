@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8887238252050628066}
   - component: {fileID: 8807285563709034826}
   - component: {fileID: 2551335840349533959}
+  - component: {fileID: 1100171858}
+  - component: {fileID: 1100171857}
   m_Layer: 0
   m_Name: Thimble
   m_TagString: Untagged
@@ -25,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4334945280325289168}
-  m_LocalRotation: {x: 0.04361934, y: -0, z: -0, w: 0.99904823}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
   m_LocalPosition: {x: -16.286509, y: 0.37218547, z: 15.901211}
   m_LocalScale: {x: 0.7178858, y: 0.7178858, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!33 &8807285563709034826
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -61,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8486936951020155453, guid: 5db7831c33c442a48be3a2b2d015a8a6, type: 3}
+  - {fileID: 2100000, guid: 7bd55e4358d104f49a89f75c2de56397, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +85,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1100171858
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334945280325289168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6426241066746792426, guid: 5db7831c33c442a48be3a2b2d015a8a6, type: 3}
+--- !u!114 &1100171857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334945280325289168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cb6150001867f47b92ff96b6f75a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pieceData: {fileID: 11400000, guid: c96bd06f2da8a3a49b5962e5e184c097, type: 2}
+  currentTile: {fileID: 0}

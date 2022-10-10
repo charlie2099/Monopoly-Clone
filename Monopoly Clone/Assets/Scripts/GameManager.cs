@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private Player _currentPlayer;
     private int _turnIndex;
     private int _turnCount;
+    private int _doublesRolled;
 
     private void Awake()
     {
@@ -59,6 +60,17 @@ public class GameManager : MonoBehaviour
         var newTile = Tiles[tileIndex];
         _commandInvoker.AddCommand(new MoveCommand(piece, currentTile, newTile));
         
+        playerTurnText.text = "Turn: <color=blue>" + _currentPlayer.name + "</color>";
+        tileText.text = "Tile: <color=blue>" + _currentPlayer.Piece.CurrentTile().name + "</color>";
+
+        if (Dice.Instance.RolledADouble())
+        {
+            _doublesRolled++;
+            return;
+        }
+
+        _doublesRolled = 0;
+        
         NextTurn();
     }
     
@@ -70,8 +82,6 @@ public class GameManager : MonoBehaviour
             _turnIndex = 0;
         }
         _currentPlayer = players[_turnIndex];
-        playerTurnText.text = "Turn: <color=blue>" + _currentPlayer.name + "</color>";
-        tileText.text = "Tile: <color=blue>" + _currentPlayer.Piece.CurrentTile().name + "</color>";
         _turnCount++;
     }
 }

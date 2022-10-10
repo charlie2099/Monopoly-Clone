@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using ScriptableObjects;
+using UnityEngine;
 
 namespace Tiles
 {
-    public class Tile : MonoBehaviour
+    public abstract class Tile : MonoBehaviour
     {
+        //[SerializeField] private TileType tileTypeData;
         public bool IsEmpty { get; set; }
         public int TileID { get; set; }
     }

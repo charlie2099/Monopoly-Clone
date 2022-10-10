@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class CommandInvoker
 {
-    private Stack<ICommand> _commandsStack = new Stack<ICommand>();
+    private readonly Stack<ICommand> _commandsStack = new();
 
     public void AddCommand(ICommand command)
     {
