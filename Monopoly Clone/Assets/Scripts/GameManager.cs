@@ -46,6 +46,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // TODO: Call then upon an event trigger
+        playerTurnText.text = "Turn: <color=blue>" + _currentPlayer.name + "</color>";
+        tileText.text = "Tile: <color=blue>" + _currentPlayer.Piece.CurrentTile().name + "</color>";
+    }
+
     public void Move() 
     {
         var piece = _currentPlayer.Piece;
@@ -59,29 +66,28 @@ public class GameManager : MonoBehaviour
         
         var newTile = Tiles[tileIndex];
         _commandInvoker.AddCommand(new MoveCommand(piece, currentTile, newTile));
-        
-        playerTurnText.text = "Turn: <color=blue>" + _currentPlayer.name + "</color>";
-        tileText.text = "Tile: <color=blue>" + _currentPlayer.Piece.CurrentTile().name + "</color>";
 
         if (Dice.Instance.RolledADouble())
         {
             _doublesRolled++;
             return;
         }
-
+        Dice.Instance.DiceButton.SetActive(false);
         _doublesRolled = 0;
-        
-        NextTurn();
     }
     
     public void NextTurn()
     {
-        _turnIndex++;
-        if (_turnIndex >= players.Count)
+        if (_doublesRolled == 0)
         {
-            _turnIndex = 0;
+            _turnIndex++;
+            if (_turnIndex >= players.Count)
+            {
+                _turnIndex = 0;
+            }
+            _currentPlayer = players[_turnIndex];
+            _turnCount++;
         }
-        _currentPlayer = players[_turnIndex];
-        _turnCount++;
+        Dice.Instance.DiceButton.SetActive(true);
     }
 }
