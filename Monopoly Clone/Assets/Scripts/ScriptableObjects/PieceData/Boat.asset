@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Boat
   model: {fileID: 0}
-  colour: {r: 1, g: 0, b: 0.51245356, a: 0}
+  colour: {r: 1, g: 0, b: 0.008962631, a: 0}

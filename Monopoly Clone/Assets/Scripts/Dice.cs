@@ -12,6 +12,7 @@ public class Dice : MonoBehaviour
     [SerializeField] private TextMeshProUGUI diceRollText;
     private int _diceOneRoll;
     private int _diceTwoRoll;
+    private int _doublesRolled;
 
     private void Awake()
     {
@@ -33,8 +34,10 @@ public class Dice : MonoBehaviour
     {
         if (_diceOneRoll == _diceTwoRoll)
         {
+            _doublesRolled++;
             return true;
         }
+        _doublesRolled = 0;
         return false;
     }
 }
