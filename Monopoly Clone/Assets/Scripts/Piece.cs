@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
+using Palmmedia.ReportGenerator.Core;
 using Tiles;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Serialization;
 
 public class Piece : MonoBehaviour

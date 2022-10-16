@@ -15,10 +15,10 @@ namespace Tiles
 
         private void Start()
         {
-            propertyTitleText.text = propertyData.name;
+            propertyTitleText.text = tileName;
             propertyCostText.text = "£" + propertyData.purchaseData.purchaseCost; 
-            propertyColourBar.material.color = propertyData.colour;
-            propertyImage.texture = propertyData.imageTexture;
+            propertyColourBar.material.color = Color.grey;
+            //propertyImage.texture = propertyData.imageTexture;
             IsEmpty = true;
         }
     }

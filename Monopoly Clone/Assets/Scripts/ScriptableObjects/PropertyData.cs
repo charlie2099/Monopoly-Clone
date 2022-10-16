@@ -6,9 +6,6 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "PropertyData", menuName = "ScriptableObjects/PropertyData")]
     public class PropertyData : ScriptableObject
     {
-        public string name;
-        public Color colour;
-        public Texture imageTexture;
         public PurchaseData purchaseData;
         public RentData rentData;
     }

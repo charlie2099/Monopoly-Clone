@@ -14,9 +14,9 @@ namespace Tiles
 
         private void Start()
         {
-            propertyTitleText.text = propertyData.name;
+            propertyTitleText.text = tileName;
             propertyCostText.text = "£" + propertyData.purchaseData.purchaseCost;
-            propertyImage.texture = propertyData.imageTexture;
+            //propertyImage.texture = propertyData.imageTexture;
             IsEmpty = true;
         }
     }

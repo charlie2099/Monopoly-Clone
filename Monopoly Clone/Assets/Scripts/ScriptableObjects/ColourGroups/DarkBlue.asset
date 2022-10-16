@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c5b45f8df0cbf49943988ccbcf9bd1, type: 3}
+  m_Name: DarkBlue
+  m_EditorClassIdentifier: 
+  groupColour: {r: 0.047058824, g: 0.19215687, b: 0.45882353, a: 0}
+  propertyTiles:
+  - {fileID: 11400000, guid: ee5aabecc1cd1d34098a76725f5f0ae0, type: 2}
+  - {fileID: 11400000, guid: e4d7502b68621df4984a11bc532f8b8a, type: 2}

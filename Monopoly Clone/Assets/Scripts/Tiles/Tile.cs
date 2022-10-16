@@ -5,7 +5,7 @@ namespace Tiles
 {
     public abstract class Tile : MonoBehaviour
     {
-        //[SerializeField] private TileType tileTypeData;
+        [SerializeField] protected string tileName;
         public bool IsEmpty { get; set; }
         public int TileID { get; set; }
     }
