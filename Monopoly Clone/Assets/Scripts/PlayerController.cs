@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (hitInfo.transform.GetComponent<Piece>() == piece)
                 {
-                    Debug.Log("Piece: <color=orange>" + hitInfo.transform.GetComponent<Piece>().PieceName() + "</color>");
+                    Debug.Log("Piece: <color=orange>" + hitInfo.transform.GetComponent<Piece>().PieceName + "</color>");
                     _selectedPiece = hitInfo.transform.GetComponent<Piece>();
                 }
                 
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Tile: <color=lime>" + hitInfo.transform.name + "</color>");
                     
                     selectedPropertyTile = hitInfo.transform.GetComponent<Tile>(); 
-                    Tile previousPropertyTile = piece.CurrentTile();
+                    Tile previousPropertyTile = piece.CurrentTile;
                     
                     _commandInvoker.AddCommand(new MoveCommand(piece, previousPropertyTile, selectedPropertyTile));
 

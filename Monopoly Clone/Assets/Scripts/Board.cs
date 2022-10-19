@@ -29,7 +29,7 @@ public class Board : MonoBehaviour
         {
             foreach (var piece in pieces)
             {
-                if (piece.CurrentTile() == tile)
+                if (piece.CurrentTile == tile)
                 {
                     tile.IsEmpty = false;
                 }

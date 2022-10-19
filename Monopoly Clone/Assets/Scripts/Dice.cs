@@ -1,43 +1,39 @@
-using TMPro;
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Dice : MonoBehaviour
 {
-    public static Dice Instance;
+    public event Action<int, int> OnDiceRolled;
+    public event Action<int> OnDoubleRolled;
     public int DiceRollOutput => _diceOneRoll+_diceTwoRoll;
-    public GameObject DiceButton => diceRollButton;
-
-    [SerializeField] private GameObject diceRollButton;
-    [SerializeField] private TextMeshProUGUI diceRollText;
+    public int DoublesRolled => _doublesRolled;
+    
     private int _diceOneRoll;
     private int _diceTwoRoll;
     private int _doublesRolled;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
-
-    public void Roll()
+    public void Roll() // called upon a click event via Roll Turn button
     {
         _diceOneRoll = Random.Range(1, 7);
         _diceTwoRoll = Random.Range(1, 7);
-        diceRollText.text = "Dice Roll: [" + _diceOneRoll + " + " + _diceTwoRoll + "]";
-        
+        OnDiceRolled?.Invoke(_diceOneRoll, _diceTwoRoll);
+
+        if (RolledADouble())
+        {
+            _doublesRolled++;
+            OnDoubleRolled?.Invoke(_doublesRolled);
+            return;
+        }
+        _doublesRolled = 0;
     }
 
-    public bool RolledADouble()
+    private bool RolledADouble()
     {
         if (_diceOneRoll == _diceTwoRoll)
         {
-            _doublesRolled++;
             return true;
         }
-        _doublesRolled = 0;
         return false;
     }
 }

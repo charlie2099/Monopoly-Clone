@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using Commands;
-using Tiles;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
+    public string Username => username;
     public float Money { get; set; }
     public Piece Piece => piece;
-    public List<Card> CardsInHand => _cardsInHand;
+    //public List<Card> CardsInHand => _cardsInHand;
 
+    [SerializeField] private string username;
     [SerializeField] private Piece piece;
-    private List<Card> _cardsInHand = new List<Card>();
+    //private List<Card> _cardsInHand = new List<Card>();
 }
