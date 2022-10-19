@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using ScriptableObjects;
-using Tiles;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ColourGroupData", menuName = "ScriptableObjects/ColourGroupData")]

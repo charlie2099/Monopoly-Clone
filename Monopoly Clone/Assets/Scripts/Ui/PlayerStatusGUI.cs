@@ -1,4 +1,5 @@
 using System;
+using Tiles;
 using UnityEngine;
 
 namespace Ui
@@ -14,6 +15,7 @@ namespace Ui
         
         private void OnEnable()
         {
+            BoardMaster.Instance.OnPieceMoved += UpdateButtonVisibilityOnPieceMoved;
             BoardMaster.Instance.Dice.OnDiceRolled += UpdateButtonVisibilityOnDiceRolled;
             BoardMaster.Instance.Dice.OnDoubleRolled += UpdateButtonVisibilityOnDoublesRolled;
             BoardMaster.Instance.OnTurnChanged += UpdateButtonVisibilityOnTurnChanged;
@@ -21,17 +23,22 @@ namespace Ui
 
         private void OnDisable()
         {
+            BoardMaster.Instance.OnPieceMoved -= UpdateButtonVisibilityOnPieceMoved;
             BoardMaster.Instance.Dice.OnDiceRolled -= UpdateButtonVisibilityOnDiceRolled;
             BoardMaster.Instance.Dice.OnDoubleRolled -= UpdateButtonVisibilityOnDoublesRolled;
             BoardMaster.Instance.OnTurnChanged -= UpdateButtonVisibilityOnTurnChanged;
         }
 
         private void Start() => endTurnButton.SetActive(false);
+        
+        private void UpdateButtonVisibilityOnPieceMoved(Tile tile)
+        {
+            endTurnButton.SetActive(true);
+        }
 
         private void UpdateButtonVisibilityOnDiceRolled(int diceRollOne, int diceRollTwo)
         {
             rollDiceButton.SetActive(false);
-            endTurnButton.SetActive(true);
         }
 
         public void UpdateButtonVisibilityOnDoublesRolled(int doublesRolled)
@@ -42,8 +49,8 @@ namespace Ui
         
         private void UpdateButtonVisibilityOnTurnChanged(Player player)
         {
-            endTurnButton.SetActive(false);
             rollDiceButton.SetActive(true);
+            endTurnButton.SetActive(false);
         }
     }
 }

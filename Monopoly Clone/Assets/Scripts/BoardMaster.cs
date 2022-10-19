@@ -5,6 +5,7 @@ using Commands;
 using Tiles;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// Responsible for moving pieces on the board and deciding
@@ -26,6 +27,9 @@ public class BoardMaster : MonoBehaviour
     [SerializeField] private List<Tile> tiles;
     private Player _activePlayer;
     private int _turnIndex;
+    private int _tileToMoveToID;
+    private bool _pieceIsMoving;
+    private float _randomXPos;
     
     private Vector3 _tileToMovePos;
     private Vector3 _transformDir;
@@ -50,37 +54,27 @@ public class BoardMaster : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(_tileToMovePos, _transformDir, Color.magenta);
-        
-        /*if (_pieceIsMoving)
-        {
-            var piece = _currentPlayer.Piece;
-            var newTilePos = Tiles[_nextTileID].transform.position;
-            var destination = new Vector3(newTilePos.x, _currentPlayer.Piece.transform.position.y, newTilePos.z);
-            var speed = 5.0f * Time.deltaTime;
-            piece.transform.position = Vector3.MoveTowards(piece.transform.position, destination, speed);
-            
-            if (piece.transform.position == destination)
-            {
-                piece.SetCurrentTile(Tiles[_nextTileID]);
-                _pieceIsMoving = false;
-            }
-        }*/
+        //Debug.DrawRay(_tileToMovePos, _transformDir, Color.magenta);
 
-        /*if (_pieceIsMoving)
+        if (_pieceIsMoving)
         {
-            var piece = _currentPlayer.Piece;
-            var newTilePos = Tiles[_tileToMoveToID].transform.position;
-            var destination = new Vector3(newTilePos.x, _currentPlayer.Piece.transform.position.y, newTilePos.z);
-            var speed = 5.0f * Time.deltaTime;
-            piece.transform.position = Vector3.MoveTowards(piece.transform.position, destination, speed);
+            var playerPiece = _activePlayer.Piece;
+            var tileToMoveToPos = Tiles[_tileToMoveToID].transform.position;
+            var newTilePos = new Vector3(tileToMoveToPos.x, playerPiece.transform.position.y, tileToMoveToPos.z);
+            playerPiece.NavAgent.SetDestination(newTilePos/*new Vector3(_randomXPos, newTilePos.y, newTilePos.z)*/);
+            //var speed = 5.0f * Time.deltaTime;
+            //playerPiece.transform.position = Vector3.MoveTowards(playerPiece.transform.position, newTilePos, speed);
 
-            if (piece.transform.position == destination)
+            if (playerPiece.NavAgent.hasPath)
             {
-                piece.SetCurrentTile(Tiles[_tileToMoveToID]);
-                _pieceIsMoving = false;
+                if (playerPiece.NavAgent.remainingDistance < 0.5)
+                {
+                    playerPiece.SetCurrentTile(Tiles[_tileToMoveToID]);
+                    OnPieceMoved?.Invoke(playerPiece.CurrentTile);
+                    _pieceIsMoving = false;
+                }
             }
-        }*/
+        }
     }
 
     public void MovePiece() // called upon a click event via Roll Dice button
@@ -93,6 +87,11 @@ public class BoardMaster : MonoBehaviour
             int remainder = Tiles.Count - currentTile.TileID;
             tileToMoveToID = dice.DiceRollOutput - remainder;
         }
+        _tileToMoveToID = tileToMoveToID;
+
+        //_randomXPos = Tiles[tileToMoveToID].transform.position.x + (Random.insideUnitSphere.x * 1.75f);
+        
+        _pieceIsMoving = true;
         
         // TODO:
         // Fire a raycast down onto the tile that is being moved to, check for pieces, and adjust the position of the
@@ -100,9 +99,8 @@ public class BoardMaster : MonoBehaviour
         // OR
         // Fire a raycast in the direction the piece is moving and adjust the moving piece to position next to piece
         // in front of it.
-
-        var tileToMoveToPos = Tiles[tileToMoveToID].transform.position;
-        //var pieceOffsetPos = 0;
+        
+        /*//var pieceOffsetPos = 0;
         
         RaycastHit hitInfo;
         if (Physics.Raycast(tileToMoveToPos + Vector3.up*5, transform.TransformDirection(Vector3.down), out hitInfo))
@@ -115,12 +113,15 @@ public class BoardMaster : MonoBehaviour
                 //pieceOffsetPos = 2;
                 Debug.Log("Piece at center of tile to move to");
             }
-        }
+        }*/
 
-        var newTilePos = new Vector3(tileToMoveToPos.x /*+ pieceOffsetPos*/, playerPiece.transform.position.y, tileToMoveToPos.z);
-        playerPiece.transform.position = newTilePos;
-        playerPiece.SetCurrentTile(Tiles[tileToMoveToID]);
-        OnPieceMoved?.Invoke(playerPiece.CurrentTile);
+        //var width = Tiles[tileToMoveToID].transform.GetComponent<Renderer>().bounds.size.x;
+        //var tileToMoveToPos = Tiles[tileToMoveToID].transform.position;
+        //var newTilePos = new Vector3(tileToMoveToPos.x /*+ pieceOffsetPos*/, playerPiece.transform.position.y, tileToMoveToPos.z);
+        //playerPiece.transform.position = newTilePos;
+
+        /*playerPiece.SetCurrentTile(Tiles[tileToMoveToID]);
+        OnPieceMoved?.Invoke(playerPiece.CurrentTile);*/
 
         /*var currentTile = _currentPlayer.Piece.CurrentTile();
         //int tileToMoveToID = currentTile.TileID + Dice.Instance.DiceRollOutput;
