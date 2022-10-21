@@ -1,15 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Commands;
 using Tiles;
-using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 /// <summary>
-/// Responsible for moving pieces on the board and deciding
-/// whose turn it is.
+/// Responsible for moving pieces on the board and handling turn switching.
 /// </summary>
 
 public class BoardMaster : MonoBehaviour
@@ -62,8 +57,6 @@ public class BoardMaster : MonoBehaviour
             var tileToMoveToPos = Tiles[_tileToMoveToID].transform.position;
             var newTilePos = new Vector3(tileToMoveToPos.x, playerPiece.transform.position.y, tileToMoveToPos.z);
             playerPiece.NavAgent.SetDestination(newTilePos/*new Vector3(_randomXPos, newTilePos.y, newTilePos.z)*/);
-            //var speed = 5.0f * Time.deltaTime;
-            //playerPiece.transform.position = Vector3.MoveTowards(playerPiece.transform.position, newTilePos, speed);
 
             if (playerPiece.NavAgent.hasPath)
             {
@@ -92,14 +85,7 @@ public class BoardMaster : MonoBehaviour
         //_randomXPos = Tiles[tileToMoveToID].transform.position.x + (Random.insideUnitSphere.x * 1.75f);
         
         _pieceIsMoving = true;
-        
-        // TODO:
-        // Fire a raycast down onto the tile that is being moved to, check for pieces, and adjust the position of the
-        // pieces to be spaced apart from each other.
-        // OR
-        // Fire a raycast in the direction the piece is moving and adjust the moving piece to position next to piece
-        // in front of it.
-        
+
         /*//var pieceOffsetPos = 0;
         
         RaycastHit hitInfo;
@@ -115,40 +101,8 @@ public class BoardMaster : MonoBehaviour
             }
         }*/
 
-        //var width = Tiles[tileToMoveToID].transform.GetComponent<Renderer>().bounds.size.x;
-        //var tileToMoveToPos = Tiles[tileToMoveToID].transform.position;
-        //var newTilePos = new Vector3(tileToMoveToPos.x /*+ pieceOffsetPos*/, playerPiece.transform.position.y, tileToMoveToPos.z);
-        //playerPiece.transform.position = newTilePos;
-
-        /*playerPiece.SetCurrentTile(Tiles[tileToMoveToID]);
-        OnPieceMoved?.Invoke(playerPiece.CurrentTile);*/
-
-        /*var currentTile = _currentPlayer.Piece.CurrentTile();
-        //int tileToMoveToID = currentTile.TileID + Dice.Instance.DiceRollOutput;
-        int nextTileToMoveToID = currentTile.TileID + 1;
-        
-        if (nextTileToMoveToID >= Tiles.Count)
-        {
-            int remainder = Tiles.Count - currentTile.TileID;
-            nextTileToMoveToID = 1 - remainder;
-        }
-        
-        _nextTileID = nextTileToMoveToID;
-        _pieceIsMoving = true;*/
-
-        /*var currentTile = _currentPlayer.Piece.CurrentTile();
-        int tileToMoveToID = currentTile.TileID + Dice.Instance.DiceRollOutput;
-        
-        if (tileToMoveToID >= Tiles.Count)
-        {
-            int remainder = Tiles.Count - currentTile.TileID;
-            tileToMoveToID = Dice.Instance.DiceRollOutput - remainder;
-        }
-        _tileToMoveToID = tileToMoveToID;
-        _pieceIsMoving = true;*/
-
         // TODO: Consider whether using the command pattern is actually necessary
-        //       - Undo functionality and a command history isn't needed?
+        // - Undo functionality and a command history isn't needed for this type of game?
         //_commandInvoker.AddCommand(new MoveCommand(piece, currentTile, newTile));
     }
     

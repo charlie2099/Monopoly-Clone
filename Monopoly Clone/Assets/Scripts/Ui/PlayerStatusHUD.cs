@@ -18,6 +18,12 @@ namespace Ui
 
         private void OnEnable()
         {
+            // TODO: Idea
+            // Upon a roll dice event, hide ALL ui until the player has reached their destination
+            // When the player reaches their destination, reveal all ui again.
+            // Gives the movement of a piece a cinematic look to it. 
+            
+            
             BoardMaster.Instance.OnPieceMoved += UpdateUiOnPieceMoved;
             BoardMaster.Instance.OnTurnChanged += UpdateUiOnTurnChanged;
             BoardMaster.Instance.Dice.OnDiceRolled += UpdateUiOnDiceRolled;
