@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c5b45f8df0cbf49943988ccbcf9bd1, type: 3}
   m_Name: Pink
   m_EditorClassIdentifier: 
-  groupColour: {r: 0.8392157, g: 0.12941177, b: 0.4509804, a: 0}
-  propertyTiles: []
+  blockColour: {r: 0.77647066, g: 0.13725491, b: 0.37254903, a: 0}

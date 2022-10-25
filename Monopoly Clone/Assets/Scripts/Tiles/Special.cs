@@ -1,14 +1,9 @@
-﻿using System;
+﻿using UnityEngine;
 
 namespace Tiles
 {
-    public class SpecialTile : Tile
+    public class Special : Tile
     {
-        private void Start()
-        {
-            IsEmpty = true;
-        }
-
         public void GiveCard(Player player)
         {
             // card.SetActive(true)
@@ -19,6 +14,11 @@ namespace Tiles
         public void GenerateCard()
         {
             //
+        }
+        
+        public override void OnLanded()
+        {
+            Debug.Log("Landed on: " + tileName);
         }
     }
 }

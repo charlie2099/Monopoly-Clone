@@ -6,7 +6,6 @@ using UnityEngine;
 /// <summary>
 /// Responsible for moving pieces on the board and handling turn switching.
 /// </summary>
-
 public class BoardMaster : MonoBehaviour
 {
     public static BoardMaster Instance;

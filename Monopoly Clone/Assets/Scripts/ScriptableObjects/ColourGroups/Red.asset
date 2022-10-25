@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c5b45f8df0cbf49943988ccbcf9bd1, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
-  groupColour: {r: 0.73333335, g: 0.08235294, b: 0.08235294, a: 0}
-  propertyTiles: []
+  blockColour: {r: 0.7019608, g: 0.14901961, b: 0.08627451, a: 0}

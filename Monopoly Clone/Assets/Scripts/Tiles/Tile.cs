@@ -1,14 +1,15 @@
-﻿using ScriptableObjects;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Tiles
 {
-    public abstract class Tile : MonoBehaviour
+    public abstract class Tile : MonoBehaviour, ILandable
     {
-        [SerializeField] protected string tileName;
-        /*[SerializeField] protected Tile previousTile;
-        [SerializeField] protected Tile nextTile;*/
-        public bool IsEmpty { get; set; }
         public int TileID { get; set; }
+        public abstract void OnLanded();
+        
+        [Header("Tile Data")]
+        [SerializeField] protected string tileName;
+        [SerializeField] protected TextMeshPro tileNameText;
     }
 }
