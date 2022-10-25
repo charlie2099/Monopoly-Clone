@@ -9,17 +9,17 @@ namespace Tiles
         [SerializeField] private ColourBlock colourBlock;
         [SerializeField] private TextMeshPro streetCostText;
         [SerializeField] private MeshRenderer streetColourBar;
-            
-        private void Start()
+
+        protected override void Start()
         {
-            tileNameText.text = tileName;
+            base.Start();
             streetCostText.text = "£1Mil";
             streetColourBar.material.color = colourBlock.blockColour;
         }
 
         public override void OnLanded()
         {
-            Debug.Log("Landed on: " + tileName);
+            Debug.Log("Landed on: " + TileName);
         }
     }
 }

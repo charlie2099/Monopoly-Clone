@@ -40,12 +40,12 @@ namespace Ui
         {
             // TODO: Tidy
             playerTurnText.text = "Turn: <color=blue>" + BoardMaster.Instance.ActivePlayer.Username + "</color>"; 
-            tileText.text = "Tile: <color=blue>" + BoardMaster.Instance.Tiles[0].name + "</color>";
+            tileText.text = "Tile: <color=blue>" + BoardMaster.Instance.Tiles[0].TileName + "</color>";
         }
 
         private void UpdateUiOnPieceMoved(Tile tile)
         {
-            tileText.text = "Tile: <color=blue>" + tile.name + "</color>";
+            tileText.text = "Tile: <color=blue>" + tile.TileName + "</color>";
         }
         
         private void UpdateUiOnTurnChanged(Player player)

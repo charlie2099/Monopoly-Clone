@@ -11,7 +11,7 @@ namespace Tiles
         
         public override void OnLanded()
         {
-            Debug.Log("Landed on: " + tileName);
+            Debug.Log("Landed on: " + TileName);
         }
     }
 }

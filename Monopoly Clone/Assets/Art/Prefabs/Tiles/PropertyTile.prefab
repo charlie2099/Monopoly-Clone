@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 5328614787955583836}
   - component: {fileID: 2766659326082916695}
   m_Layer: 0
-  m_Name: TaxTile
+  m_Name: PropertyTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

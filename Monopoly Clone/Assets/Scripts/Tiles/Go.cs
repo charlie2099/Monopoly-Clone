@@ -1,7 +1,4 @@
-﻿using System;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace Tiles
 {
@@ -9,7 +6,7 @@ namespace Tiles
     {
         public override void OnLanded()
         {
-            Debug.Log("Landed on: " + tileName);
+            Debug.Log("Landed on: " + TileName);
         }
     }
 }
