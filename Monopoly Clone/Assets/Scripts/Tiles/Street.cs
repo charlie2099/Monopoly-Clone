@@ -1,9 +1,10 @@
+using Interfaces;
 using TMPro;
 using UnityEngine;
 
 namespace Tiles
 {
-    public class Street : Tile
+    public class Street : Tile, IPurchaseable
     {
         [Header("Street Data")]
         [SerializeField] private ColourBlock colourBlock;
@@ -20,6 +21,29 @@ namespace Tiles
         public override void OnLanded()
         {
             Debug.Log("Landed on: " + TileName);
+        }
+
+        public void Buy()
+        {
+            // player.Buy(property);
+            // player.Sell(property);
+            // player.Mortgage(property);
+            
+            // Player
+            // {
+            //    List<Properties> ownedProperties;
+            //    List<IPurchaseable> ownedProperties;
+            // }
+        }
+
+        public void Sell()
+        {
+            
+        }
+
+        public void Mortgage()
+        {
+            
         }
     }
 }

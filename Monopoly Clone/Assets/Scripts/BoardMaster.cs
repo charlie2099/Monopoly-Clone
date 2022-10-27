@@ -28,6 +28,9 @@ public class BoardMaster : MonoBehaviour
     private Vector3 _tileToMovePos;
     private Vector3 _transformDir;
 
+    private void OnEnable() => dice.OnDiceRolled += MovePiece;
+    private void OnDisable() => dice.OnDiceRolled -= MovePiece;
+
     private void Awake()
     {
         if (Instance == null)
@@ -62,6 +65,18 @@ public class BoardMaster : MonoBehaviour
                 if (playerPiece.NavAgent.remainingDistance < 0.5)
                 {
                     playerPiece.SetCurrentTile(Tiles[_tileToMoveToID]);
+                    playerPiece.CurrentTile.OnLanded();
+
+                    /*if (playerPiece.GetComponent<Street>() != null)
+                    {
+                        playerPiece.GetComponent<Street>().Buy();
+                    }*/
+
+                    /*if (playerPiece.CurrentTile.GetComponent<Street>() != null)
+                    {
+                        _activePlayer.BuyProperty(playerPiece.CurrentTile.GetComponent<Street>());
+                    }*/
+
                     OnPieceMoved?.Invoke(playerPiece.CurrentTile);
                     _pieceIsMoving = false;
                 }
@@ -69,8 +84,10 @@ public class BoardMaster : MonoBehaviour
         }
     }
 
-    public void MovePiece() // called upon a click event via Roll Dice button
+    public void MovePiece(int diceRollOne, int diceRollTwo) // (OLD) called upon a click event via Roll Dice button
     {
+        if (_pieceIsMoving) { return; }
+        
         var playerPiece = _activePlayer.Piece;
         var currentTile = playerPiece.CurrentTile;
         int tileToMoveToID = currentTile.TileID + dice.DiceRollOutput;
