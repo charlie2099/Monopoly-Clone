@@ -18,10 +18,10 @@ namespace Tiles
             streetColourBar.material.color = colourBlock.blockColour;
         }
 
-        public override void OnLanded()
+        /*public override void OnLanded()
         {
             Debug.Log("Landed on: " + TileName);
-        }
+        }*/
 
         public void Buy()
         {

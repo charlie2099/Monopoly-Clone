@@ -9,9 +9,9 @@ namespace Tiles
             player.Money -= tax;
         }
         
-        public override void OnLanded()
+        /*public override void OnLanded()
         {
             Debug.Log("Landed on: " + TileName);
-        }
+        }*/
     }
 }

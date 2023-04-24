@@ -7,10 +7,11 @@ namespace Tiles
 {
     public abstract class Tile : MonoBehaviour, ILandable
     {
+        public event Action<Tile> OnLandedEvent;
+        
         public string TileName { get => tileName; set => tileName = value; }
         public int TileID { get; set; }
-        public abstract void OnLanded();
-        
+
         [Header("Tile Data")]
         [SerializeField] private string tileName;
         [SerializeField] private TextMeshPro tileNameText;
@@ -18,6 +19,12 @@ namespace Tiles
         protected virtual void Start()
         {
             tileNameText.text = tileName;
+        }
+
+        public virtual void OnLanded()
+        {
+            Debug.Log("Landed on: " + tileName);
+            OnLandedEvent?.Invoke(this);
         }
     }
 }

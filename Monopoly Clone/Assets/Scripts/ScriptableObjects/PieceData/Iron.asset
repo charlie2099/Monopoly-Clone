@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Iron
   model: {fileID: 0}
-  colour: {r: 0.101122975, g: 1, b: 0, a: 0}
+  colour: {r: 1, g: 0.98475426, b: 0, a: 0}

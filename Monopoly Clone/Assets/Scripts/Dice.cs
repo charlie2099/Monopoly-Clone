@@ -19,6 +19,7 @@ public class Dice : MonoBehaviour
         set => _diceTwoRoll = value;
     }
 
+    [SerializeField] private DiceDetector diceDetector; //tight coupling? 
     [SerializeField] private GameObject dicePrefab;
     [SerializeField] private Transform diceThrowerOne;
     [SerializeField] private Transform diceThrowerTwo;
@@ -26,6 +27,16 @@ public class Dice : MonoBehaviour
     private int _diceOneRoll;
     private int _diceTwoRoll;
     private int _doublesRolled;
+
+    private void OnEnable()
+    {
+        diceDetector.OnDiceResult += CalculateDiceOutput;
+    }
+    
+    private void OnDisable()
+    {
+        diceDetector.OnDiceResult -= CalculateDiceOutput;
+    }
 
     public void Roll() // called upon a click event via Roll Turn button
     {
@@ -37,25 +48,38 @@ public class Dice : MonoBehaviour
         dice1Instance.GetComponent<Rigidbody>().AddForce(-transform.right * 350);
         dice1Instance.GetComponent<Rigidbody>().AddTorque(dirX1, dirY1, dirZ1);
         
-        /*GameObject dice2Instance = Instantiate(dicePrefab, diceThrowerTwo.position, Quaternion.identity);
+        GameObject dice2Instance = Instantiate(dicePrefab, diceThrowerTwo.position, Quaternion.identity);
         float dirX2 = Random.Range(0, 500);
         float dirY2 = Random.Range(0, 500);
         float dirZ2 = Random.Range(0, 500);
         dice2Instance.GetComponent<Rigidbody>().AddForce(-transform.right * 350);
-        dice2Instance.GetComponent<Rigidbody>().AddTorque(dirX2, dirY2, dirZ2);*/
+        dice2Instance.GetComponent<Rigidbody>().AddTorque(dirX2, dirY2, dirZ2);
     }
 
-    public void CalculateDiceOutput()
+    public void CalculateDiceOutput(int diceResult)
     {
+        if (_diceOneRoll == 0)
+        {
+            _diceOneRoll = diceResult;
+            return;
+        }
+
+        // if diceOne result already captured, capture 2nd dice result
+        _diceTwoRoll = diceResult;
+
         OnDiceRolled?.Invoke(_diceOneRoll, _diceTwoRoll);
 
         if (RolledADouble())
         {
             _doublesRolled++;
             OnDoubleRolled?.Invoke(_doublesRolled);
+            _diceOneRoll = 0;
+            _diceTwoRoll = 0;
             return;
         }
         _doublesRolled = 0;
+        _diceOneRoll = 0;
+        _diceTwoRoll = 0;
     }
 
     private bool RolledADouble()

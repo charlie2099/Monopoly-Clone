@@ -4,9 +4,9 @@ namespace Tiles
 {
     public class Go : Tile
     {
-        public override void OnLanded()
+        /*public override void OnLanded()
         {
             Debug.Log("Landed on: " + TileName);
-        }
+        }*/
     }
 }

@@ -1,7 +1,7 @@
-using System;
 using Tiles;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Ui
 {
@@ -16,17 +16,20 @@ namespace Ui
         [SerializeField] private TextMeshProUGUI playerTurnText;
         [SerializeField] private TextMeshProUGUI diceRollText;
 
+        [SerializeField] private TextMeshProUGUI hudTileText;
+        [SerializeField] private Image hudColourBar;
+
         private void OnEnable()
         {
             // TODO: Idea
             // Upon a roll dice event, hide ALL ui until the player has reached their destination
             // When the player reaches their destination, reveal all ui again.
             // Gives the movement of a piece a cinematic look to it. 
-            
-            
+
             BoardMaster.Instance.OnPieceMoved += UpdateUiOnPieceMoved;
             BoardMaster.Instance.OnTurnChanged += UpdateUiOnTurnChanged;
             BoardMaster.Instance.Dice.OnDiceRolled += UpdateUiOnDiceRolled;
+            //BoardMaster.Instance.ActivePlayer.Piece.CurrentTile.OnLandedEvent += UpdateUiOnLandedEvent;
         }
 
         private void OnDisable()
@@ -34,6 +37,7 @@ namespace Ui
             BoardMaster.Instance.OnPieceMoved -= UpdateUiOnPieceMoved;
             BoardMaster.Instance.OnTurnChanged -= UpdateUiOnTurnChanged;
             BoardMaster.Instance.Dice.OnDiceRolled -= UpdateUiOnDiceRolled;
+            //BoardMaster.Instance.ActivePlayer.Piece.CurrentTile.OnLandedEvent -= UpdateUiOnLandedEvent;
         }
 
         private void Start()
@@ -42,6 +46,12 @@ namespace Ui
             playerTurnText.text = "Turn: <color=blue>" + BoardMaster.Instance.ActivePlayer.Username + "</color>"; 
             tileText.text = "Tile: <color=blue>" + BoardMaster.Instance.Tiles[0].TileName + "</color>";
         }
+        
+        /*private void UpdateUiOnLandedEvent(Tile tile)
+        {
+            hudTileText.text = tile.TileName;
+            hudColourBar.color = Color.red;
+        }*/
 
         private void UpdateUiOnPieceMoved(Tile tile)
         {

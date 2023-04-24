@@ -15,7 +15,7 @@ public class BoardMaster : MonoBehaviour
     public List<Tile> Tiles => tiles;
     public Player ActivePlayer => _activePlayer;
     public Dice Dice => dice;
-
+    
     [SerializeField] private Dice dice; //tight coupling? 
     [SerializeField] private List<Player> players;
     [SerializeField] private List<Tile> tiles;
@@ -29,6 +29,7 @@ public class BoardMaster : MonoBehaviour
     private Vector3 _transformDir;
 
     private void OnEnable() => dice.OnDiceRolled += MovePiece;
+
     private void OnDisable() => dice.OnDiceRolled -= MovePiece;
 
     private void Awake()
