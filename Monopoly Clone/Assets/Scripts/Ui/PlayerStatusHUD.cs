@@ -28,7 +28,7 @@ namespace Ui
 
             BoardMaster.Instance.OnPieceMoved += UpdateUiOnPieceMoved;
             BoardMaster.Instance.OnTurnChanged += UpdateUiOnTurnChanged;
-            BoardMaster.Instance.Dice.OnDiceRolled += UpdateUiOnDiceRolled;
+            BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateUiOnDiceRolled;
             //BoardMaster.Instance.ActivePlayer.Piece.CurrentTile.OnLandedEvent += UpdateUiOnLandedEvent;
         }
 
@@ -36,7 +36,7 @@ namespace Ui
         {
             BoardMaster.Instance.OnPieceMoved -= UpdateUiOnPieceMoved;
             BoardMaster.Instance.OnTurnChanged -= UpdateUiOnTurnChanged;
-            BoardMaster.Instance.Dice.OnDiceRolled -= UpdateUiOnDiceRolled;
+            BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateUiOnDiceRolled;
             //BoardMaster.Instance.ActivePlayer.Piece.CurrentTile.OnLandedEvent -= UpdateUiOnLandedEvent;
         }
 

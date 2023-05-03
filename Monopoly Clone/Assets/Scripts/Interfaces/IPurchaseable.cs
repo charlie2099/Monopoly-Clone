@@ -5,5 +5,7 @@ namespace Interfaces
         public void Buy();
         public void Sell();
         public void Mortgage();
+        //public void Upgrade();
+        //public void Downgrade();
     }
 }

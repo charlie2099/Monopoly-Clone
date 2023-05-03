@@ -166,8 +166,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 505243412}
-  - {fileID: 1230463536}
-  - {fileID: 135427990}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -346,6 +344,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39061801}
   m_CullTransparentMesh: 1
+--- !u!1 &39360486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 39360487}
+  - component: {fileID: 39360488}
+  m_Layer: 0
+  m_Name: BoardMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &39360487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39360486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 859716276}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &39360488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39360486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bece6f5d65f2b488475d7b78a4cf84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceManager: {fileID: 480928925}
+  players:
+  - {fileID: 742587255}
+  - {fileID: 71863059}
+  - {fileID: 1353280542}
+  - {fileID: 283047752}
 --- !u!1 &46091958
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +440,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -622,6 +674,10 @@ PrefabInstance:
       value: StreetTile (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: TV Centre Bath Road
       objectReference: {fileID: 0}
@@ -693,17 +749,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 104488071}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &108002895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 66664267}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &132047287
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,52 +816,6 @@ Transform:
   m_Father: {fileID: 859716276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &135427989
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 135427990}
-  - component: {fileID: 135427991}
-  m_Layer: 0
-  m_Name: GUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &135427990
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135427989}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1431437}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &135427991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135427989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3ef7a15f4643f4c939b63ca4bdb498, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rollDiceButton: {fileID: 2016269230}
-  endTurnButton: {fileID: 2083500429}
 --- !u!1 &161145570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1082,10 @@ PrefabInstance:
       value: StreetTile (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Denmark Street
       objectReference: {fileID: 0}
@@ -1154,17 +1157,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 349916049}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &349916051 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 349916049}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &351458007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,13 +1193,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351458007}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.08, y: 1.19, z: 7.85}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1122437, y: 3.0865674, z: 3.6443496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1947821542}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &363428955
 GameObject:
@@ -1394,84 +1386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 36
   tileName: Chance
   tileNameText: {fileID: 1763907303736473352}
---- !u!1 &418772812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 418772813}
-  - component: {fileID: 418772815}
-  - component: {fileID: 418772814}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &418772813
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418772812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 505243412}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 143.6}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!114 &418772814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418772812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0.8}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &418772815
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418772812}
-  m_CullTransparentMesh: 1
 --- !u!1 &422350682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,56 +1669,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 453639654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51bece6f5d65f2b488475d7b78a4cf84, type: 3}
+  m_Script: {fileID: 11500000, guid: 3aa5affba9c9bd3439ccd589cb3e1efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 480928925}
-  players:
-  - {fileID: 742587255}
-  - {fileID: 71863059}
-  - {fileID: 1353280542}
-  - {fileID: 283047752}
-  tiles:
-  - {fileID: 604272992827724896}
-  - {fileID: 1336910159}
-  - {fileID: 1763907302127733248}
-  - {fileID: 108002895}
-  - {fileID: 2385086447015010816}
-  - {fileID: 5181724007386785072}
-  - {fileID: 1990393822}
-  - {fileID: 674302720}
-  - {fileID: 1949517016}
-  - {fileID: 1737059813}
-  - {fileID: 604272992256061102}
-  - {fileID: 1351153429}
-  - {fileID: 5181724007506712495}
-  - {fileID: 1122314103}
-  - {fileID: 1609360729}
-  - {fileID: 5181724007139674080}
-  - {fileID: 506610644}
-  - {fileID: 1808335064}
-  - {fileID: 1022437707}
-  - {fileID: 1328974320}
-  - {fileID: 604272992349434154}
-  - {fileID: 1729569984}
-  - {fileID: 1174801249}
-  - {fileID: 349916051}
-  - {fileID: 1841139552}
-  - {fileID: 5181724007726655919}
-  - {fileID: 636863951}
-  - {fileID: 839409989}
-  - {fileID: 5181724007577817784}
-  - {fileID: 1586409947}
-  - {fileID: 604272991395721609}
-  - {fileID: 1288593450}
-  - {fileID: 1670784130}
-  - {fileID: 1848634332}
-  - {fileID: 1947426452}
-  - {fileID: 5181724006924763952}
-  - {fileID: 382164768}
-  - {fileID: 1001709646}
-  - {fileID: 5328614788352891328}
-  - {fileID: 2056503196}
 --- !u!1 &467225840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,8 +1836,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1947821542}
-  m_RootOrder: 0
+  m_Father: {fileID: 859716276}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &480928925
 MonoBehaviour:
@@ -1981,6 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc9ab264fca25f4686e92991f1b10fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rollDiceButton: {fileID: 2016269232}
   diceDetector: {fileID: 1792845457}
   dicePrefab: {fileID: 3312330422463642511, guid: 95df71b81320d66449894238810971f3, type: 3}
   diceThrowerOne: {fileID: 1396179253}
@@ -1996,6 +1867,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -2160,6 +2035,8 @@ GameObject:
   - component: {fileID: 505243411}
   - component: {fileID: 505243410}
   - component: {fileID: 505243409}
+  - component: {fileID: 505243414}
+  - component: {fileID: 505243413}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2244,7 +2121,6 @@ RectTransform:
   - {fileID: 467225841}
   - {fileID: 1655485349}
   - {fileID: 1816484438}
-  - {fileID: 418772813}
   - {fileID: 2016269231}
   - {fileID: 2083500430}
   - {fileID: 161145571}
@@ -2258,6 +2134,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &505243413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505243408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3ef7a15f4643f4c939b63ca4bdb498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollDiceButton: {fileID: 2016269230}
+  endTurnButton: {fileID: 2083500429}
+--- !u!114 &505243414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505243408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc04cd89416fa04439eff056a8186f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileText: {fileID: 467225842}
+  playerTurnText: {fileID: 1655485350}
+  diceRollText: {fileID: 1816484436}
+  hudTileText: {fileID: 39061803}
+  hudColourBar: {fileID: 2060679637}
 --- !u!1001 &506610642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2269,6 +2176,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -2342,17 +2253,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 506610642}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &506610644 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 506610642}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &520729655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,25 +2477,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623909119}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.973705, y: -0.26168108, z: 14.531668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.005947113, y: 1.6348863, z: 10.326017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1947821542}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &636863951 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 104488071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &674302720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2608,6 +2497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 7
   tileName: Chance
   tileNameText: {fileID: 1763907303756243752}
 --- !u!1 &683786316
@@ -2802,6 +2692,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -3009,13 +2903,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771858024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.08, y: 1.19, z: 10.87}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1122437, y: 3.0865674, z: 6.6643496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1947821542}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813230551
 GameObject:
@@ -3068,6 +2962,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -3141,17 +3039,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 839409987}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &839409989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 839409987}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &859716275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,6 +3067,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 39360487}
+  - {fileID: 480928924}
   - {fileID: 132047290}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -3354,6 +3243,10 @@ PrefabInstance:
       value: StreetTile (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Bristol Old Vic
       objectReference: {fileID: 0}
@@ -3425,17 +3318,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1001709644}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1001709646 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1001709644}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1002521529
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,17 +3600,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015549818}
   m_CullTransparentMesh: 1
---- !u!114 &1022437707 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 486386327}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1026544017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3740,6 +3611,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -3901,6 +3776,10 @@ PrefabInstance:
       value: StreetTile (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Ashton Gate
       objectReference: {fileID: 0}
@@ -3972,17 +3851,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1118817377}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1122314103 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1118817377}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1171746573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4130,6 +3998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 22
   tileName: Chance
   tileNameText: {fileID: 1763907302381626185}
 --- !u!1 &1208471500
@@ -4220,6 +4089,10 @@ PrefabInstance:
       value: StreetTile (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Somerset House
       objectReference: {fileID: 0}
@@ -4291,55 +4164,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1228525269}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1230463535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1230463536}
-  - component: {fileID: 1230463537}
-  m_Layer: 0
-  m_Name: HUD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1230463536
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230463535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1431437}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1230463537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230463535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc04cd89416fa04439eff056a8186f31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileText: {fileID: 467225842}
-  playerTurnText: {fileID: 1655485350}
-  diceRollText: {fileID: 1816484436}
-  hudTileText: {fileID: 39061803}
-  hudColourBar: {fileID: 2060679637}
 --- !u!1001 &1261244599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4351,6 +4175,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -4577,7 +4405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1273601922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4585,7 +4413,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273601921}
-  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: -0.005}
   m_LocalScale: {x: 0.0036533452, y: 0.73550993, z: 0.0031589987}
   m_ConstrainProportionsScale: 0
@@ -4595,7 +4423,7 @@ RectTransform:
   - {fileID: 1003959099}
   m_Father: {fileID: 72951087}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.005, y: -0.00010165237}
@@ -4663,17 +4491,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1288593450 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1228525269}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1324801396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,6 +4638,10 @@ PrefabInstance:
       value: StreetTile (9)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Lewins Mead
       objectReference: {fileID: 0}
@@ -4892,28 +4713,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1328974318}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1328974320 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1328974318}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1336910159 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 6828296916028324057}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1351153427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4925,6 +4724,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -4998,17 +4801,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1351153427}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1351153429 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1351153427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1353280541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5309,17 +5101,6 @@ MonoBehaviour:
   pieceData: {fileID: 11400000, guid: 483a4244aa6def44694d4164cbe7a111, type: 2}
   model: {fileID: 771062006}
   currentTile: {fileID: 604272992827724896}
---- !u!114 &1586409947 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1261244599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1609360727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5331,6 +5112,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -5404,17 +5189,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1609360727}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1609360729 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1609360727}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1633091734
 GameObject:
   m_ObjectHideFlags: 0
@@ -5638,6 +5412,10 @@ PrefabInstance:
       value: StreetTile (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Aztec West
       objectReference: {fileID: 0}
@@ -5709,17 +5487,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1670784128}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1670784130 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1670784128}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1689257416
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,17 +5563,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689257416}
   m_CullTransparentMesh: 1
---- !u!114 &1729569984 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1026544017}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1737059811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5818,6 +5574,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -5891,17 +5651,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1737059811}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1737059813 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1737059811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1792845454
 GameObject:
   m_ObjectHideFlags: 0
@@ -5972,6 +5721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 17
   tileName: Community Chest
   tileNameText: {fileID: 1763907302712387824}
 --- !u!1 &1816484435
@@ -6180,17 +5930,6 @@ NavMeshAgent:
   m_BaseOffset: 0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1841139552 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 758740781}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1848634332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6203,6 +5942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 33
   tileName: Community Chest
   tileNameText: {fileID: 1763907302781699060}
 --- !u!1 &1849414532
@@ -6320,13 +6060,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853366932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.08, y: 1.19, z: 14.85}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1122437, y: 3.0865674, z: 10.64435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1947821542}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1939158029
 GameObject:
@@ -6412,6 +6152,10 @@ PrefabInstance:
       value: StreetTile (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Narrow Quay
       objectReference: {fileID: 0}
@@ -6483,17 +6227,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1947426450}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1947426452 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1947426450}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1947821541
 GameObject:
   m_ObjectHideFlags: 0
@@ -6522,13 +6255,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 480928924}
+  - {fileID: 272933036}
+  - {fileID: 453639655}
+  - {fileID: 1670366816}
   - {fileID: 1396179253}
   - {fileID: 584695711}
   - {fileID: 1792845455}
-  - {fileID: 453639655}
-  - {fileID: 1670366816}
-  - {fileID: 272933036}
+  - {fileID: 623909121}
+  - {fileID: 1853366934}
+  - {fileID: 771858026}
+  - {fileID: 351458009}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6543,6 +6279,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -6616,17 +6356,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1949517014}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1949517016 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1949517014}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1984701905
 GameObject:
   m_ObjectHideFlags: 0
@@ -6715,6 +6444,10 @@ PrefabInstance:
       value: StreetTile (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
       value: Great Western Dock
       objectReference: {fileID: 0}
@@ -6786,17 +6519,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 1990393820}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1990393822 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 1990393820}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2016269230
 GameObject:
   m_ObjectHideFlags: 0
@@ -6810,7 +6532,7 @@ GameObject:
   - component: {fileID: 2016269233}
   - component: {fileID: 2016269232}
   m_Layer: 5
-  m_Name: DiceRollButton
+  m_Name: RollDiceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6880,19 +6602,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2016269233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 480928925}
-        m_TargetAssemblyTypeName: Dice, Assembly-CSharp
-        m_MethodName: Roll
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2016269233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6942,6 +6652,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName
@@ -7015,17 +6729,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828296916797093703, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
   m_PrefabInstance: {fileID: 2056503194}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2056503196 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
-  m_PrefabInstance: {fileID: 2056503194}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2060679635
 GameObject:
   m_ObjectHideFlags: 0
@@ -7320,19 +7023,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2083500432}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 453639659}
-        m_TargetAssemblyTypeName: BoardMaster, Assembly-CSharp
-        m_MethodName: EndTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2083500432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7654,6 +7345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cc9e005cf94508999c2133f168b0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 30
   tileName: Go To Jail
   tileNameText: {fileID: 604272993150342962}
 --- !u!33 &604272991742107978
@@ -8385,6 +8077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a576d8b40404a6b9cb66922c102e656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 10
   tileName: Jail
   tileNameText: {fileID: 604272992567904279}
 --- !u!114 &604272992332138612
@@ -8602,6 +8295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711adc0c1ccf4d178753aa8e3f35993c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 20
   tileName: Free Parking
   tileNameText: {fileID: 604272992206067603}
 --- !u!114 &604272992440063984
@@ -9161,6 +8855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0237809e1a8459f9bff42a28788665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 0
   tileName: GO
   tileNameText: {fileID: 604272991996244709}
 --- !u!65 &604272992993148616
@@ -9720,6 +9415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 2
   tileName: Community Chest
   tileNameText: {fileID: 1763907302586795443}
 --- !u!23 &1763907302353853228
@@ -13140,6 +12836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d237d60189c2437e8bdd84c91594d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 4
   tileName: Income Tax
   tileNameText: {fileID: 2385086447460838836}
 --- !u!1 &2385086447222302888
@@ -14973,6 +14670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 35
   tileName: Bristol Temple Meads
   tileNameText: {fileID: 5181724007374819171}
 --- !u!1 &5181724006940466614
@@ -15737,6 +15435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 15
   tileName: Centre
   tileNameText: {fileID: 5181724007023594387}
 --- !u!222 &5181724007313542794
@@ -16195,6 +15894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 5
   tileName: International Airport Bristol
   tileNameText: {fileID: 5181724007833725284}
 --- !u!1 &5181724007404583857
@@ -16486,6 +16186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c61d6d24bfa49c6bad2f936d25faa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 12
   tileName: Water Company
   tileNameText: {fileID: 5181724007864523749}
 --- !u!1 &5181724007550426873
@@ -16675,6 +16376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c61d6d24bfa49c6bad2f936d25faa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 28
   tileName: Communications
   tileNameText: {fileID: 5181724007659462399}
 --- !u!33 &5181724007605247366
@@ -17504,6 +17206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 25
   tileName: Bristol Port
   tileNameText: {fileID: 5181724007644587490}
 --- !u!222 &5181724007800250619
@@ -18774,6 +18477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d237d60189c2437e8bdd84c91594d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileID: 38
   tileName: Bank Deposit
   tileNameText: {fileID: 5328614788270855665}
 --- !u!222 &5328614788426617064
@@ -18875,6 +18579,10 @@ PrefabInstance:
     - target: {fileID: 6828296916797093696, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: m_Name
       value: StreetTile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
+      propertyPath: tileID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6828296916797093702, guid: 09f562ee516a7dc4fba5d56b884e0bcc, type: 3}
       propertyPath: tileName

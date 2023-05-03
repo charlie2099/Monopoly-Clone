@@ -17,16 +17,16 @@ namespace Ui
         private void OnEnable()
         {
             BoardMaster.Instance.OnPieceMoved += UpdateButtonVisibilityOnPieceMoved;
-            BoardMaster.Instance.Dice.OnDiceRolled += UpdateButtonVisibilityOnDiceRolled;
-            BoardMaster.Instance.Dice.OnDoubleRolled += UpdateButtonVisibilityOnDoublesRolled;
+            BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateButtonVisibilityOnDiceRolled;
+            BoardMaster.Instance.DiceManager.OnDoubleRolled += UpdateButtonVisibilityOnDoublesRolled;
             BoardMaster.Instance.OnTurnChanged += UpdateButtonVisibilityOnTurnChanged;
         }
 
         private void OnDisable()
         {
             BoardMaster.Instance.OnPieceMoved -= UpdateButtonVisibilityOnPieceMoved;
-            BoardMaster.Instance.Dice.OnDiceRolled -= UpdateButtonVisibilityOnDiceRolled;
-            BoardMaster.Instance.Dice.OnDoubleRolled -= UpdateButtonVisibilityOnDoublesRolled;
+            BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateButtonVisibilityOnDiceRolled;
+            BoardMaster.Instance.DiceManager.OnDoubleRolled -= UpdateButtonVisibilityOnDoublesRolled;
             BoardMaster.Instance.OnTurnChanged -= UpdateButtonVisibilityOnTurnChanged;
         }
 

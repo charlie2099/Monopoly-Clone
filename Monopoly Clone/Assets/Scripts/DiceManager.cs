@@ -1,25 +1,17 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class Dice : MonoBehaviour
+public class DiceManager : MonoBehaviour
 {
     public event Action<int, int> OnDiceRolled;
     public event Action<int> OnDoubleRolled;
     public int DiceRollOutput => _diceOneRoll+_diceTwoRoll;
     public int DoublesRolled => _doublesRolled;
-    public int DiceOneOutput
-    {
-        get => _diceOneRoll; 
-        set => _diceOneRoll = value;
-    }
-    public int DiceTwoOutput
-    {
-        get => _diceTwoRoll; 
-        set => _diceTwoRoll = value;
-    }
 
-    [SerializeField] private DiceDetector diceDetector; //tight coupling? 
+    [SerializeField] private Button rollDiceButton;
+    [SerializeField] private DiceDetector diceDetector; 
     [SerializeField] private GameObject dicePrefab;
     [SerializeField] private Transform diceThrowerOne;
     [SerializeField] private Transform diceThrowerTwo;
@@ -30,15 +22,17 @@ public class Dice : MonoBehaviour
 
     private void OnEnable()
     {
+        rollDiceButton.onClick.AddListener(Roll);
         diceDetector.OnDiceResult += CalculateDiceOutput;
     }
     
     private void OnDisable()
     {
+        rollDiceButton.onClick.RemoveListener(Roll);
         diceDetector.OnDiceResult -= CalculateDiceOutput;
     }
 
-    public void Roll() // called upon a click event via Roll Turn button
+    private void Roll() // called upon a click event via Roll Turn button
     {
         // Instantiating not ideal
         GameObject dice1Instance = Instantiate(dicePrefab, diceThrowerOne.position, Quaternion.identity);
@@ -56,7 +50,7 @@ public class Dice : MonoBehaviour
         dice2Instance.GetComponent<Rigidbody>().AddTorque(dirX2, dirY2, dirZ2);
     }
 
-    public void CalculateDiceOutput(int diceResult)
+    private void CalculateDiceOutput(int diceResult)
     {
         if (_diceOneRoll == 0)
         {
@@ -84,10 +78,6 @@ public class Dice : MonoBehaviour
 
     private bool RolledADouble()
     {
-        if (_diceOneRoll == _diceTwoRoll)
-        {
-            return true;
-        }
-        return false;
+        return _diceOneRoll == _diceTwoRoll;
     }
 }

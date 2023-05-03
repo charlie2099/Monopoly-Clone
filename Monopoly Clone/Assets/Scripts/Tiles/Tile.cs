@@ -8,11 +8,10 @@ namespace Tiles
     public abstract class Tile : MonoBehaviour, ILandable
     {
         public event Action<Tile> OnLandedEvent;
-        
-        public string TileName { get => tileName; set => tileName = value; }
-        public int TileID { get; set; }
+        public string TileName => tileName;
+        public int TileID => tileID;
 
-        [Header("Tile Data")]
+        [SerializeField] private int tileID;
         [SerializeField] private string tileName;
         [SerializeField] private TextMeshPro tileNameText;
 
