@@ -1,12 +1,13 @@
 using Commands;
 using Tiles;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Piece piece;
+    [FormerlySerializedAs("piece")] [SerializeField] private Token token;
     private CommandInvoker _commandInvoker = new CommandInvoker();
-    private Piece _selectedPiece;
+    private Token selectedToken;
     private Tile selectedPropertyTile;
 
     private void Update()
@@ -15,13 +16,13 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (hitInfo.transform.GetComponent<Piece>() == piece)
+                if (hitInfo.transform.GetComponent<Token>() == token)
                 {
-                    Debug.Log("Piece: <color=orange>" + hitInfo.transform.GetComponent<Piece>().PieceName + "</color>");
-                    _selectedPiece = hitInfo.transform.GetComponent<Piece>();
+                    Debug.Log("Piece: <color=orange>" + hitInfo.transform.GetComponent<Token>().PieceName + "</color>");
+                    selectedToken = hitInfo.transform.GetComponent<Token>();
                 }
                 
-                if (_selectedPiece == null)
+                if (selectedToken == null)
                 {
                     Debug.LogError("A Piece must be selected before a Tile can be selected!");
                     return;
@@ -33,16 +34,16 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Tile: <color=lime>" + hitInfo.transform.name + "</color>");
                     
                     selectedPropertyTile = hitInfo.transform.GetComponent<Tile>(); 
-                    Tile previousPropertyTile = piece.CurrentTile;
+                    Tile previousPropertyTile = token.CurrentTile;
                     
-                    _commandInvoker.AddCommand(new MoveCommand(piece, previousPropertyTile, selectedPropertyTile));
+                    _commandInvoker.AddCommand(new MoveCommand(token, previousPropertyTile, selectedPropertyTile));
 
                     // Update the state of the tile
                     //previousTile.IsEmpty = true;
                     //_selectedTile.IsEmpty = false; // Nullifies(?) the if statement condition here
 
                     // Clear selection after move
-                    _selectedPiece = null;
+                    selectedToken = null;
                     selectedPropertyTile = null;
                 }
             }

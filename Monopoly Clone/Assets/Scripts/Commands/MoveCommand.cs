@@ -5,13 +5,13 @@ namespace Commands
 {
     public class MoveCommand : ICommand
     {
-        private readonly Piece _piece;
+        private readonly Token token;
         private readonly Tile _previousTile;
         private readonly Tile _newTile;
 
-        public MoveCommand(Piece piece, Tile previousTile, Tile newTile)
+        public MoveCommand(Token token, Tile previousTile, Tile newTile)
         {
-            _piece = piece;
+            this.token = token;
             _previousTile = previousTile;
             _newTile = newTile;
         }
@@ -19,19 +19,19 @@ namespace Commands
         public void Execute()
         { 
             var newTilePos = _newTile.transform.position;
-            var destination = new Vector3(newTilePos.x, _piece.transform.position.y, newTilePos.z);
-            _piece.transform.position = destination;
+            var destination = new Vector3(newTilePos.x, token.transform.position.y, newTilePos.z);
+            token.transform.position = destination;
             //AnimationController.Instance.MoveTo(_piece, destination);
-            _piece.SetCurrentTile(_newTile);
+            token.SetCurrentTile(_newTile);
             //_piece.MoveTo(destination);
         }
 
         public void Undo()
         {
             var oldTilePos = _previousTile.transform.position;
-            var destination = new Vector3(oldTilePos.x, _piece.transform.position.y, oldTilePos.z);
-            _piece.transform.position = destination;
-            _piece.SetCurrentTile(_previousTile);
+            var destination = new Vector3(oldTilePos.x, token.transform.position.y, oldTilePos.z);
+            token.transform.position = destination;
+            token.SetCurrentTile(_previousTile);
         }
     }
 }

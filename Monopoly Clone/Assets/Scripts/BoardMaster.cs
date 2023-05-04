@@ -10,14 +10,12 @@ using UnityEngine;
 public class BoardMaster : MonoBehaviour
 {
     public static BoardMaster Instance;
-    public event Action<Tile> OnPieceMoved;
+    public event Action<Tile> OnTokenMoved;
     public event Action<Player> OnTurnChanged;
     public List<Player> Players => players;
     public List<Tile> Tiles => _tiles;
     public Player ActivePlayer => _activePlayer;
-    public DiceManager DiceManager => diceManager;
-    
-    [SerializeField] private DiceManager diceManager; //tight coupling? 
+
     [SerializeField] private List<Player> players;
     private List<Tile> _tiles = new();
     private Player _activePlayer;
@@ -28,8 +26,8 @@ public class BoardMaster : MonoBehaviour
     private Vector3 _tileToMovePos;
     private Vector3 _transformDir;
 
-    private void OnEnable() => diceManager.OnDiceRolled += MovePiece;
-    private void OnDisable() => diceManager.OnDiceRolled -= MovePiece;
+    //private void OnEnable() => diceManager.OnDiceRolled += MovePiece;
+    //private void OnDisable() => diceManager.OnDiceRolled -= MovePiece;
 
     private void Awake()
     {
@@ -53,7 +51,7 @@ public class BoardMaster : MonoBehaviour
         //Debug.DrawRay(_tileToMovePos, _transformDir, Color.magenta);
         if (_pieceIsMoving)
         {
-            var playerPiece = _activePlayer.Piece;
+            var playerPiece = _activePlayer.Token;
             var tileToMoveToPos = _tiles[_tileToMoveToID].transform.position;
             var newTilePos = new Vector3(tileToMoveToPos.x, playerPiece.transform.position.y, tileToMoveToPos.z);
             playerPiece.NavAgent.SetDestination(newTilePos/*new Vector3(_randomXPos, newTilePos.y, newTilePos.z)*/);
@@ -64,7 +62,7 @@ public class BoardMaster : MonoBehaviour
                 {
                     playerPiece.SetCurrentTile(_tiles[_tileToMoveToID]);
                     playerPiece.CurrentTile.OnLanded();
-                    OnPieceMoved?.Invoke(playerPiece.CurrentTile);
+                    OnTokenMoved?.Invoke(playerPiece.CurrentTile);
                     EndTurn();
                     _pieceIsMoving = false;
                 }
@@ -72,11 +70,11 @@ public class BoardMaster : MonoBehaviour
         }
     }
 
-    private void MovePiece(int diceRollOne, int diceRollTwo) // (OLD) called upon a click event via Roll Dice button
+    /*private void MovePiece(int diceRollOne, int diceRollTwo)
     {
         if (_pieceIsMoving) { return; }
         
-        var playerPiece = _activePlayer.Piece;
+        var playerPiece = _activePlayer.Token;
         var currentTile = playerPiece.CurrentTile;
         int tileToMoveToID = currentTile.TileID + diceManager.DiceRollOutput;
         if (tileToMoveToID >= _tiles.Count)
@@ -87,7 +85,7 @@ public class BoardMaster : MonoBehaviour
         _tileToMoveToID = tileToMoveToID;
         //_randomXPos = _tiles[tileToMoveToID].transform.position.x + (Random.insideUnitSphere.x * 1.75f);
         _pieceIsMoving = true;
-    }
+    }*/
 
     private void EndTurn() // called upon a click event via End Turn button
     {

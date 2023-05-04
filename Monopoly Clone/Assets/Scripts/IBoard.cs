@@ -1,5 +1,9 @@
 ﻿
+using Tiles;
+
 public interface IBoard
 {
-    public void Initialise();
+    Tile[] Tiles { get; }
+    void SetupBoard();
 }
+

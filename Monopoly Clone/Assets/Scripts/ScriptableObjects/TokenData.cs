@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PieceData", menuName = "ScriptableObjects/PieceData")]
-public class PieceData : ScriptableObject
+public class TokenData : ScriptableObject
 {
     public string name;
     public GameObject model;

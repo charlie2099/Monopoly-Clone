@@ -1,11 +1,12 @@
+using Tiles;
 using UnityEngine;
 
-public class Board : MonoBehaviour
+public class Board : MonoBehaviour, IBoard
 {
-    private IBoard _board;
-
-    public void SetBoard(IBoard board)
+    public Tile[] Tiles { get; }
+    
+    public void SetupBoard()
     {
-        _board = board;
+        
     }
 }

@@ -16,57 +16,40 @@ namespace Ui
         [SerializeField] private TextMeshProUGUI playerTurnText;
         [SerializeField] private TextMeshProUGUI diceRollText;
 
-        [SerializeField] private TextMeshProUGUI hudTileText;
-        [SerializeField] private Image hudColourBar;
-
         private void OnEnable()
         {
-            // TODO: Idea
-            // Upon a roll dice event, hide ALL ui until the player has reached their destination
-            // When the player reaches their destination, reveal all ui again.
-            // Gives the movement of a piece a cinematic look to it. 
-
-            BoardMaster.Instance.OnPieceMoved += UpdateUiOnPieceMoved;
+            BoardMaster.Instance.OnTokenMoved += UpdateUiOnTokenMoved;
             BoardMaster.Instance.OnTurnChanged += UpdateUiOnTurnChanged;
-            BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateUiOnDiceRolled;
-            //BoardMaster.Instance.ActivePlayer.Piece.CurrentTile.OnLandedEvent += UpdateUiOnLandedEvent;
+            //BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateUiOnDiceRolled;
         }
 
         private void OnDisable()
         {
-            BoardMaster.Instance.OnPieceMoved -= UpdateUiOnPieceMoved;
+            BoardMaster.Instance.OnTokenMoved -= UpdateUiOnTokenMoved;
             BoardMaster.Instance.OnTurnChanged -= UpdateUiOnTurnChanged;
-            BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateUiOnDiceRolled;
-            //BoardMaster.Instance.ActivePlayer.Piece.CurrentTile.OnLandedEvent -= UpdateUiOnLandedEvent;
+            //BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateUiOnDiceRolled;
         }
 
         private void Start()
         {
-            // TODO: Tidy
-            playerTurnText.text = "Turn: <color=blue>" + BoardMaster.Instance.ActivePlayer.Username + "</color>"; 
-            tileText.text = "Tile: <color=blue>" + BoardMaster.Instance.Tiles[0].TileName + "</color>";
+            playerTurnText.text = "Turn: <color=red>" + BoardMaster.Instance.ActivePlayer.Username + "</color>"; 
+            tileText.text = "Tile: <color=red>" + BoardMaster.Instance.Tiles[0].TileName + "</color>";
         }
-        
-        /*private void UpdateUiOnLandedEvent(Tile tile)
-        {
-            hudTileText.text = tile.TileName;
-            hudColourBar.color = Color.red;
-        }*/
 
-        private void UpdateUiOnPieceMoved(Tile tile)
+        private void UpdateUiOnTokenMoved(Tile tile)
         {
-            tileText.text = "Tile: <color=blue>" + tile.TileName + "</color>";
+            tileText.text = "Tile: <color=red>" + tile.TileName + "</color>";
         }
         
         private void UpdateUiOnTurnChanged(Player player)
         {
-            playerTurnText.text = "Turn: <color=blue>" + player.Username + "</color>";
+            playerTurnText.text = "Turn: <color=red>" + player.Username + "</color>";
             diceRollText.text = "Dice Roll: ";
         }
         
         private void UpdateUiOnDiceRolled(int roll1, int roll2)
         {
-            diceRollText.text = "Dice Roll: (<color=blue>" + roll1 + "+" + roll2 + "</color>)" + " [<color=blue>" + (roll1+roll2) + "</color>]";
+            diceRollText.text = "Dice Roll: (<color=red>" + roll1 + "+" + roll2 + "</color>)" + " [<color=red>" + (roll1+roll2) + "</color>]";
         }
     }
 }

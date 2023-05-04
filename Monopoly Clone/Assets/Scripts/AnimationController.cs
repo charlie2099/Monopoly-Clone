@@ -7,7 +7,7 @@ public class AnimationController : MonoBehaviour
 {
     public static AnimationController Instance;
 
-    private Piece _piece;
+    private Token token;
     private Vector3 _destination;
     private bool _isPlaying;
 
@@ -23,21 +23,21 @@ public class AnimationController : MonoBehaviour
     {
         if (_isPlaying)
         {
-            MoveTo(_piece, _destination);
+            MoveTo(token, _destination);
         }
     }
 
-    public void MoveTo(Piece piece, Vector3 destination)
+    public void MoveTo(Token token, Vector3 destination)
     {
-        _piece = piece;
+        this.token = token;
         _destination = destination;
         _isPlaying = true;
         var speed = 2.5f * Time.deltaTime;
-        piece.transform.position = Vector3.MoveTowards(piece.transform.position, destination, speed);
+        token.transform.position = Vector3.MoveTowards(token.transform.position, destination, speed);
         //piece.transform.LookAt(destination);
         //piece.transform.position = Vector3.Lerp(piece.transform.position, destination, speed);
 
-        if (piece.transform.position == destination)
+        if (token.transform.position == destination)
         {
             _isPlaying = false;
         }

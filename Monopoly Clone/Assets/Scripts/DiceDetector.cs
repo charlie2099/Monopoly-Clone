@@ -14,27 +14,27 @@ public class DiceDetector : MonoBehaviour
             {
                 case "Side1":
                     OnDiceResult?.Invoke(2);
-                    Destroy(col.transform.parent.gameObject);
+                    col.gameObject.SetActive(false);
                     break;
                 case "Side2":
                     OnDiceResult?.Invoke(1);
-                    Destroy(col.transform.parent.gameObject);
+                    col.gameObject.SetActive(false);
                     break;
                 case "Side3":
                     OnDiceResult?.Invoke(5);
-                    Destroy(col.transform.parent.gameObject);
+                    col.gameObject.SetActive(false);
                     break;
                 case "Side4":
                     OnDiceResult?.Invoke(6);
-                    Destroy(col.transform.parent.gameObject);
+                    col.gameObject.SetActive(false);
                     break;
                 case "Side5":
                     OnDiceResult?.Invoke(3);
-                    Destroy(col.transform.parent.gameObject);
+                    col.gameObject.SetActive(false);
                     break;
                 case "Side6":
                     OnDiceResult?.Invoke(4);
-                    Destroy(col.transform.parent.gameObject);
+                    col.gameObject.SetActive(false);
                     break;
             }
         }

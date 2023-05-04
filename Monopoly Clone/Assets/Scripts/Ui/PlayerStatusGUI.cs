@@ -16,23 +16,23 @@ namespace Ui
         
         private void OnEnable()
         {
-            BoardMaster.Instance.OnPieceMoved += UpdateButtonVisibilityOnPieceMoved;
-            BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateButtonVisibilityOnDiceRolled;
-            BoardMaster.Instance.DiceManager.OnDoubleRolled += UpdateButtonVisibilityOnDoublesRolled;
+            BoardMaster.Instance.OnTokenMoved += UpdateButtonVisibilityOnTokenMoved;
+            //BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateButtonVisibilityOnDiceRolled;
+            //BoardMaster.Instance.DiceManager.OnDoubleRolled += UpdateButtonVisibilityOnDoublesRolled;
             BoardMaster.Instance.OnTurnChanged += UpdateButtonVisibilityOnTurnChanged;
         }
 
         private void OnDisable()
         {
-            BoardMaster.Instance.OnPieceMoved -= UpdateButtonVisibilityOnPieceMoved;
-            BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateButtonVisibilityOnDiceRolled;
-            BoardMaster.Instance.DiceManager.OnDoubleRolled -= UpdateButtonVisibilityOnDoublesRolled;
+            BoardMaster.Instance.OnTokenMoved -= UpdateButtonVisibilityOnTokenMoved;
+            //BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateButtonVisibilityOnDiceRolled;
+            //BoardMaster.Instance.DiceManager.OnDoubleRolled -= UpdateButtonVisibilityOnDoublesRolled;
             BoardMaster.Instance.OnTurnChanged -= UpdateButtonVisibilityOnTurnChanged;
         }
 
         private void Start() => /*endTurnButton.GetComponent<Image>().color = Color.gray;*/endTurnButton.SetActive(false);
         
-        private void UpdateButtonVisibilityOnPieceMoved(Tile tile)
+        private void UpdateButtonVisibilityOnTokenMoved(Tile tile)
         {
             endTurnButton.SetActive(true);
             //endTurnButton.GetComponent<Image>().color = Color.white;
