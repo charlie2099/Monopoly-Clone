@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public Player ActivePlayer => _activePlayer;
 
     [SerializeField] private DiceResultCalculator diceResultCalculator;
+    private Dictionary<Player, WaypointSequence> playerPathDict;
+    private List<WaypointSequence> waypointSequences = new();
     private List<Player> _players = new();
     private List<Tile> _tiles = new();
     private Player _activePlayer;
@@ -24,8 +26,7 @@ public class GameManager : MonoBehaviour
     private bool _tokenIsMoving;
     private float _randomXPos;
     private Vector3 _tileToMovePos;
-    private Vector3 _transformDir;
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -33,8 +34,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         
+        waypointSequences.AddRange(FindObjectsOfType<WaypointSequence>().OrderBy(sequence => sequence.name));
         _tiles.AddRange(FindObjectsOfType<Tile>().OrderBy(tile => tile.TileNum));
         _players.AddRange(FindObjectsOfType<Player>().OrderBy(player => player.Username));
+        playerPathDict = new Dictionary<Player, WaypointSequence>
+        {
+            {_players[0], waypointSequences[0]},
+            {_players[1], waypointSequences[1]},
+            {_players[2], waypointSequences[2]},
+            {_players[3], waypointSequences[3]}
+        };
     }
     
     private void OnEnable() => diceResultCalculator.OnDiceRollCalculated += MoveToken;
@@ -43,24 +52,22 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //Debug.DrawRay(_tileToMovePos, _transformDir, Color.magenta);
         if (_tokenIsMoving)
         {
-            var playerPiece = _activePlayer.Token;
-            var tileToMoveToPos = _tiles[_tileToMoveToID].transform.position;
-            var newTilePos = new Vector3(tileToMoveToPos.x, playerPiece.transform.position.y, tileToMoveToPos.z);
-            playerPiece.NavAgent.SetDestination(newTilePos/*new Vector3(_randomXPos, newTilePos.y, newTilePos.z)*/);
-
-            if (playerPiece.NavAgent.hasPath)
+            var playerToken = _activePlayer.Token;
+            var targetWaypoint = playerPathDict[_activePlayer].GetWaypoint(_tileToMoveToID);
+            var targetWaypointPos = targetWaypoint.transform.position;
+            
+            playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, targetWaypointPos, 5.0f * Time.deltaTime);
+            playerToken.transform.LookAt(targetWaypointPos);
+            
+            if (playerToken.transform.position == targetWaypointPos)
             {
-                if (playerPiece.NavAgent.remainingDistance < 0.5)
-                {
-                    playerPiece.SetCurrentTile(_tiles[_tileToMoveToID]);
-                    playerPiece.CurrentTile.OnLanded();
-                    OnTokenMoved?.Invoke(playerPiece.CurrentTile);
-                    EndTurn();
-                    _tokenIsMoving = false;
-                }
+                playerToken.SetCurrentTile(_tiles[_tileToMoveToID]);
+                playerToken.CurrentTile.OnLanded();
+                OnTokenMoved?.Invoke(playerToken.CurrentTile);
+                EndTurn();
+                _tokenIsMoving = false;  
             }
         }
     }
@@ -78,6 +85,7 @@ public class GameManager : MonoBehaviour
             tileToMoveToID = spacesToMove - remainder;
         }
         _tileToMoveToID = tileToMoveToID;
+        
         _tokenIsMoving = true;
     }
 

@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField] private Color gizmoColour = Color.red;
+    [SerializeField] private float gizmoSize = 0.25f;
+    
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 0.25f);
+        Gizmos.color = gizmoColour;
+        Gizmos.DrawSphere(transform.position, gizmoSize);
     }
 }
