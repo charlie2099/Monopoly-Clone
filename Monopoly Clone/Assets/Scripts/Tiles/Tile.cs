@@ -2,6 +2,7 @@
 using Interfaces;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Tiles
 {
@@ -9,9 +10,9 @@ namespace Tiles
     {
         public event Action<Tile> OnLandedEvent;
         public string TileName => tileName;
-        public int TileID => tileID;
+        public int TileNum => tileNum;
 
-        [SerializeField] private int tileID;
+        [FormerlySerializedAs("tileID")] [SerializeField] private int tileNum;
         [SerializeField] private string tileName;
         [SerializeField] private TextMeshPro tileNameText;
 

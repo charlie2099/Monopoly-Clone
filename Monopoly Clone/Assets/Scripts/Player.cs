@@ -18,12 +18,9 @@ public class Player : MonoBehaviour
     
     public void BuyProperty(IPurchaseable property)
     {
+        property.Buy();
+        
         // if property not already owned, add it to the list
         _ownedProperties.Add(property);
-    }
-
-    public void Buy()
-    {
-        Debug.Log("BUY");
     }
 }

@@ -1,7 +1,6 @@
 using Tiles;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Ui
 {
@@ -14,26 +13,23 @@ namespace Ui
     {
         [SerializeField] private TextMeshProUGUI tileText;
         [SerializeField] private TextMeshProUGUI playerTurnText;
-        [SerializeField] private TextMeshProUGUI diceRollText;
 
         private void OnEnable()
         {
-            BoardMaster.Instance.OnTokenMoved += UpdateUiOnTokenMoved;
-            BoardMaster.Instance.OnTurnChanged += UpdateUiOnTurnChanged;
-            //BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateUiOnDiceRolled;
+            GameManager.Instance.OnTokenMoved += UpdateUiOnTokenMoved;
+            GameManager.Instance.OnTurnChanged += UpdateUiOnTurnChanged;
         }
 
         private void OnDisable()
         {
-            BoardMaster.Instance.OnTokenMoved -= UpdateUiOnTokenMoved;
-            BoardMaster.Instance.OnTurnChanged -= UpdateUiOnTurnChanged;
-            //BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateUiOnDiceRolled;
+            GameManager.Instance.OnTokenMoved -= UpdateUiOnTokenMoved;
+            GameManager.Instance.OnTurnChanged -= UpdateUiOnTurnChanged;
         }
 
         private void Start()
         {
-            playerTurnText.text = "Turn: <color=red>" + BoardMaster.Instance.ActivePlayer.Username + "</color>"; 
-            tileText.text = "Tile: <color=red>" + BoardMaster.Instance.Tiles[0].TileName + "</color>";
+            playerTurnText.text = "Turn: <color=red>" + GameManager.Instance.ActivePlayer.Username + "</color>"; 
+            tileText.text = "Tile: <color=red>" + GameManager.Instance.Tiles[0].TileName + "</color>";
         }
 
         private void UpdateUiOnTokenMoved(Tile tile)
@@ -44,12 +40,6 @@ namespace Ui
         private void UpdateUiOnTurnChanged(Player player)
         {
             playerTurnText.text = "Turn: <color=red>" + player.Username + "</color>";
-            diceRollText.text = "Dice Roll: ";
-        }
-        
-        private void UpdateUiOnDiceRolled(int roll1, int roll2)
-        {
-            diceRollText.text = "Dice Roll: (<color=red>" + roll1 + "+" + roll2 + "</color>)" + " [<color=red>" + (roll1+roll2) + "</color>]";
         }
     }
 }

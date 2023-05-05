@@ -7,49 +7,44 @@ using UnityEngine;
 /// <summary>
 /// Responsible for moving pieces on the board and handling turn switching.
 /// </summary>
-public class BoardMaster : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static BoardMaster Instance;
+    public static GameManager Instance;
     public event Action<Tile> OnTokenMoved;
     public event Action<Player> OnTurnChanged;
-    public List<Player> Players => players;
     public List<Tile> Tiles => _tiles;
     public Player ActivePlayer => _activePlayer;
 
-    [SerializeField] private List<Player> players;
+    [SerializeField] private DiceResultCalculator diceResultCalculator;
+    private List<Player> _players = new();
     private List<Tile> _tiles = new();
     private Player _activePlayer;
     private int _turnIndex;
     private int _tileToMoveToID;
-    private bool _pieceIsMoving;
+    private bool _tokenIsMoving;
     private float _randomXPos;
     private Vector3 _tileToMovePos;
     private Vector3 _transformDir;
-
-    //private void OnEnable() => diceManager.OnDiceRolled += MovePiece;
-    //private void OnDisable() => diceManager.OnDiceRolled -= MovePiece;
-
+    
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
-
-        Tile[] foundTiles = FindObjectsOfType<Tile>();
-        _tiles.AddRange(foundTiles);
-        _tiles = _tiles.OrderBy(tile => tile.TileID).ToList();
+        
+        _tiles.AddRange(FindObjectsOfType<Tile>().OrderBy(tile => tile.TileNum));
+        _players.AddRange(FindObjectsOfType<Player>().OrderBy(player => player.Username));
     }
-
-    private void Start()
-    {
-        _activePlayer = players[0];
-    }
+    
+    private void OnEnable() => diceResultCalculator.OnDiceRollCalculated += MoveToken;
+    private void OnDisable() => diceResultCalculator.OnDiceRollCalculated += MoveToken;
+    private void Start() => _activePlayer = _players[0];
 
     private void Update()
     {
         //Debug.DrawRay(_tileToMovePos, _transformDir, Color.magenta);
-        if (_pieceIsMoving)
+        if (_tokenIsMoving)
         {
             var playerPiece = _activePlayer.Token;
             var tileToMoveToPos = _tiles[_tileToMoveToID].transform.position;
@@ -64,37 +59,36 @@ public class BoardMaster : MonoBehaviour
                     playerPiece.CurrentTile.OnLanded();
                     OnTokenMoved?.Invoke(playerPiece.CurrentTile);
                     EndTurn();
-                    _pieceIsMoving = false;
+                    _tokenIsMoving = false;
                 }
             }
         }
     }
 
-    /*private void MovePiece(int diceRollOne, int diceRollTwo)
+    private void MoveToken(int spacesToMove)
     {
-        if (_pieceIsMoving) { return; }
+        if (_tokenIsMoving) { return; }
         
-        var playerPiece = _activePlayer.Token;
-        var currentTile = playerPiece.CurrentTile;
-        int tileToMoveToID = currentTile.TileID + diceManager.DiceRollOutput;
+        var playerToken = _activePlayer.Token;
+        var currentTile = playerToken.CurrentTile;
+        int tileToMoveToID = currentTile.TileNum + spacesToMove;
         if (tileToMoveToID >= _tiles.Count)
         {
-            int remainder = _tiles.Count - currentTile.TileID;
-            tileToMoveToID = diceManager.DiceRollOutput - remainder;
+            int remainder = _tiles.Count - currentTile.TileNum;
+            tileToMoveToID = spacesToMove - remainder;
         }
         _tileToMoveToID = tileToMoveToID;
-        //_randomXPos = _tiles[tileToMoveToID].transform.position.x + (Random.insideUnitSphere.x * 1.75f);
-        _pieceIsMoving = true;
-    }*/
+        _tokenIsMoving = true;
+    }
 
-    private void EndTurn() // called upon a click event via End Turn button
+    private void EndTurn() 
     {
         _turnIndex++;
-        if (_turnIndex >= Players.Count)
+        if (_turnIndex >= _players.Count)
         {
             _turnIndex = 0;
         }
-        _activePlayer = players[_turnIndex];
+        _activePlayer = _players[_turnIndex];
         OnTurnChanged?.Invoke(_activePlayer);
     }
 }

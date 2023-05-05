@@ -16,18 +16,18 @@ namespace Ui
         
         private void OnEnable()
         {
-            BoardMaster.Instance.OnTokenMoved += UpdateButtonVisibilityOnTokenMoved;
+            GameManager.Instance.OnTokenMoved += UpdateButtonVisibilityOnTokenMoved;
             //BoardMaster.Instance.DiceManager.OnDiceRolled += UpdateButtonVisibilityOnDiceRolled;
             //BoardMaster.Instance.DiceManager.OnDoubleRolled += UpdateButtonVisibilityOnDoublesRolled;
-            BoardMaster.Instance.OnTurnChanged += UpdateButtonVisibilityOnTurnChanged;
+            GameManager.Instance.OnTurnChanged += UpdateButtonVisibilityOnTurnChanged;
         }
 
         private void OnDisable()
         {
-            BoardMaster.Instance.OnTokenMoved -= UpdateButtonVisibilityOnTokenMoved;
+            GameManager.Instance.OnTokenMoved -= UpdateButtonVisibilityOnTokenMoved;
             //BoardMaster.Instance.DiceManager.OnDiceRolled -= UpdateButtonVisibilityOnDiceRolled;
             //BoardMaster.Instance.DiceManager.OnDoubleRolled -= UpdateButtonVisibilityOnDoublesRolled;
-            BoardMaster.Instance.OnTurnChanged -= UpdateButtonVisibilityOnTurnChanged;
+            GameManager.Instance.OnTurnChanged -= UpdateButtonVisibilityOnTurnChanged;
         }
 
         private void Start() => /*endTurnButton.GetComponent<Image>().color = Color.gray;*/endTurnButton.SetActive(false);

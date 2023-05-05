@@ -26,6 +26,7 @@ public class DiceRoller : MonoBehaviour
 
     public void Throw()
     {
+        ResetDicePositions();
         ShowDice();
         ApplyForcesAndTorque();
         OnDiceThrown?.Invoke();
@@ -43,7 +44,7 @@ public class DiceRoller : MonoBehaviour
         _diceTwo.SetActive(false);
     }
 
-    public void ResetDice()
+    public void ResetDicePositions()
     {
         _diceOne.transform.position = diceOneSpawnLocation.position;
         _diceTwo.transform.position = diceTwoSpawnLocation.position;
