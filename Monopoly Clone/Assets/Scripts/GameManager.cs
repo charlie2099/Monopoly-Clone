@@ -55,15 +55,25 @@ public class GameManager : MonoBehaviour
         if (_tokenIsMoving)
         {
             var playerToken = _activePlayer.Token;
-            var targetWaypoint = playerPathDict[_activePlayer].GetWaypoint(_tileToMoveToID);
-            var targetWaypointPos = targetWaypoint.transform.position;
-            
-            playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, targetWaypointPos, 5.0f * Time.deltaTime);
-            playerToken.transform.LookAt(targetWaypointPos);
-            
-            if (playerToken.transform.position == targetWaypointPos)
+            Tile targetTile = _tiles[_tileToMoveToID];
+            Waypoint targetTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(_tileToMoveToID);
+            Waypoint nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(playerToken.CurrentTile.TileNum + 1);
+
+            if (playerToken.CurrentTile != targetTile)
             {
-                playerToken.SetCurrentTile(_tiles[_tileToMoveToID]);
+                playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
+                playerToken.transform.LookAt(nextTileWaypoint.transform.position);
+
+                if (playerToken.transform.position == nextTileWaypoint.transform.position)
+                {
+                    // move the player to the next tile
+                    playerToken.SetCurrentTile(_tiles[playerToken.CurrentTile.TileNum + 1]);
+                    nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(playerToken.CurrentTile.TileNum + 1);
+                }
+            }
+            else
+            {
+                //playerToken.SetCurrentTile(_tiles[_tileToMoveToID]);
                 playerToken.CurrentTile.OnLanded();
                 OnTokenMoved?.Invoke(playerToken.CurrentTile);
                 EndTurn();
@@ -71,6 +81,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
 
     private void MoveToken(int spacesToMove)
     {
