@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
     private int _turnIndex;
     private int _tileToMoveToID;
     private bool _tokenIsMoving;
-    private float _randomXPos;
-    private Vector3 _tileToMovePos;
 
     private void Awake()
     {
@@ -56,32 +54,34 @@ public class GameManager : MonoBehaviour
         {
             var playerToken = _activePlayer.Token;
             Tile targetTile = _tiles[_tileToMoveToID];
-            Waypoint targetTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(_tileToMoveToID);
-            Waypoint nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(playerToken.CurrentTile.TileNum + 1);
 
             if (playerToken.CurrentTile != targetTile)
             {
+                int nextTileNum = playerToken.CurrentTile.TileNum + 1;
+                if (nextTileNum >= _tiles.Count)
+                    nextTileNum = 0; // loop back to the beginning of the list
+
+                Waypoint nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(nextTileNum);
                 playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
                 playerToken.transform.LookAt(nextTileWaypoint.transform.position);
 
                 if (playerToken.transform.position == nextTileWaypoint.transform.position)
                 {
-                    // move the player to the next tile
-                    playerToken.SetCurrentTile(_tiles[playerToken.CurrentTile.TileNum + 1]);
-                    nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(playerToken.CurrentTile.TileNum + 1);
+                    playerToken.SetCurrentTile(_tiles[nextTileNum]);
+
+                    // Check if the player has reached the target tile
+                    if (playerToken.CurrentTile == targetTile)
+                    {
+                        playerToken.CurrentTile.OnLanded();
+                        OnTokenMoved?.Invoke(playerToken.CurrentTile);
+                        EndTurn();
+                        _tokenIsMoving = false;
+                    }
                 }
             }
-            else
-            {
-                //playerToken.SetCurrentTile(_tiles[_tileToMoveToID]);
-                playerToken.CurrentTile.OnLanded();
-                OnTokenMoved?.Invoke(playerToken.CurrentTile);
-                EndTurn();
-                _tokenIsMoving = false;  
-            }
+
         }
     }
-
 
     private void MoveToken(int spacesToMove)
     {
@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
         int tileToMoveToID = currentTile.TileNum + spacesToMove;
         if (tileToMoveToID >= _tiles.Count)
         {
+            //tileToMoveToID %= _tiles.Count;
             int remainder = _tiles.Count - currentTile.TileNum;
             tileToMoveToID = spacesToMove - remainder;
         }

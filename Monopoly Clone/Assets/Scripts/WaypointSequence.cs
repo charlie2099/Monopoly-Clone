@@ -7,7 +7,7 @@ public class WaypointSequence : MonoBehaviour
     [SerializeField] private bool showDebugLines;
     [SerializeField] private Color lineColor;
     [Range(1, 50)] [SerializeField] private int thickness;
-    private List<Waypoint> _waypoints = new();
+    private readonly List<Waypoint> _waypoints = new();
 
     private void Awake() => _waypoints.AddRange(GetComponentsInChildren<Waypoint>());
 
