@@ -446,6 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39360487}
   - component: {fileID: 39360488}
+  - component: {fileID: 39360489}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -481,6 +482,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceResultCalculator: {fileID: 480928927}
+--- !u!114 &39360489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39360486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addb6aa81fcdc2643bf522e2e695c752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endTurnButton: {fileID: 2083500431}
 --- !u!1 &44931921
 GameObject:
   m_ObjectHideFlags: 0

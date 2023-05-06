@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
                     nextTileNum = 0; // loop back to the beginning of the list
 
                 Waypoint nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(nextTileNum);
+                //playerToken.transform.position = Vector3.Lerp(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
                 playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
                 playerToken.transform.LookAt(nextTileWaypoint.transform.position);
 
@@ -74,7 +75,6 @@ public class GameManager : MonoBehaviour
                     {
                         playerToken.CurrentTile.OnLanded();
                         OnTokenMoved?.Invoke(playerToken.CurrentTile);
-                        EndTurn();
                         _tokenIsMoving = false;
                     }
                 }
@@ -85,23 +85,17 @@ public class GameManager : MonoBehaviour
 
     private void MoveToken(int spacesToMove)
     {
-        if (_tokenIsMoving) { return; }
-        
+        if (_tokenIsMoving) return;
+    
         var playerToken = _activePlayer.Token;
         var currentTile = playerToken.CurrentTile;
-        int tileToMoveToID = currentTile.TileNum + spacesToMove;
-        if (tileToMoveToID >= _tiles.Count)
-        {
-            //tileToMoveToID %= _tiles.Count;
-            int remainder = _tiles.Count - currentTile.TileNum;
-            tileToMoveToID = spacesToMove - remainder;
-        }
+        int tileToMoveToID = (currentTile.TileNum + spacesToMove) % _tiles.Count;
         _tileToMoveToID = tileToMoveToID;
         
         _tokenIsMoving = true;
     }
 
-    private void EndTurn() 
+    public void EndTurn() 
     {
         _turnIndex++;
         if (_turnIndex >= _players.Count)

@@ -40,6 +40,7 @@ namespace Ui
         private void UpdateUiOnTurnChanged(Player player)
         {
             playerTurnText.text = "Turn: <color=red>" + player.Username + "</color>";
+            tileText.text = "Tile: <color=red>" + player.Token.CurrentTile.TileName + "</color>";
         }
     }
 }
