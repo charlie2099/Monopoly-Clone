@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Commands;
 using Interfaces;
 using Tiles;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 
 public class PropertyManager : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager; // TODO: Clean this
     [SerializeField] private Button purchaseButton;
     private List<IPurchasable> purchasableTiles = new();
     private Tile currentTile;
@@ -14,27 +16,54 @@ public class PropertyManager : MonoBehaviour
     private void Awake()
     {
         purchaseButton.onClick.AddListener(PurchaseProperty);
-        
         purchasableTiles = FindObjectsOfType<MonoBehaviour>().OfType<IPurchasable>().ToList();
-        purchasableTiles.ForEach(purchasable => purchasable.OnPropertyTileLanded += ShowPurchaseButton_OnTileLanded);
     }
-    
+
+    private void OnEnable()
+    {
+        purchasableTiles.ForEach(purchasable => purchasable.OnPropertyTileLanded += ShowPurchaseButton_OnTileLanded);
+        gameManager.OnTurnChanged += player => HidePurchaseButton();
+    }
+
+    private void OnDisable()
+    {
+        purchasableTiles.ForEach(purchasable => purchasable.OnPropertyTileLanded -= ShowPurchaseButton_OnTileLanded);
+        gameManager.OnTurnChanged -= player => HidePurchaseButton();
+    }
+
     private void Start()
     {
-        purchaseButton.gameObject.SetActive(false);
+        HidePurchaseButton();
     }
 
     private void PurchaseProperty()
     {
         Player currentPlayer = GameManager.Instance.ActivePlayer;
-        currentPlayer.PurchaseProperty(currentTile as IPurchasable);
-        //PurchaseCommand purchaseCommand = new PurchaseCommand();
-        //purchaseCommand.Execute();
+        //currentPlayer.BuyProperty(currentTile as IPurchasable);
+        ICommand buyPropertyCommand = new BuyPropertyCommand(currentPlayer, currentTile as IPurchasable);
+        buyPropertyCommand.Execute();
+        //PlayerTurn turn = new PlayerTurn();
+        //turn.AddCommand(buyPropertyCommand);
+        HidePurchaseButton();
     }
 
     private void ShowPurchaseButton_OnTileLanded(Tile tile)
     {
+        var property = (IPurchasable)tile;
+        if (!property.HasOwner())
+        {
+            ShowPurchaseButton();
+            currentTile = tile;
+        }
+    }
+
+    private void ShowPurchaseButton()
+    {
         purchaseButton.gameObject.SetActive(true);
-        currentTile = tile;
+    }
+
+    private void HidePurchaseButton()
+    {
+        purchaseButton.gameObject.SetActive(false);
     }
 }

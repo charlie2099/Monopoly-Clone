@@ -6,7 +6,7 @@ namespace Tiles
     {
         public void ChargeTax(float tax, Player player)
         {
-            player.Money -= tax;
+            player.Balance -= tax;
         }
         
         /*public override void OnLanded()

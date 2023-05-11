@@ -46,9 +46,13 @@ public class GameManager : MonoBehaviour
         };
     }
     
-    private void OnEnable() => _diceResultCalculator.OnDiceRollCalculated += MoveToken;
-    private void OnDisable() => _diceResultCalculator.OnDiceRollCalculated += MoveToken;
-    private void Start() => _activePlayer = _players[0];
+    private void OnEnable() => _diceResultCalculator.OnDiceRollCalculated += CalculateTargetTile;
+    private void OnDisable() => _diceResultCalculator.OnDiceRollCalculated += CalculateTargetTile;
+    private void Start()
+    {
+        _activePlayer = _players[0];
+        _players.ForEach(player => player.Balance = 1500);
+    }
 
     private void Update()
     {
@@ -83,7 +87,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void MoveToken(int spacesToMove)
+    private void CalculateTargetTile(int spacesToMove)
     {
         if (_tokenIsMoving) return;
     

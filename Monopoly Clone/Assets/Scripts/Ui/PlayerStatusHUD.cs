@@ -1,3 +1,4 @@
+using System;
 using Tiles;
 using TMPro;
 using UnityEngine;
@@ -11,8 +12,9 @@ namespace Ui
     /// </summary>
     public class PlayerStatusHUD : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI tileText;
-        [SerializeField] private TextMeshProUGUI playerTurnText;
+        [SerializeField] private TMP_Text tileText;
+        [SerializeField] private TMP_Text playerTurnText;
+        [SerializeField] private TMP_Text playerBalanceText;
 
         private void OnEnable()
         {
@@ -28,19 +30,25 @@ namespace Ui
 
         private void Start()
         {
-            playerTurnText.text = "Turn: <color=red>" + GameManager.Instance.ActivePlayer.Username + "</color>"; 
-            tileText.text = "Tile: <color=red>" + GameManager.Instance.Tiles[0].TileName + "</color>";
+            playerTurnText.text = $"Turn: <color=red>{GameManager.Instance.ActivePlayer.Username}</color>"; 
+            tileText.text = $"Tile: <color=red>{GameManager.Instance.Tiles[0].TileName}</color>";
+        }
+        
+        private void Update()
+        {
+            // TODO: Clean up
+            playerBalanceText.text = $"Balance: <color=red>{GameManager.Instance.ActivePlayer.Balance}</color>";
         }
 
         private void UpdateUiOnTokenMoved(Tile tile)
         {
-            tileText.text = "Tile: <color=red>" + tile.TileName + "</color>";
+            tileText.text = $"Tile: <color=red>{tile.TileName}</color>";
         }
         
         private void UpdateUiOnTurnChanged(Player player)
         {
-            playerTurnText.text = "Turn: <color=red>" + player.Username + "</color>";
-            tileText.text = "Tile: <color=red>" + player.Token.CurrentTile.TileName + "</color>";
+            playerTurnText.text = $"Turn: <color=red>{player.Username}</color>";
+            tileText.text = $"Tile: <color=red>{player.Token.CurrentTile.TileName}</color>";
         }
     }
 }

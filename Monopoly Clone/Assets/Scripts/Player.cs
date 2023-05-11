@@ -5,19 +5,21 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public string Username => username;
-    public float Money { get; set; }
+    public float Balance { get; set; }
     public Token Token => token;
 
     [SerializeField] private string username;
     [SerializeField] private Token token;
     private List<IPurchasable> _ownedProperties = new();
 
-    public void PurchaseProperty(IPurchasable property)
+    public void BuyProperty(IPurchasable property)
     {
-        if (property.Owner == null)
+        if (property.HasOwner())
         {
-            property.Purchase();
-            _ownedProperties.Add(property);
+            return;
         }
+        _ownedProperties.Add(property);
+        property.SetOwner(this);
+        property.Purchase();
     }
 }
