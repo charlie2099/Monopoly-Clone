@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,9 +7,11 @@ using UnityEngine;
 public class DiceResultCalculator : MonoBehaviour
 {
     public event Action<int> OnDiceRollCalculated;
+    public event Action OnDiceRollCalculationFailed;
     public event Action<int> OnDoubleRolled;
 
     [SerializeField] private DiceDetector diceDetector;
+    private Coroutine _checkDiceResultHasFailedCoroutine;
     private List<bool> _hasDiceLanded = new();
     private List<int> _diceRollOutput = new();
     private const int NumOfDice = 2;
@@ -33,9 +36,17 @@ public class DiceResultCalculator : MonoBehaviour
         _diceRollOutput.Insert(_diceIndex, diceResult);
 
         _diceIndex++;
+        
+        if (_checkDiceResultHasFailedCoroutine == null)
+        {
+            _checkDiceResultHasFailedCoroutine = StartCoroutine(BeginDiceResultFailedCheck());
+        }
 
         if (_diceIndex == NumOfDice)
         {
+            StopCoroutine(_checkDiceResultHasFailedCoroutine);
+            _checkDiceResultHasFailedCoroutine = null;
+            
             if (RolledADouble())
             {
                 _doublesRolled++;
@@ -51,5 +62,17 @@ public class DiceResultCalculator : MonoBehaviour
     public bool RolledADouble()
     {
         return _diceRollOutput[0] == _diceRollOutput[1];
+    }
+    
+    /// <summary>
+    /// Invokes a failure event if one of the dice fails to produce a result after x amount of time
+    /// </summary>
+    private IEnumerator BeginDiceResultFailedCheck()
+    {
+        yield return new WaitForSeconds(5f);
+        OnDiceRollCalculationFailed?.Invoke();
+        _diceRollOutput.Clear();
+        _diceIndex = 0;
+        _checkDiceResultHasFailedCoroutine = null;
     }
 }
