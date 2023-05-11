@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Commands;
 using Tiles;
 using UnityEngine;
 
@@ -14,10 +15,10 @@ public class GameManager : MonoBehaviour
     public event Action<Player> OnTurnChanged;
     public List<Tile> Tiles => _tiles;
     public Player ActivePlayer => _activePlayer;
-
-    [SerializeField] private DiceResultCalculator diceResultCalculator;
+    
     private Dictionary<Player, WaypointSequence> playerPathDict;
-    private List<WaypointSequence> waypointSequences = new();
+    private DiceResultCalculator _diceResultCalculator;
+    private List<WaypointSequence> _waypointSequences = new();
     private List<Player> _players = new();
     private List<Tile> _tiles = new();
     private Player _activePlayer;
@@ -31,21 +32,22 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        
-        waypointSequences.AddRange(FindObjectsOfType<WaypointSequence>().OrderBy(sequence => sequence.name));
+
+        _diceResultCalculator = FindObjectOfType<DiceResultCalculator>();
+        _waypointSequences.AddRange(FindObjectsOfType<WaypointSequence>().OrderBy(sequence => sequence.name));
         _tiles.AddRange(FindObjectsOfType<Tile>().OrderBy(tile => tile.TileNum));
         _players.AddRange(FindObjectsOfType<Player>().OrderBy(player => player.Username));
         playerPathDict = new Dictionary<Player, WaypointSequence>
         {
-            {_players[0], waypointSequences[0]},
-            {_players[1], waypointSequences[1]},
-            {_players[2], waypointSequences[2]},
-            {_players[3], waypointSequences[3]}
+            {_players[0], _waypointSequences[0]},
+            {_players[1], _waypointSequences[1]},
+            {_players[2], _waypointSequences[2]},
+            {_players[3], _waypointSequences[3]}
         };
     }
     
-    private void OnEnable() => diceResultCalculator.OnDiceRollCalculated += MoveToken;
-    private void OnDisable() => diceResultCalculator.OnDiceRollCalculated += MoveToken;
+    private void OnEnable() => _diceResultCalculator.OnDiceRollCalculated += MoveToken;
+    private void OnDisable() => _diceResultCalculator.OnDiceRollCalculated += MoveToken;
     private void Start() => _activePlayer = _players[0];
 
     private void Update()
@@ -62,15 +64,13 @@ public class GameManager : MonoBehaviour
                     nextTileNum = 0; // loop back to the beginning of the list
 
                 Waypoint nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(nextTileNum);
-                //playerToken.transform.position = Vector3.Lerp(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
                 playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
                 playerToken.transform.LookAt(nextTileWaypoint.transform.position);
 
                 if (playerToken.transform.position == nextTileWaypoint.transform.position)
                 {
                     playerToken.SetCurrentTile(_tiles[nextTileNum]);
-
-                    // Check if the player has reached the target tile
+                    
                     if (playerToken.CurrentTile == targetTile)
                     {
                         playerToken.CurrentTile.OnLanded();
@@ -91,7 +91,6 @@ public class GameManager : MonoBehaviour
         var currentTile = playerToken.CurrentTile;
         int tileToMoveToID = (currentTile.TileNum + spacesToMove) % _tiles.Count;
         _tileToMoveToID = tileToMoveToID;
-        
         _tokenIsMoving = true;
     }
 
@@ -106,3 +105,5 @@ public class GameManager : MonoBehaviour
         OnTurnChanged?.Invoke(_activePlayer);
     }
 }
+
+//MoveCommand moveCommand = new MoveCommand(playerToken, currentTile, _tiles[tileToMoveToID]);

@@ -5,7 +5,7 @@ namespace Interfaces
 {
     public interface ILandable
     {
-        public event Action<Tile> OnLandedEvent;
+        public event Action<Tile> OnTileLanded;
         public void OnLanded();
     }
 }

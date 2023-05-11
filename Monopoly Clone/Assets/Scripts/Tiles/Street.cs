@@ -1,11 +1,16 @@
+using System;
 using Interfaces;
 using TMPro;
 using UnityEngine;
 
 namespace Tiles
 {
-    public class Street : Tile, IPurchaseable
+    public class Street : Tile, IPurchasable
     {
+        public event Action<Tile> OnPropertyTileLanded;
+        public Player Owner { get; set; }
+        public int Cost { get; set; }
+
         [Header("Street Data")]
         [SerializeField] private ColourBlock colourBlock;
         [SerializeField] private TextMeshPro streetCostText;
@@ -18,32 +23,18 @@ namespace Tiles
             streetColourBar.material.color = colourBlock.blockColour;
         }
 
-        /*public override void OnLanded()
+        public override void OnLanded()
         {
-            Debug.Log("Landed on: " + TileName);
-        }*/
-
-        public void Buy()
-        {
-            // player.Buy(property);
-            // player.Sell(property);
-            // player.Mortgage(property);
-            
-            // Player
-            // {
-            //    List<Properties> ownedProperties;
-            //    List<IPurchaseable> ownedProperties;
-            // }
+            OnPropertyTileLanded?.Invoke(this);
         }
 
-        public void Sell()
+        public void Purchase()
         {
-            
+            Debug.Log("Property purchased");
+            Owner = GameManager.Instance.ActivePlayer;
+            Owner.Money -= Cost;
         }
 
-        public void Mortgage()
-        {
-            
-        }
+        public void Mortgage() {}
     }
 }

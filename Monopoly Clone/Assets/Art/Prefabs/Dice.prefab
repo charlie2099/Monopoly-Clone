@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3312330422463642496}
   m_Layer: 0
   m_Name: Dice
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 4838467860145345315}
   m_Layer: 0
   m_Name: Side4
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 4838467860565355395}
   m_Layer: 0
   m_Name: Side3
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 4838467860792993453}
   m_Layer: 0
   m_Name: Side6
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 4838467861098669098}
   m_Layer: 0
   m_Name: Side1
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 4838467861191729182}
   m_Layer: 0
   m_Name: Side2
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 4838467861284773260}
   m_Layer: 0
   m_Name: Side5
-  m_TagString: Untagged
+  m_TagString: Dice
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
