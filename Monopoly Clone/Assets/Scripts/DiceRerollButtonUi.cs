@@ -1,32 +1,34 @@
+using Commands;
 using UnityEngine;
 
 public class DiceRerollButtonUi : MonoBehaviour
 {
-    private DiceDetector diceDetector;
-    private DiceRoller diceRoller;
+    private DiceDetector _diceDetector;
+    private DiceRoller _diceRoller;
     private DiceResultCalculator _diceResultCalculator;
 
     private void Awake()
     {
-        diceDetector = FindObjectOfType<DiceDetector>();
-        diceRoller = GetComponent<DiceRoller>();
+        _diceDetector = FindObjectOfType<DiceDetector>();
+        _diceRoller = GetComponent<DiceRoller>();
         _diceResultCalculator = GetComponent<DiceResultCalculator>();
     }
 
     private void OnEnable()
     {
-        diceDetector.OnDiceLandFailed += ReRoll;
+        _diceDetector.OnDiceLandFailed += ReRoll;
         _diceResultCalculator.OnDiceRollCalculationFailed += ReRoll;
     }
 
     private void OnDisable()
     {
-        diceDetector.OnDiceLandFailed -= ReRoll;
+        _diceDetector.OnDiceLandFailed -= ReRoll;
         _diceResultCalculator.OnDiceRollCalculationFailed -= ReRoll;
     }
 
     private void ReRoll()
     {
-        diceRoller.Throw();
+        ICommand rollDiceCommand = new RollDiceCommand(_diceRoller);
+        rollDiceCommand.Execute();
     }
 }

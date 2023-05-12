@@ -1,3 +1,4 @@
+using Commands;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +11,10 @@ public class DiceRollInputHandler : MonoBehaviour
     private void OnEnable() => rollDiceButton.onClick.AddListener(Roll);
     private void OnDisable() => rollDiceButton.onClick.RemoveListener(Roll);
 
-    private void Roll() 
+    private void Roll()
     {
-        _diceRoller.Throw();
+        ICommand rollDiceCommand = new RollDiceCommand(_diceRoller);
+        rollDiceCommand.Execute();
         rollDiceButton.gameObject.SetActive(false);
     }
 }

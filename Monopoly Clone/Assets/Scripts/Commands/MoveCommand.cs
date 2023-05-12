@@ -5,6 +5,45 @@ namespace Commands
 {
     public class MoveCommand : ICommand
     {
+        private readonly Player _player;
+        private readonly Tile _targetTile;
+        private readonly Tile[] _tiles;
+
+        public MoveCommand(Player player, Tile targetTile, Tile[] tiles)
+        {
+            _player = player;
+            _targetTile = targetTile;
+            _tiles = tiles;
+        }
+
+        public void Execute()
+        {
+            var playerToken = _player.Token;
+            int nextTileNum = playerToken.CurrentTile.TileNum + 1;
+            if (nextTileNum >= _tiles.Length)
+                nextTileNum = 0; // loop back to the beginning of the list
+
+            Waypoint nextTileWaypoint = GameManager.Instance.playerPathDict[_player].GetWaypoint(nextTileNum);
+            playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
+            playerToken.transform.LookAt(nextTileWaypoint.transform.position);
+
+            if (playerToken.transform.position == nextTileWaypoint.transform.position)
+            {
+                playerToken.SetCurrentTile(_tiles[nextTileNum]);
+
+                if (playerToken.CurrentTile == _targetTile)
+                {
+                    playerToken.CurrentTile.OnLanded();
+                }
+            }
+        }
+
+        public void Undo() {}
+    }
+
+    
+    /*public class MoveCommand : ICommand
+    {
         private readonly Token _token;
         private readonly Tile _previousTile;
         private readonly Tile _newTile;
@@ -31,5 +70,5 @@ namespace Commands
             _token.transform.position = destination;
             _token.SetCurrentTile(_previousTile);
         }
-    }
+    }*/
 }

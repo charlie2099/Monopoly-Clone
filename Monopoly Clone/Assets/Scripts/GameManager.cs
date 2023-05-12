@@ -15,15 +15,16 @@ public class GameManager : MonoBehaviour
     public event Action<Player> OnTurnChanged;
     public List<Tile> Tiles => _tiles;
     public Player ActivePlayer => _activePlayer;
-    
-    private Dictionary<Player, WaypointSequence> playerPathDict;
+
+    public Dictionary<Player, WaypointSequence> playerPathDict;
     private DiceResultCalculator _diceResultCalculator;
     private List<WaypointSequence> _waypointSequences = new();
     private List<Player> _players = new();
     private List<Tile> _tiles = new();
     private Player _activePlayer;
+    private PlayerTurn playerTurn = new PlayerTurn();
     private int _turnIndex;
-    private int _tileToMoveToID;
+    private int _targetTileIndex;
     private bool _tokenIsMoving;
 
     private void Awake()
@@ -58,8 +59,10 @@ public class GameManager : MonoBehaviour
     {
         if (_tokenIsMoving)
         {
+            //playerTurn.ExecuteCommands();
+
             var playerToken = _activePlayer.Token;
-            Tile targetTile = _tiles[_tileToMoveToID];
+            Tile targetTile = _tiles[_targetTileIndex];
 
             if (playerToken.CurrentTile != targetTile)
             {
@@ -83,7 +86,6 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-
         }
     }
 
@@ -93,8 +95,11 @@ public class GameManager : MonoBehaviour
     
         var playerToken = _activePlayer.Token;
         var currentTile = playerToken.CurrentTile;
-        int tileToMoveToID = (currentTile.TileNum + spacesToMove) % _tiles.Count;
-        _tileToMoveToID = tileToMoveToID;
+        var tileToMoveToID = (currentTile.TileNum + spacesToMove) % _tiles.Count;
+        _targetTileIndex = tileToMoveToID;
+
+        //ICommand moveCommand = new MoveCommand(_activePlayer, _tiles[_targetTileIndex], _tiles.ToArray());
+        //playerTurn.AddCommand(moveCommand);
         _tokenIsMoving = true;
     }
 

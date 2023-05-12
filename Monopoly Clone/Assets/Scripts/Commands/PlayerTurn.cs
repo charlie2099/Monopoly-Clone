@@ -9,7 +9,14 @@ namespace Commands
         public void AddCommand(ICommand command) 
         {
             _commandsStack.Push(command);
-            command.Execute();
+        }
+
+        public void ExecuteCommands()
+        {
+            foreach (var command in _commandsStack)
+            {
+                command.Execute();
+            }
         }
 
         public void UndoCommand()
@@ -21,4 +28,5 @@ namespace Commands
             }
         }
     }
+
 }
