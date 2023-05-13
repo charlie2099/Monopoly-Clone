@@ -1,4 +1,5 @@
 using System;
+using ScriptableObjects;
 using Tiles;
 
 namespace Interfaces
@@ -6,7 +7,7 @@ namespace Interfaces
     public interface IPurchasable
     {
         public event Action<Tile> OnPropertyTileLanded;
-        public int PropertyCost { get; set; }
+        public PropertyData PropertyData { get; }
         public void Purchase();
         public void Mortgage();
         public void SetOwner(Player player);

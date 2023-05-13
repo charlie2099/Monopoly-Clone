@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using ScriptableObjects;
 using TMPro;
 using UnityEngine;
 
@@ -8,32 +9,35 @@ namespace Tiles
     public class Street : Tile, IPurchasable
     {
         public event Action<Tile> OnPropertyTileLanded;
-        public int PropertyCost { get; set; }
+        public PropertyData PropertyData => propertyData;
 
-        [Header("Street Data")]
-        [SerializeField] private ColourBlock colourBlock;
+        [Header("Property Data")]
         [SerializeField] private TextMeshPro streetCostText;
         [SerializeField] private MeshRenderer streetColourBar;
-        
+        [SerializeField] private PropertyData propertyData;
         private Player _owner;
 
         protected override void Start()
         {
             base.Start();
-            streetCostText.text = "£1Mil";
-            streetColourBar.material.color = colourBlock.blockColour;
-            PropertyCost = 25;
+            streetCostText.text = propertyData.purchaseData.purchaseCost.ToString();
+            streetColourBar.material.color = propertyData.colourBlock.colour;
         }
 
-        public override void OnLanded()
+        public override void OnLanded(Player player)
         {
+            if (player != _owner && _owner != null)
+            {
+                player.Balance -= propertyData.rentData.rentWithNoHouses;
+            }
+            
             OnPropertyTileLanded?.Invoke(this);
         }
 
         public void Purchase()
         {
             Debug.Log("Property purchased");
-            _owner.Balance -= PropertyCost;
+            _owner.Balance -= propertyData.purchaseData.purchaseCost;
         }
 
         public void Mortgage() {}

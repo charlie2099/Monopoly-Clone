@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
                     
                     if (playerToken.CurrentTile == targetTile)
                     {
-                        playerToken.CurrentTile.OnLanded();
+                        playerToken.CurrentTile.OnLanded(_activePlayer);
                         OnTokenMoved?.Invoke(playerToken.CurrentTile);
                         _tokenIsMoving = false;
                     }

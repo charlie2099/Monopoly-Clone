@@ -2783,8 +2783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 36
-  tileName: Chance
+  tileData: {fileID: 11400000, guid: 6a292bcf65ed5f24b83ddf570155dd78, type: 2}
   tileNameText: {fileID: 1763907303736473352}
 --- !u!1 &396382979
 GameObject:
@@ -4607,8 +4606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 7
-  tileName: Chance
+  tileData: {fileID: 11400000, guid: b73c85a2306dd7e40bd081c491d22a11, type: 2}
   tileNameText: {fileID: 1763907303756243752}
 --- !u!1 &677625990
 GameObject:
@@ -6076,9 +6074,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 1
-  tileName: Temple Street
+  tileData: {fileID: 11400000, guid: 9448d26b15579df458805d9c5d0cae69, type: 2}
   tileNameText: {fileID: 758858709}
+  propertyData: {fileID: 11400000, guid: 9956448679e3a0a4aa1c7387926c80fc, type: 2}
   colourBlock: {fileID: 11400000, guid: 740eb1e1ca3e06f46ab0fa61c814cd9e, type: 2}
   streetCostText: {fileID: 1121850075}
   streetColourBar: {fileID: 152216550}
@@ -7805,8 +7803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 22
-  tileName: Chance
+  tileData: {fileID: 11400000, guid: 5da50df5b0d64f34ea9b52784d60da1d, type: 2}
   tileNameText: {fileID: 1763907302381626185}
 --- !u!1 &1177981607
 GameObject:
@@ -11203,8 +11200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 17
-  tileName: Community Chest
+  tileData: {fileID: 11400000, guid: 2bdb618ec1c497048a3bb543508fe1dd, type: 2}
   tileNameText: {fileID: 1763907302712387824}
 --- !u!1 &1812431194
 GameObject:
@@ -11493,8 +11489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 33
-  tileName: Community Chest
+  tileData: {fileID: 11400000, guid: 72a2f5ee82fd23b45b608a78c33fb939, type: 2}
   tileNameText: {fileID: 1763907302781699060}
 --- !u!1 &1849414532
 GameObject:
@@ -13663,8 +13658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cc9e005cf94508999c2133f168b0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 30
-  tileName: Go To Jail
+  tileData: {fileID: 11400000, guid: 29a5b48976be6fa4db04ae2c4db01d3c, type: 2}
   tileNameText: {fileID: 604272993150342962}
 --- !u!33 &604272991742107978
 MeshFilter:
@@ -14395,8 +14389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a576d8b40404a6b9cb66922c102e656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 10
-  tileName: Jail
+  tileData: {fileID: 11400000, guid: 4b0288e85bd0d534ab91076a9d7bbe84, type: 2}
   tileNameText: {fileID: 604272992567904279}
 --- !u!114 &604272992332138612
 MonoBehaviour:
@@ -14613,8 +14606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711adc0c1ccf4d178753aa8e3f35993c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 20
-  tileName: Free Parking
+  tileData: {fileID: 11400000, guid: 6eed9300829e5a74ebaa268b5caba12c, type: 2}
   tileNameText: {fileID: 604272992206067603}
 --- !u!114 &604272992440063984
 MonoBehaviour:
@@ -15173,8 +15165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0237809e1a8459f9bff42a28788665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 0
-  tileName: GO
+  tileData: {fileID: 11400000, guid: ce8a3c509efb7ff43a41c34cfbbafeac, type: 2}
   tileNameText: {fileID: 604272991996244709}
 --- !u!65 &604272992993148616
 BoxCollider:
@@ -15733,8 +15724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 2
-  tileName: Community Chest
+  tileData: {fileID: 11400000, guid: 4ec7487791ecda842b3d521a273dba86, type: 2}
   tileNameText: {fileID: 1763907302586795443}
 --- !u!23 &1763907302353853228
 MeshRenderer:
@@ -19154,8 +19144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d237d60189c2437e8bdd84c91594d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 4
-  tileName: Income Tax
+  tileData: {fileID: 11400000, guid: 20f0fd13bd730014b953039db37f919f, type: 2}
   tileNameText: {fileID: 2385086447460838836}
 --- !u!1 &2385086447222302888
 GameObject:
@@ -20988,8 +20977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 35
-  tileName: Bristol Temple Meads
+  tileData: {fileID: 11400000, guid: 622358eddf74bac47a414d1101c437b1, type: 2}
   tileNameText: {fileID: 5181724007374819171}
 --- !u!1 &5181724006940466614
 GameObject:
@@ -21753,8 +21741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 15
-  tileName: Centre
+  tileData: {fileID: 11400000, guid: 1702b5920bae28f4cacebb6a9e62f346, type: 2}
   tileNameText: {fileID: 5181724007023594387}
 --- !u!222 &5181724007313542794
 CanvasRenderer:
@@ -22212,8 +22199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 5
-  tileName: International Airport Bristol
+  tileData: {fileID: 11400000, guid: 1cf0b7801cb5c014bb96bdc15bb75f62, type: 2}
   tileNameText: {fileID: 5181724007833725284}
 --- !u!1 &5181724007404583857
 GameObject:
@@ -22504,8 +22490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c61d6d24bfa49c6bad2f936d25faa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 12
-  tileName: Water Company
+  tileData: {fileID: 11400000, guid: 72cff13925c93ce42960676b1440fa34, type: 2}
   tileNameText: {fileID: 5181724007864523749}
 --- !u!1 &5181724007550426873
 GameObject:
@@ -22694,8 +22679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c61d6d24bfa49c6bad2f936d25faa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 28
-  tileName: Communications
+  tileData: {fileID: 11400000, guid: ca3fc91feff78144bb497b636cae942e, type: 2}
   tileNameText: {fileID: 5181724007659462399}
 --- !u!33 &5181724007605247366
 MeshFilter:
@@ -23524,8 +23508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 25
-  tileName: Bristol Port
+  tileData: {fileID: 11400000, guid: 440f1974b7e81384bbbc73220c3ce7be, type: 2}
   tileNameText: {fileID: 5181724007644587490}
 --- !u!222 &5181724007800250619
 CanvasRenderer:
@@ -24795,8 +24778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d237d60189c2437e8bdd84c91594d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 38
-  tileName: Bank Deposit
+  tileData: {fileID: 11400000, guid: 1ac84cfdd5437d143971b680a2c4fa75, type: 2}
   tileNameText: {fileID: 5328614788270855665}
 --- !u!222 &5328614788426617064
 CanvasRenderer:
@@ -24952,9 +24934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 27
-  tileName: Bristol Cathedral
+  tileData: {fileID: 11400000, guid: 342e01f37db315c41995b99576eb5667, type: 2}
   tileNameText: {fileID: 6828296916417141327}
+  propertyData: {fileID: 11400000, guid: 82028c635dc01c947b23f8f7fdacc868, type: 2}
   colourBlock: {fileID: 11400000, guid: 8c982d71c6e08f0498809f41518846ca, type: 2}
   streetCostText: {fileID: 6828296917895940929}
   streetColourBar: {fileID: 6828296917019638396}
@@ -25958,9 +25940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 37
-  tileName: Bristol Old Vic
+  tileData: {fileID: 11400000, guid: 5affddd6ec423fd4b9789a0d60ad09c1, type: 2}
   tileNameText: {fileID: 6828296916255431488}
+  propertyData: {fileID: 11400000, guid: ee5aabecc1cd1d34098a76725f5f0ae0, type: 2}
   colourBlock: {fileID: 11400000, guid: b8f6454ec03ef384dbfbdaf68ef2a7e3, type: 2}
   streetCostText: {fileID: 6828296918056667726}
   streetColourBar: {fileID: 6828296916861008755}
@@ -27213,9 +27195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 21
-  tileName: Cribbs Causeway
+  tileData: {fileID: 11400000, guid: 3a1ff8c91ec95ba4ab7b0d71647a4c7c, type: 2}
   tileNameText: {fileID: 6828296916298099357}
+  propertyData: {fileID: 11400000, guid: 2ac384fc529ddd649b4b6a1bd9e507bc, type: 2}
   colourBlock: {fileID: 11400000, guid: 0722bd8bc89499749997c8b502cdfe63, type: 2}
   streetCostText: {fileID: 6828296918015327123}
   streetColourBar: {fileID: 6828296916770359982}
@@ -29118,9 +29100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 24
-  tileName: Harbourside
+  tileData: {fileID: 11400000, guid: 1a5d42b979713514dad5293d3e0348be, type: 2}
   tileNameText: {fileID: 6828296916028181537}
+  propertyData: {fileID: 11400000, guid: 5967cf949db606a46b37ec9a5b45340e, type: 2}
   colourBlock: {fileID: 11400000, guid: 0722bd8bc89499749997c8b502cdfe63, type: 2}
   streetCostText: {fileID: 6828296917745933615}
   streetColourBar: {fileID: 6828296916500524050}
@@ -30059,9 +30041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 23
-  tileName: Denmark Street
+  tileData: {fileID: 11400000, guid: c5514aee1f13e1c4d84469e72334be53, type: 2}
   tileNameText: {fileID: 6828296916974137501}
+  propertyData: {fileID: 11400000, guid: e3252755c73476a4292723db356ad0ac, type: 2}
   colourBlock: {fileID: 11400000, guid: 0722bd8bc89499749997c8b502cdfe63, type: 2}
   streetCostText: {fileID: 6828296917337121171}
   streetColourBar: {fileID: 6828296916368527534}
@@ -30850,9 +30832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 16
-  tileName: King Street
+  tileData: {fileID: 11400000, guid: 9c82b7d3d3e791145badd70c9fd31ff3, type: 2}
   tileNameText: {fileID: 6828296916884420830}
+  propertyData: {fileID: 11400000, guid: 9c8cb8524b2c6d34c9089a05935a806c, type: 2}
   colourBlock: {fileID: 11400000, guid: de624f5c1413d2e4c88df76ed32ca4cc, type: 2}
   streetCostText: {fileID: 6828296917427890640}
   streetColourBar: {fileID: 6828296916282087661}
@@ -31057,9 +31039,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 18
-  tileName: Broadmead
+  tileData: {fileID: 11400000, guid: 4897cf1805b000b40bc48b3e5e3db4f6, type: 2}
   tileNameText: {fileID: 6828296916837962139}
+  propertyData: {fileID: 11400000, guid: 22a601501841b6c43ac198ab4e797023, type: 2}
   colourBlock: {fileID: 11400000, guid: de624f5c1413d2e4c88df76ed32ca4cc, type: 2}
   streetCostText: {fileID: 6828296917473083541}
   streetColourBar: {fileID: 6828296916236530088}
@@ -31653,9 +31635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 3
-  tileName: St. Andrews Road
+  tileData: {fileID: 11400000, guid: 768216b8d65c5fc4d882af77d8ee5b7a, type: 2}
   tileNameText: {fileID: 6828296916653116487}
+  propertyData: {fileID: 11400000, guid: fea031af2abee884580cc740d36d7724, type: 2}
   colourBlock: {fileID: 11400000, guid: 740eb1e1ca3e06f46ab0fa61c814cd9e, type: 2}
   streetCostText: {fileID: 6828296917120998729}
   streetColourBar: {fileID: 6828296916185967732}
@@ -32183,9 +32165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 26
-  tileName: TV Centre Bath Road
+  tileData: {fileID: 11400000, guid: c232c10bc72545248892d822fc8ad3da, type: 2}
   tileNameText: {fileID: 6828296916749674379}
+  propertyData: {fileID: 11400000, guid: 9d0831cbd1fe09e4181c6f2ddcfd2771, type: 2}
   colourBlock: {fileID: 11400000, guid: 8c982d71c6e08f0498809f41518846ca, type: 2}
   streetCostText: {fileID: 6828296917024716421}
   streetColourBar: {fileID: 6828296916148389816}
@@ -34412,9 +34394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 6
-  tileName: Great Western Dock
+  tileData: {fileID: 11400000, guid: 8585f5e831fd80b4187c1550b534c261, type: 2}
   tileNameText: {fileID: 6828296917548188880}
+  propertyData: {fileID: 11400000, guid: dc3e30180f060a347817e39a01a6407a, type: 2}
   colourBlock: {fileID: 11400000, guid: bdd9ca9c7cc28bf47a930ced83db2ddc, type: 2}
   streetCostText: {fileID: 6828296916766266846}
   streetColourBar: {fileID: 6828296918019548387}
@@ -34859,9 +34841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 34
-  tileName: Narrow Quay
+  tileData: {fileID: 11400000, guid: 43368599a55b8a94798467aca80a0321, type: 2}
   tileNameText: {fileID: 6828296917524112798}
+  propertyData: {fileID: 11400000, guid: 23783b321a1efed41a2d6108172b3201, type: 2}
   colourBlock: {fileID: 11400000, guid: c47223362f0159d4fa5337b5dca85577, type: 2}
   streetCostText: {fileID: 6828296916788196496}
   streetColourBar: {fileID: 6828296917991196077}
@@ -34948,9 +34930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 8
-  tileName: Bristol Zoo Gardens
+  tileData: {fileID: 11400000, guid: 707dfa44535dede4e8a1541116fa7a72, type: 2}
   tileNameText: {fileID: 6828296917522022362}
+  propertyData: {fileID: 11400000, guid: 313a316b3d3848b4183ad40ba0e2bfd1, type: 2}
   colourBlock: {fileID: 11400000, guid: bdd9ca9c7cc28bf47a930ced83db2ddc, type: 2}
   streetCostText: {fileID: 6828296916790292180}
   streetColourBar: {fileID: 6828296917993299945}
@@ -35302,9 +35284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 39
-  tileName: Anchor Road
+  tileData: {fileID: 11400000, guid: d21d6fe9be067584498ad1f9bd83a0b5, type: 2}
   tileNameText: {fileID: 6828296917347959958}
+  propertyData: {fileID: 11400000, guid: e4d7502b68621df4984a11bc532f8b8a, type: 2}
   colourBlock: {fileID: 11400000, guid: b8f6454ec03ef384dbfbdaf68ef2a7e3, type: 2}
   streetCostText: {fileID: 6828296916964398488}
   streetColourBar: {fileID: 6828296917949244581}
@@ -36624,9 +36606,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 32
-  tileName: Aztec West
+  tileData: {fileID: 11400000, guid: 862c6fbdbdaffd44facd54d764d552db, type: 2}
   tileNameText: {fileID: 6828296917197135756}
+  propertyData: {fileID: 11400000, guid: 10c950ae462539a40a8d9bae3b2737e5, type: 2}
   colourBlock: {fileID: 11400000, guid: c47223362f0159d4fa5337b5dca85577, type: 2}
   streetCostText: {fileID: 6828296916578291330}
   streetColourBar: {fileID: 6828296917798617023}
@@ -37352,9 +37334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 9
-  tileName: Clifton Suspension Bridge
+  tileData: {fileID: 11400000, guid: fce4de7f59f5ac94bb13655c0d467b54, type: 2}
   tileNameText: {fileID: 6828296917264455407}
+  propertyData: {fileID: 11400000, guid: 4abcdd0a1d9a40c49a54fbea18db0072, type: 2}
   colourBlock: {fileID: 11400000, guid: bdd9ca9c7cc28bf47a930ced83db2ddc, type: 2}
   streetCostText: {fileID: 6828296916511754209}
   streetColourBar: {fileID: 6828296917732603612}
@@ -39720,9 +39702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 11
-  tileName: The Memorial Stadium
+  tileData: {fileID: 11400000, guid: 28141907fecfe1d42a939fcd90600279, type: 2}
   tileNameText: {fileID: 6828296917985840159}
+  propertyData: {fileID: 11400000, guid: 4d4eb6fb644cc1b4ab75fbb6e380d0ec, type: 2}
   colourBlock: {fileID: 11400000, guid: d2f40e4e147c1f447b589d8ccddcd6ee, type: 2}
   streetCostText: {fileID: 6828296916327308561}
   streetColourBar: {fileID: 6828296917514529836}
@@ -41283,9 +41265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 14
-  tileName: County Ground
+  tileData: {fileID: 11400000, guid: 8a68fe9e8a48b9f4c82ae263156d7504, type: 2}
   tileNameText: {fileID: 6828296917929483867}
+  propertyData: {fileID: 11400000, guid: 3752aa4262f12e44dae37eb6e626335b, type: 2}
   colourBlock: {fileID: 11400000, guid: d2f40e4e147c1f447b589d8ccddcd6ee, type: 2}
   streetCostText: {fileID: 6828296916383666005}
   streetColourBar: {fileID: 6828296917328150120}
@@ -41833,9 +41815,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 13
-  tileName: Ashton Gate
+  tileData: {fileID: 11400000, guid: 48708f47b913fc14da131a1410a8651f, type: 2}
   tileNameText: {fileID: 6828296917749331821}
+  propertyData: {fileID: 11400000, guid: 0822ccac917a59740a84f0a2f7f60e4d, type: 2}
   colourBlock: {fileID: 11400000, guid: d2f40e4e147c1f447b589d8ccddcd6ee, type: 2}
   streetCostText: {fileID: 6828296916027221603}
   streetColourBar: {fileID: 6828296917282068318}
@@ -43126,9 +43108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 29
-  tileName: University of Bristol
+  tileData: {fileID: 11400000, guid: cd00c5b737a5aa141a5a3e81e72d64c0, type: 2}
   tileNameText: {fileID: 6828296917606542267}
+  propertyData: {fileID: 11400000, guid: 4b013b373a3a0614894d3b8a372793de, type: 2}
   colourBlock: {fileID: 11400000, guid: 8c982d71c6e08f0498809f41518846ca, type: 2}
   streetCostText: {fileID: 6828296916169685685}
   streetColourBar: {fileID: 6828296917139377032}
@@ -43761,9 +43743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 31
-  tileName: Somerset House
+  tileData: {fileID: 11400000, guid: 5dbd6635f76cc8142aae75c398d0dad1, type: 2}
   tileNameText: {fileID: 6828296917571728857}
+  propertyData: {fileID: 11400000, guid: 12639509ef0b3b0438c30589ea169c00, type: 2}
   colourBlock: {fileID: 11400000, guid: c47223362f0159d4fa5337b5dca85577, type: 2}
   streetCostText: {fileID: 6828296916202464471}
   streetColourBar: {fileID: 6828296917104465386}
@@ -44079,9 +44061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileNum: 19
-  tileName: Lewins Mead
+  tileData: {fileID: 11400000, guid: 766f3c121cf8d7d4b801aa7f629fb7ab, type: 2}
   tileNameText: {fileID: 6828296917673226978}
+  propertyData: {fileID: 11400000, guid: 7163fe2ecd5e9914284a49ca106ff829, type: 2}
   colourBlock: {fileID: 11400000, guid: de624f5c1413d2e4c88df76ed32ca4cc, type: 2}
   streetCostText: {fileID: 6828296916102276076}
   streetColourBar: {fileID: 6828296917070861009}

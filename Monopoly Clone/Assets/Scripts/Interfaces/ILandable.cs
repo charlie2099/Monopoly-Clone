@@ -6,6 +6,6 @@ namespace Interfaces
     public interface ILandable
     {
         public event Action<Tile> OnTileLanded;
-        public void OnLanded();
+        public void OnLanded(Player player);
     }
 }

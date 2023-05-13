@@ -33,7 +33,7 @@ namespace Commands
 
                 if (playerToken.CurrentTile == _targetTile)
                 {
-                    playerToken.CurrentTile.OnLanded();
+                    playerToken.CurrentTile.OnLanded(_player);
                 }
             }
         }
