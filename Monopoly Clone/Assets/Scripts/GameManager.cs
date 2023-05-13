@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _activePlayer = _players[0];
-        _players.ForEach(player => player.Balance = 1500);
+        _players.ForEach(player => Bank.SetStartingFunds(player.BankAccount, 1500));
     }
 
     private void Update()

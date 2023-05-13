@@ -32,7 +32,7 @@ namespace Tiles
             
             if (player != _owner && _owner != null)
             {
-                player.Balance -= propertyData.rentData.GetRentLevel(RentLevel.NoHouses);
+                player.BankAccount.Withdraw(propertyData.rentData.GetRentLevel(RentLevel.NoHouses));
             }
             OnPropertyTileLanded?.Invoke(this);
         }
@@ -40,7 +40,7 @@ namespace Tiles
         public void Purchase()
         {
             Debug.Log("Property purchased");
-            _owner.Balance -= propertyData.purchaseData.purchaseCost;
+            _owner.BankAccount.Withdraw(propertyData.purchaseData.purchaseCost);
         }
 
         public void Mortgage() {}

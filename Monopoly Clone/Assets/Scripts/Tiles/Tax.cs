@@ -1,17 +1,10 @@
-﻿using UnityEngine;
-
-namespace Tiles
+﻿namespace Tiles
 {
     public class Tax : Tile
     {
-        public void ChargeTax(float tax, Player player)
+        public void ChargeTax(int tax, Player player)
         {
-            player.Balance -= tax;
+            player.BankAccount.Withdraw(tax);
         }
-        
-        /*public override void OnLanded()
-        {
-            Debug.Log("Landed on: " + TileName);
-        }*/
     }
 }

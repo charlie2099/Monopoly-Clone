@@ -37,7 +37,7 @@ namespace Ui
         private void Update()
         {
             // TODO: Clean up
-            playerBalanceText.text = $"Balance: <color=red>{GameManager.Instance.ActivePlayer.Balance}</color>";
+            playerBalanceText.text = $"Balance: <color=red>{GameManager.Instance.ActivePlayer.BankAccount.BalanceRemaining}</color>";
         }
 
         private void UpdateUiOnTokenMoved(Tile tile)
