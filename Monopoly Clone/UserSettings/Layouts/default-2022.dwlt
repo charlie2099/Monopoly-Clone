@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 300}
   m_MaxSize: {x: 32384, y: 24288}
   vertical: 0
-  controlID: 114
+  controlID: 88
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 1
-  controlID: 115
+  controlID: 89
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,8 +190,8 @@ MonoBehaviour:
     y: 0
     width: 731
     height: 949
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -240,9 +240,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 992
-    height: 574
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 572
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -264,9 +264,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 574
+    y: 572
     width: 992
-    height: 375
+    height: 377
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
@@ -375,7 +375,7 @@ MonoBehaviour:
     x: -1829
     y: 73
     width: 990
-    height: 553
+    height: 551
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -428,22 +428,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 990
-      height: 532
-    m_Scale: {x: 0.4925926, y: 0.4925926}
-    m_Translation: {x: 495, y: 266}
+      height: 530
+    m_Scale: {x: 0.49074075, y: 0.49074075}
+    m_Translation: {x: 495, y: 265}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1004.8872
+      x: -1008.67926
       y: -540
-      width: 2009.7744
+      width: 2017.3585
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.4925926
-  m_LastWindowPixelSize: {x: 990, y: 553}
+  m_defaultScale: 0.49074075
+  m_LastWindowPixelSize: {x: 990, y: 551}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 43.114666, y: -5.426511, z: 8.470105}
+    m_Target: {x: 45.42986, y: -7.5511827, z: 14.427343}
     speed: 2
-    m_Value: {x: 43.114666, y: -5.426511, z: 8.470105}
+    m_Value: {x: 45.42986, y: -7.5511827, z: 14.427343}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -759,11 +759,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.29719427, y: -0.65533483, z: 0.31433904, w: 0.61938184}
     speed: 2
-    m_Value: {x: 0.29621568, y: -0.65711415, z: 0.3151928, w: 0.61734176}
+    m_Value: {x: 0.29715994, y: -0.65525913, z: 0.31430274, w: 0.6193103}
   m_Size:
-    m_Target: 16.600788
+    m_Target: 24.175297
     speed: 2
-    m_Value: 15.885922
+    m_Value: 24.175297
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -809,9 +809,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: -1829
-    y: 647
+    y: 645
     width: 990
-    height: 354
+    height: 356
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -846,24 +846,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 165}
-      m_SelectedIDs: e46a0000
-      m_LastClickedID: 27364
-      m_ExpandedIDs: 2afbffff4a5c00005a5c0000745c00009a5d00008e5e0000b05e0000de5f00009c60000098610000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: RailroadTile (5)
-        m_OriginalName: RailroadTile (5)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 25932
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 12}
       m_SearchString: 
@@ -914,22 +914,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/ScriptableObjects/PropertyData
+    - Assets/Scripts/Tiles
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/ScriptableObjects/PropertyData
+  - Assets/Scripts/Tiles
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\MyProjects\Unity_Projects\Monopoly-Clone\Monopoly Clone
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f47c0000
-    m_LastClickedID: 31988
-    m_ExpandedIDs: 00000000e26c0000e46c0000f46c00000c6d0000
+    m_SelectedIDs: 866d0000
+    m_LastClickedID: 28038
+    m_ExpandedIDs: 00000000626d0000646d0000746d0000786d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -957,7 +957,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e26c0000e46c0000
+    m_ExpandedIDs: 00000000626d0000646d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

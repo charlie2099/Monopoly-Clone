@@ -2783,8 +2783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 6a292bcf65ed5f24b83ddf570155dd78, type: 2}
   tileNameText: {fileID: 1763907303736473352}
+  tileData: {fileID: 11400000, guid: 6a292bcf65ed5f24b83ddf570155dd78, type: 2}
 --- !u!1 &396382979
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,7 +3746,7 @@ GameObject:
   - component: {fileID: 505243414}
   - component: {fileID: 505243413}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas (Overlay)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4606,8 +4606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: b73c85a2306dd7e40bd081c491d22a11, type: 2}
   tileNameText: {fileID: 1763907303756243752}
+  tileData: {fileID: 11400000, guid: b73c85a2306dd7e40bd081c491d22a11, type: 2}
 --- !u!1 &677625990
 GameObject:
   m_ObjectHideFlags: 0
@@ -6074,12 +6074,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 9448d26b15579df458805d9c5d0cae69, type: 2}
   tileNameText: {fileID: 758858709}
-  propertyData: {fileID: 11400000, guid: 9956448679e3a0a4aa1c7387926c80fc, type: 2}
-  colourBlock: {fileID: 11400000, guid: 740eb1e1ca3e06f46ab0fa61c814cd9e, type: 2}
+  tileData: {fileID: 11400000, guid: 9448d26b15579df458805d9c5d0cae69, type: 2}
   streetCostText: {fileID: 1121850075}
   streetColourBar: {fileID: 152216550}
+  propertyData: {fileID: 11400000, guid: 9956448679e3a0a4aa1c7387926c80fc, type: 2}
 --- !u!1 &922066343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6674,7 +6673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7803,8 +7802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 5da50df5b0d64f34ea9b52784d60da1d, type: 2}
   tileNameText: {fileID: 1763907302381626185}
+  tileData: {fileID: 11400000, guid: 5da50df5b0d64f34ea9b52784d60da1d, type: 2}
 --- !u!1 &1177981607
 GameObject:
   m_ObjectHideFlags: 0
@@ -8261,7 +8260,7 @@ GameObject:
   - component: {fileID: 1273601924}
   - component: {fileID: 1273601923}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas (Monopoly Title)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11200,8 +11199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 2bdb618ec1c497048a3bb543508fe1dd, type: 2}
   tileNameText: {fileID: 1763907302712387824}
+  tileData: {fileID: 11400000, guid: 2bdb618ec1c497048a3bb543508fe1dd, type: 2}
 --- !u!1 &1812431194
 GameObject:
   m_ObjectHideFlags: 0
@@ -11489,8 +11488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 72a2f5ee82fd23b45b608a78c33fb939, type: 2}
   tileNameText: {fileID: 1763907302781699060}
+  tileData: {fileID: 11400000, guid: 72a2f5ee82fd23b45b608a78c33fb939, type: 2}
 --- !u!1 &1849414532
 GameObject:
   m_ObjectHideFlags: 0
@@ -13530,7 +13529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -13658,8 +13657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cc9e005cf94508999c2133f168b0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 29a5b48976be6fa4db04ae2c4db01d3c, type: 2}
   tileNameText: {fileID: 604272993150342962}
+  tileData: {fileID: 11400000, guid: 29a5b48976be6fa4db04ae2c4db01d3c, type: 2}
 --- !u!33 &604272991742107978
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13777,7 +13776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -14389,8 +14388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a576d8b40404a6b9cb66922c102e656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 4b0288e85bd0d534ab91076a9d7bbe84, type: 2}
   tileNameText: {fileID: 604272992567904279}
+  tileData: {fileID: 11400000, guid: 4b0288e85bd0d534ab91076a9d7bbe84, type: 2}
 --- !u!114 &604272992332138612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14606,8 +14605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711adc0c1ccf4d178753aa8e3f35993c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 6eed9300829e5a74ebaa268b5caba12c, type: 2}
   tileNameText: {fileID: 604272992206067603}
+  tileData: {fileID: 11400000, guid: 6eed9300829e5a74ebaa268b5caba12c, type: 2}
 --- !u!114 &604272992440063984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14738,7 +14737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -15165,8 +15164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0237809e1a8459f9bff42a28788665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: ce8a3c509efb7ff43a41c34cfbbafeac, type: 2}
   tileNameText: {fileID: 604272991996244709}
+  tileData: {fileID: 11400000, guid: ce8a3c509efb7ff43a41c34cfbbafeac, type: 2}
 --- !u!65 &604272992993148616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15596,7 +15595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -15724,8 +15723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956d46f325d4f468eb395f3fe354bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 4ec7487791ecda842b3d521a273dba86, type: 2}
   tileNameText: {fileID: 1763907302586795443}
+  tileData: {fileID: 11400000, guid: 4ec7487791ecda842b3d521a273dba86, type: 2}
 --- !u!23 &1763907302353853228
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15871,7 +15870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -16434,7 +16433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -17393,7 +17392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -17576,7 +17575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -17952,7 +17951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -18767,7 +18766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -19144,8 +19143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d237d60189c2437e8bdd84c91594d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 20f0fd13bd730014b953039db37f919f, type: 2}
   tileNameText: {fileID: 2385086447460838836}
+  tileData: {fileID: 11400000, guid: 20f0fd13bd730014b953039db37f919f, type: 2}
 --- !u!1 &2385086447222302888
 GameObject:
   m_ObjectHideFlags: 0
@@ -19184,7 +19183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -20977,8 +20976,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 622358eddf74bac47a414d1101c437b1, type: 2}
   tileNameText: {fileID: 5181724007374819171}
+  tileData: {fileID: 11400000, guid: 622358eddf74bac47a414d1101c437b1, type: 2}
 --- !u!1 &5181724006940466614
 GameObject:
   m_ObjectHideFlags: 0
@@ -21226,7 +21225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -21741,8 +21740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 1702b5920bae28f4cacebb6a9e62f346, type: 2}
   tileNameText: {fileID: 5181724007023594387}
+  tileData: {fileID: 11400000, guid: 1702b5920bae28f4cacebb6a9e62f346, type: 2}
 --- !u!222 &5181724007313542794
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21791,7 +21790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -22199,8 +22198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 1cf0b7801cb5c014bb96bdc15bb75f62, type: 2}
   tileNameText: {fileID: 5181724007833725284}
+  tileData: {fileID: 11400000, guid: 1cf0b7801cb5c014bb96bdc15bb75f62, type: 2}
 --- !u!1 &5181724007404583857
 GameObject:
   m_ObjectHideFlags: 0
@@ -22343,7 +22342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -22490,8 +22489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c61d6d24bfa49c6bad2f936d25faa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 72cff13925c93ce42960676b1440fa34, type: 2}
   tileNameText: {fileID: 5181724007864523749}
+  tileData: {fileID: 11400000, guid: 72cff13925c93ce42960676b1440fa34, type: 2}
 --- !u!1 &5181724007550426873
 GameObject:
   m_ObjectHideFlags: 0
@@ -22550,7 +22549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -22679,8 +22678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c61d6d24bfa49c6bad2f936d25faa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: ca3fc91feff78144bb497b636cae942e, type: 2}
   tileNameText: {fileID: 5181724007659462399}
+  tileData: {fileID: 11400000, guid: ca3fc91feff78144bb497b636cae942e, type: 2}
 --- !u!33 &5181724007605247366
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22816,7 +22815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -23508,8 +23507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f8e1cba34612b09c0f5b94d305fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 440f1974b7e81384bbbc73220c3ce7be, type: 2}
   tileNameText: {fileID: 5181724007644587490}
+  tileData: {fileID: 11400000, guid: 440f1974b7e81384bbbc73220c3ce7be, type: 2}
 --- !u!222 &5181724007800250619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23538,7 +23537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -24778,8 +24777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d237d60189c2437e8bdd84c91594d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 1ac84cfdd5437d143971b680a2c4fa75, type: 2}
   tileNameText: {fileID: 5328614788270855665}
+  tileData: {fileID: 11400000, guid: 1ac84cfdd5437d143971b680a2c4fa75, type: 2}
 --- !u!222 &5328614788426617064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24846,7 +24845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -24934,12 +24933,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 342e01f37db315c41995b99576eb5667, type: 2}
   tileNameText: {fileID: 6828296916417141327}
-  propertyData: {fileID: 11400000, guid: 82028c635dc01c947b23f8f7fdacc868, type: 2}
-  colourBlock: {fileID: 11400000, guid: 8c982d71c6e08f0498809f41518846ca, type: 2}
+  tileData: {fileID: 11400000, guid: 342e01f37db315c41995b99576eb5667, type: 2}
   streetCostText: {fileID: 6828296917895940929}
   streetColourBar: {fileID: 6828296917019638396}
+  propertyData: {fileID: 11400000, guid: 82028c635dc01c947b23f8f7fdacc868, type: 2}
 --- !u!23 &6828296915958732294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25048,7 +25046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -25211,7 +25209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -25940,12 +25938,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 5affddd6ec423fd4b9789a0d60ad09c1, type: 2}
   tileNameText: {fileID: 6828296916255431488}
-  propertyData: {fileID: 11400000, guid: ee5aabecc1cd1d34098a76725f5f0ae0, type: 2}
-  colourBlock: {fileID: 11400000, guid: b8f6454ec03ef384dbfbdaf68ef2a7e3, type: 2}
+  tileData: {fileID: 11400000, guid: 5affddd6ec423fd4b9789a0d60ad09c1, type: 2}
   streetCostText: {fileID: 6828296918056667726}
   streetColourBar: {fileID: 6828296916861008755}
+  propertyData: {fileID: 11400000, guid: ee5aabecc1cd1d34098a76725f5f0ae0, type: 2}
 --- !u!4 &6828296916101568267
 Transform:
   m_ObjectHideFlags: 0
@@ -26777,7 +26774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -27195,12 +27192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 3a1ff8c91ec95ba4ab7b0d71647a4c7c, type: 2}
   tileNameText: {fileID: 6828296916298099357}
-  propertyData: {fileID: 11400000, guid: 2ac384fc529ddd649b4b6a1bd9e507bc, type: 2}
-  colourBlock: {fileID: 11400000, guid: 0722bd8bc89499749997c8b502cdfe63, type: 2}
+  tileData: {fileID: 11400000, guid: 3a1ff8c91ec95ba4ab7b0d71647a4c7c, type: 2}
   streetCostText: {fileID: 6828296918015327123}
   streetColourBar: {fileID: 6828296916770359982}
+  propertyData: {fileID: 11400000, guid: 2ac384fc529ddd649b4b6a1bd9e507bc, type: 2}
 --- !u!33 &6828296916231824164
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27563,7 +27559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -29100,12 +29096,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 1a5d42b979713514dad5293d3e0348be, type: 2}
   tileNameText: {fileID: 6828296916028181537}
-  propertyData: {fileID: 11400000, guid: 5967cf949db606a46b37ec9a5b45340e, type: 2}
-  colourBlock: {fileID: 11400000, guid: 0722bd8bc89499749997c8b502cdfe63, type: 2}
+  tileData: {fileID: 11400000, guid: 1a5d42b979713514dad5293d3e0348be, type: 2}
   streetCostText: {fileID: 6828296917745933615}
   streetColourBar: {fileID: 6828296916500524050}
+  propertyData: {fileID: 11400000, guid: 5967cf949db606a46b37ec9a5b45340e, type: 2}
 --- !u!1 &6828296916479803501
 GameObject:
   m_ObjectHideFlags: 0
@@ -29256,7 +29251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -29626,7 +29621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -30041,12 +30036,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: c5514aee1f13e1c4d84469e72334be53, type: 2}
   tileNameText: {fileID: 6828296916974137501}
-  propertyData: {fileID: 11400000, guid: e3252755c73476a4292723db356ad0ac, type: 2}
-  colourBlock: {fileID: 11400000, guid: 0722bd8bc89499749997c8b502cdfe63, type: 2}
+  tileData: {fileID: 11400000, guid: c5514aee1f13e1c4d84469e72334be53, type: 2}
   streetCostText: {fileID: 6828296917337121171}
   streetColourBar: {fileID: 6828296916368527534}
+  propertyData: {fileID: 11400000, guid: e3252755c73476a4292723db356ad0ac, type: 2}
 --- !u!23 &6828296916630598690
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30670,7 +30664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -30832,12 +30826,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 9c82b7d3d3e791145badd70c9fd31ff3, type: 2}
   tileNameText: {fileID: 6828296916884420830}
-  propertyData: {fileID: 11400000, guid: 9c8cb8524b2c6d34c9089a05935a806c, type: 2}
-  colourBlock: {fileID: 11400000, guid: de624f5c1413d2e4c88df76ed32ca4cc, type: 2}
+  tileData: {fileID: 11400000, guid: 9c82b7d3d3e791145badd70c9fd31ff3, type: 2}
   streetCostText: {fileID: 6828296917427890640}
   streetColourBar: {fileID: 6828296916282087661}
+  propertyData: {fileID: 11400000, guid: 9c8cb8524b2c6d34c9089a05935a806c, type: 2}
 --- !u!4 &6828296916697592981
 Transform:
   m_ObjectHideFlags: 0
@@ -31039,12 +31032,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 4897cf1805b000b40bc48b3e5e3db4f6, type: 2}
   tileNameText: {fileID: 6828296916837962139}
-  propertyData: {fileID: 11400000, guid: 22a601501841b6c43ac198ab4e797023, type: 2}
-  colourBlock: {fileID: 11400000, guid: de624f5c1413d2e4c88df76ed32ca4cc, type: 2}
+  tileData: {fileID: 11400000, guid: 4897cf1805b000b40bc48b3e5e3db4f6, type: 2}
   streetCostText: {fileID: 6828296917473083541}
   streetColourBar: {fileID: 6828296916236530088}
+  propertyData: {fileID: 11400000, guid: 22a601501841b6c43ac198ab4e797023, type: 2}
 --- !u!23 &6828296916726996434
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31635,12 +31627,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 768216b8d65c5fc4d882af77d8ee5b7a, type: 2}
   tileNameText: {fileID: 6828296916653116487}
-  propertyData: {fileID: 11400000, guid: fea031af2abee884580cc740d36d7724, type: 2}
-  colourBlock: {fileID: 11400000, guid: 740eb1e1ca3e06f46ab0fa61c814cd9e, type: 2}
+  tileData: {fileID: 11400000, guid: 768216b8d65c5fc4d882af77d8ee5b7a, type: 2}
   streetCostText: {fileID: 6828296917120998729}
   streetColourBar: {fileID: 6828296916185967732}
+  propertyData: {fileID: 11400000, guid: fea031af2abee884580cc740d36d7724, type: 2}
 --- !u!23 &6828296916777615374
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32165,12 +32156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: c232c10bc72545248892d822fc8ad3da, type: 2}
   tileNameText: {fileID: 6828296916749674379}
-  propertyData: {fileID: 11400000, guid: 9d0831cbd1fe09e4181c6f2ddcfd2771, type: 2}
-  colourBlock: {fileID: 11400000, guid: 8c982d71c6e08f0498809f41518846ca, type: 2}
+  tileData: {fileID: 11400000, guid: c232c10bc72545248892d822fc8ad3da, type: 2}
   streetCostText: {fileID: 6828296917024716421}
   streetColourBar: {fileID: 6828296916148389816}
+  propertyData: {fileID: 11400000, guid: 9d0831cbd1fe09e4181c6f2ddcfd2771, type: 2}
 --- !u!23 &6828296916832332738
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33034,7 +33024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -33373,7 +33363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -34394,12 +34384,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 8585f5e831fd80b4187c1550b534c261, type: 2}
   tileNameText: {fileID: 6828296917548188880}
-  propertyData: {fileID: 11400000, guid: dc3e30180f060a347817e39a01a6407a, type: 2}
-  colourBlock: {fileID: 11400000, guid: bdd9ca9c7cc28bf47a930ced83db2ddc, type: 2}
+  tileData: {fileID: 11400000, guid: 8585f5e831fd80b4187c1550b534c261, type: 2}
   streetCostText: {fileID: 6828296916766266846}
   streetColourBar: {fileID: 6828296918019548387}
+  propertyData: {fileID: 11400000, guid: dc3e30180f060a347817e39a01a6407a, type: 2}
 --- !u!4 &6828296917092862107
 Transform:
   m_ObjectHideFlags: 0
@@ -34571,7 +34560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -34841,12 +34830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 43368599a55b8a94798467aca80a0321, type: 2}
   tileNameText: {fileID: 6828296917524112798}
-  propertyData: {fileID: 11400000, guid: 23783b321a1efed41a2d6108172b3201, type: 2}
-  colourBlock: {fileID: 11400000, guid: c47223362f0159d4fa5337b5dca85577, type: 2}
+  tileData: {fileID: 11400000, guid: 43368599a55b8a94798467aca80a0321, type: 2}
   streetCostText: {fileID: 6828296916788196496}
   streetColourBar: {fileID: 6828296917991196077}
+  propertyData: {fileID: 11400000, guid: 23783b321a1efed41a2d6108172b3201, type: 2}
 --- !u!4 &6828296917131635157
 Transform:
   m_ObjectHideFlags: 0
@@ -34930,12 +34918,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 707dfa44535dede4e8a1541116fa7a72, type: 2}
   tileNameText: {fileID: 6828296917522022362}
-  propertyData: {fileID: 11400000, guid: 313a316b3d3848b4183ad40ba0e2bfd1, type: 2}
-  colourBlock: {fileID: 11400000, guid: bdd9ca9c7cc28bf47a930ced83db2ddc, type: 2}
+  tileData: {fileID: 11400000, guid: 707dfa44535dede4e8a1541116fa7a72, type: 2}
   streetCostText: {fileID: 6828296916790292180}
   streetColourBar: {fileID: 6828296917993299945}
+  propertyData: {fileID: 11400000, guid: 313a316b3d3848b4183ad40ba0e2bfd1, type: 2}
 --- !u!4 &6828296917133734801
 Transform:
   m_ObjectHideFlags: 0
@@ -35284,12 +35271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: d21d6fe9be067584498ad1f9bd83a0b5, type: 2}
   tileNameText: {fileID: 6828296917347959958}
-  propertyData: {fileID: 11400000, guid: e4d7502b68621df4984a11bc532f8b8a, type: 2}
-  colourBlock: {fileID: 11400000, guid: b8f6454ec03ef384dbfbdaf68ef2a7e3, type: 2}
+  tileData: {fileID: 11400000, guid: d21d6fe9be067584498ad1f9bd83a0b5, type: 2}
   streetCostText: {fileID: 6828296916964398488}
   streetColourBar: {fileID: 6828296917949244581}
+  propertyData: {fileID: 11400000, guid: e4d7502b68621df4984a11bc532f8b8a, type: 2}
 --- !u!4 &6828296917156776157
 Transform:
   m_ObjectHideFlags: 0
@@ -35606,7 +35592,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -35833,7 +35819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -35898,7 +35884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -36606,12 +36592,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 862c6fbdbdaffd44facd54d764d552db, type: 2}
   tileNameText: {fileID: 6828296917197135756}
-  propertyData: {fileID: 11400000, guid: 10c950ae462539a40a8d9bae3b2737e5, type: 2}
-  colourBlock: {fileID: 11400000, guid: c47223362f0159d4fa5337b5dca85577, type: 2}
+  tileData: {fileID: 11400000, guid: 862c6fbdbdaffd44facd54d764d552db, type: 2}
   streetCostText: {fileID: 6828296916578291330}
   streetColourBar: {fileID: 6828296917798617023}
+  propertyData: {fileID: 11400000, guid: 10c950ae462539a40a8d9bae3b2737e5, type: 2}
 --- !u!4 &6828296917307610055
 Transform:
   m_ObjectHideFlags: 0
@@ -37334,12 +37319,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: fce4de7f59f5ac94bb13655c0d467b54, type: 2}
   tileNameText: {fileID: 6828296917264455407}
-  propertyData: {fileID: 11400000, guid: 4abcdd0a1d9a40c49a54fbea18db0072, type: 2}
-  colourBlock: {fileID: 11400000, guid: bdd9ca9c7cc28bf47a930ced83db2ddc, type: 2}
+  tileData: {fileID: 11400000, guid: fce4de7f59f5ac94bb13655c0d467b54, type: 2}
   streetCostText: {fileID: 6828296916511754209}
   streetColourBar: {fileID: 6828296917732603612}
+  propertyData: {fileID: 11400000, guid: 4abcdd0a1d9a40c49a54fbea18db0072, type: 2}
 --- !u!23 &6828296917376342694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37806,7 +37790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -38151,7 +38135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -39509,7 +39493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -39702,12 +39686,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 28141907fecfe1d42a939fcd90600279, type: 2}
   tileNameText: {fileID: 6828296917985840159}
-  propertyData: {fileID: 11400000, guid: 4d4eb6fb644cc1b4ab75fbb6e380d0ec, type: 2}
-  colourBlock: {fileID: 11400000, guid: d2f40e4e147c1f447b589d8ccddcd6ee, type: 2}
+  tileData: {fileID: 11400000, guid: 28141907fecfe1d42a939fcd90600279, type: 2}
   streetCostText: {fileID: 6828296916327308561}
   streetColourBar: {fileID: 6828296917514529836}
+  propertyData: {fileID: 11400000, guid: 4d4eb6fb644cc1b4ab75fbb6e380d0ec, type: 2}
 --- !u!23 &6828296917594472534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41265,12 +41248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 8a68fe9e8a48b9f4c82ae263156d7504, type: 2}
   tileNameText: {fileID: 6828296917929483867}
-  propertyData: {fileID: 11400000, guid: 3752aa4262f12e44dae37eb6e626335b, type: 2}
-  colourBlock: {fileID: 11400000, guid: d2f40e4e147c1f447b589d8ccddcd6ee, type: 2}
+  tileData: {fileID: 11400000, guid: 8a68fe9e8a48b9f4c82ae263156d7504, type: 2}
   streetCostText: {fileID: 6828296916383666005}
   streetColourBar: {fileID: 6828296917328150120}
+  propertyData: {fileID: 11400000, guid: 3752aa4262f12e44dae37eb6e626335b, type: 2}
 --- !u!23 &6828296917785055762
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41593,7 +41575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -41654,7 +41636,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -41815,12 +41797,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 48708f47b913fc14da131a1410a8651f, type: 2}
   tileNameText: {fileID: 6828296917749331821}
-  propertyData: {fileID: 11400000, guid: 0822ccac917a59740a84f0a2f7f60e4d, type: 2}
-  colourBlock: {fileID: 11400000, guid: d2f40e4e147c1f447b589d8ccddcd6ee, type: 2}
+  tileData: {fileID: 11400000, guid: 48708f47b913fc14da131a1410a8651f, type: 2}
   streetCostText: {fileID: 6828296916027221603}
   streetColourBar: {fileID: 6828296917282068318}
+  propertyData: {fileID: 11400000, guid: 0822ccac917a59740a84f0a2f7f60e4d, type: 2}
 --- !u!114 &6828296917839471152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42143,7 +42124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -42530,7 +42511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -43108,12 +43089,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: cd00c5b737a5aa141a5a3e81e72d64c0, type: 2}
   tileNameText: {fileID: 6828296917606542267}
-  propertyData: {fileID: 11400000, guid: 4b013b373a3a0614894d3b8a372793de, type: 2}
-  colourBlock: {fileID: 11400000, guid: 8c982d71c6e08f0498809f41518846ca, type: 2}
+  tileData: {fileID: 11400000, guid: cd00c5b737a5aa141a5a3e81e72d64c0, type: 2}
   streetCostText: {fileID: 6828296916169685685}
   streetColourBar: {fileID: 6828296917139377032}
+  propertyData: {fileID: 11400000, guid: 4b013b373a3a0614894d3b8a372793de, type: 2}
 --- !u!23 &6828296917990565874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43743,12 +43723,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 5dbd6635f76cc8142aae75c398d0dad1, type: 2}
   tileNameText: {fileID: 6828296917571728857}
-  propertyData: {fileID: 11400000, guid: 12639509ef0b3b0438c30589ea169c00, type: 2}
-  colourBlock: {fileID: 11400000, guid: c47223362f0159d4fa5337b5dca85577, type: 2}
+  tileData: {fileID: 11400000, guid: 5dbd6635f76cc8142aae75c398d0dad1, type: 2}
   streetCostText: {fileID: 6828296916202464471}
   streetColourBar: {fileID: 6828296917104465386}
+  propertyData: {fileID: 11400000, guid: 12639509ef0b3b0438c30589ea169c00, type: 2}
 --- !u!1 &6828296918023289237
 GameObject:
   m_ObjectHideFlags: 0
@@ -44034,7 +44013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 512aaee9b220348408a2e518f98d6e14, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -44061,12 +44040,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79df5fa1dc860a4ea7a5e105fba115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: 766f3c121cf8d7d4b801aa7f629fb7ab, type: 2}
   tileNameText: {fileID: 6828296917673226978}
-  propertyData: {fileID: 11400000, guid: 7163fe2ecd5e9914284a49ca106ff829, type: 2}
-  colourBlock: {fileID: 11400000, guid: de624f5c1413d2e4c88df76ed32ca4cc, type: 2}
+  tileData: {fileID: 11400000, guid: 766f3c121cf8d7d4b801aa7f629fb7ab, type: 2}
   streetCostText: {fileID: 6828296916102276076}
   streetColourBar: {fileID: 6828296917070861009}
+  propertyData: {fileID: 11400000, guid: 7163fe2ecd5e9914284a49ca106ff829, type: 2}
 --- !u!4 &6828296918056271529
 Transform:
   m_ObjectHideFlags: 0

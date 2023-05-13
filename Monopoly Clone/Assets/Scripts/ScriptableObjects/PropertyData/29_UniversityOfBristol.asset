@@ -18,10 +18,5 @@ MonoBehaviour:
     housesCost: 50
     hotelsCost: 50
   rentData:
-    rentWithNoHouses: 6
-    rentWithOneHouse: 50
-    rentWithTwoHouses: 100
-    rentWithThreeHouses: 250
-    rentWithFourHouses: 400
-    rentWithHotels: 600
+    rentLevels: 32000000c80000002c01000090010000f401000058020000
   colourBlock: {fileID: 11400000, guid: 8c982d71c6e08f0498809f41518846ca, type: 2}

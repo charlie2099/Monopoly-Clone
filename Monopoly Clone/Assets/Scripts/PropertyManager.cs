@@ -10,24 +10,22 @@ public class PropertyManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager; // TODO: Clean this
     [SerializeField] private Button purchaseButton;
-    private List<IPurchasable> purchasableTiles = new();
+    private List<Tile> tiles = new();
     private Tile currentTile;
 
-    private void Awake()
-    {
-        purchaseButton.onClick.AddListener(PurchaseProperty);
-        purchasableTiles = FindObjectsOfType<MonoBehaviour>().OfType<IPurchasable>().ToList();
-    }
+    private void Awake() => tiles.AddRange(FindObjectsOfType<Tile>());
 
     private void OnEnable()
     {
-        purchasableTiles.ForEach(purchasable => purchasable.OnPropertyTileLanded += ShowPurchaseButton_OnTileLanded);
+        purchaseButton.onClick.AddListener(PurchaseProperty);
+        tiles.ForEach(tile => tile.OnTileLanded += ShowPurchaseButton_OnTileLanded);
         gameManager.OnTurnChanged += player => HidePurchaseButton();
     }
 
     private void OnDisable()
     {
-        purchasableTiles.ForEach(purchasable => purchasable.OnPropertyTileLanded -= ShowPurchaseButton_OnTileLanded);
+        purchaseButton.onClick.RemoveListener(PurchaseProperty);
+        tiles.ForEach(tile => tile.OnTileLanded -= ShowPurchaseButton_OnTileLanded);
         gameManager.OnTurnChanged -= player => HidePurchaseButton();
     }
 
@@ -40,7 +38,7 @@ public class PropertyManager : MonoBehaviour
     {
         Player currentPlayer = GameManager.Instance.ActivePlayer;
         //currentPlayer.BuyProperty(currentTile as IPurchasable);
-        ICommand buyPropertyCommand = new BuyPropertyCommand(currentPlayer, currentTile as IPurchasable);
+        ICommand buyPropertyCommand = new BuyPropertyCommand(currentPlayer, currentTile as IProperty);
         buyPropertyCommand.Execute();
         //PlayerTurn turn = new PlayerTurn();
         //turn.AddCommand(buyPropertyCommand);
@@ -49,8 +47,7 @@ public class PropertyManager : MonoBehaviour
 
     private void ShowPurchaseButton_OnTileLanded(Tile tile)
     {
-        var property = (IPurchasable)tile;
-        if (!property.HasOwner())
+        if (tile is IPurchasable purchasable && !purchasable.HasOwner())
         {
             ShowPurchaseButton();
             currentTile = tile;

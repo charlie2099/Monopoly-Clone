@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using Interfaces;
+using UnityEngine;
 
 namespace Tiles
 {
-    public class Utility : Tile
+    public class Utility : Tile, IPurchasable
     {
-        /*public override void OnLanded()
-        {
-            Debug.Log("Landed on: " + TileName);
-        }*/
+        public void Purchase() {}
+
+        public void Mortgage() {}
+
+        public void SetOwner(Player player) {}
+
+        public Player HasOwner() { return null; }
     }
 }

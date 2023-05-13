@@ -1,20 +1,22 @@
 using System;
+using Decorators;
 using Interfaces;
-using ScriptableObjects;
+using ScriptableObjects.PropertyData;
 using TMPro;
 using UnityEngine;
 
 namespace Tiles
 {
-    public class Street : Tile, IPurchasable
+    public class Street : Tile, IProperty
     {
         public event Action<Tile> OnPropertyTileLanded;
-        public PropertyData PropertyData => propertyData;
+        public PropertyData PropertyData => _decorableProperty.PropertyData;
 
         [Header("Property Data")]
         [SerializeField] private TextMeshPro streetCostText;
         [SerializeField] private MeshRenderer streetColourBar;
         [SerializeField] private PropertyData propertyData;
+        private IProperty _decorableProperty;
         private Player _owner;
 
         protected override void Start()
@@ -26,11 +28,12 @@ namespace Tiles
 
         public override void OnLanded(Player player)
         {
+            base.OnLanded(player);
+            
             if (player != _owner && _owner != null)
             {
-                player.Balance -= propertyData.rentData.rentWithNoHouses;
+                player.Balance -= propertyData.rentData.GetRentLevel(RentLevel.NoHouses);
             }
-            
             OnPropertyTileLanded?.Invoke(this);
         }
 
@@ -51,5 +54,14 @@ namespace Tiles
         {
             return _owner;
         }
+
+        [ContextMenu("Upgrade Property")]
+        public void Upgrade()
+        {
+            _decorableProperty = new HouseDecorator(_decorableProperty);
+            _decorableProperty.Upgrade();
+        }
+
+        public void Downgrade() {}
     }
 }
