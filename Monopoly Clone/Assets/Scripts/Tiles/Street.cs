@@ -29,10 +29,17 @@ namespace Tiles
         public override void OnLanded(Player player)
         {
             base.OnLanded(player);
-            
-            if (player != _owner && _owner != null)
+
+            if (_owner != null)
             {
-                player.BankAccount.Withdraw(propertyData.rentData.GetRentLevel(RentLevel.NoHouses));
+                if (player == _owner)
+                {
+                    player.BankAccount.Deposit(propertyData.rentData.GetRentLevel(RentLevel.NoHouses));
+                }
+                else
+                {
+                    player.BankAccount.Withdraw(propertyData.rentData.GetRentLevel(RentLevel.NoHouses));
+                }
             }
             OnPropertyTileLanded?.Invoke(this);
         }
