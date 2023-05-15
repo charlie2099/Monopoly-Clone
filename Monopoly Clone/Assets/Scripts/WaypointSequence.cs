@@ -11,6 +11,7 @@ public class WaypointSequence : MonoBehaviour
 
     private void Awake() => _waypoints.AddRange(GetComponentsInChildren<Waypoint>());
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (showDebugLines)
@@ -24,6 +25,7 @@ public class WaypointSequence : MonoBehaviour
             }
         }
     }
+#endif
 
     public Waypoint GetWaypoint(int index)
     {
