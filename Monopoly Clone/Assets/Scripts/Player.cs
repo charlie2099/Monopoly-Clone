@@ -10,14 +10,14 @@ public class Player : MonoBehaviour
 
     [SerializeField] private string username;
     [SerializeField] private Token token;
-    private List<IProperty> _ownedProperties = new();
+    private readonly List<IPurchasable> _ownedProperties = new();
 
     private void Awake()
     {
         BankAccount = new BankAccount();
     }
 
-    public void BuyProperty(IProperty property)
+    public void BuyProperty(IPurchasable property)
     {
         if (property.HasOwner())
         {

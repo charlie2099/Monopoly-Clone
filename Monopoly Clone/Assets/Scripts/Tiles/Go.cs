@@ -4,9 +4,12 @@ namespace Tiles
 {
     public class Go : Tile
     {
-        /*public override void OnLanded()
+        [SerializeField] private int passingGoReward = 500;
+        
+        public override void OnLanded(Player player)
         {
-            Debug.Log("Landed on: " + TileName);
-        }*/
+            base.OnLanded(player);
+            //player.BankAccount.Deposit(passingGoReward);
+        }
     }
 }

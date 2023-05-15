@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using Tiles;
 using TMPro;
 using UnityEngine;
@@ -14,7 +14,7 @@ namespace Ui
     {
         [SerializeField] private TMP_Text tileText;
         [SerializeField] private TMP_Text playerTurnText;
-        [SerializeField] private TMP_Text playerBalanceText;
+        [SerializeField] private List<TMP_Text> playerBalancesText;
 
         private void OnEnable()
         {
@@ -31,24 +31,27 @@ namespace Ui
         private void Start()
         {
             playerTurnText.text = $"Turn: <color=red>{GameManager.Instance.ActivePlayer.Username}</color>"; 
-            tileText.text = $"Tile: <color=red>{GameManager.Instance.Tiles[0].TileName}</color>";
+            tileText.text = $"Tile: <color=green>{GameManager.Instance.Tiles[0].TileName}</color>";
         }
         
         private void Update()
         {
             // TODO: Clean up
-            playerBalanceText.text = $"Balance: <color=red>{GameManager.Instance.ActivePlayer.BankAccount.BalanceRemaining}</color>";
+            for (var i = 0; i < GameManager.Instance.PlayerCount; i++)
+            {
+                playerBalancesText[i].text = $"{GameManager.Instance.Players[i].Username}: <color=orange>{GameManager.Instance.Players[i].BankAccount.BalanceRemaining}</color>";
+            }
         }
 
         private void UpdateUiOnTokenMoved(Tile tile)
         {
-            tileText.text = $"Tile: <color=red>{tile.TileName}</color>";
+            tileText.text = $"Tile: <color=green>{tile.TileName}</color>";
         }
         
         private void UpdateUiOnTurnChanged(Player player)
         {
             playerTurnText.text = $"Turn: <color=red>{player.Username}</color>";
-            tileText.text = $"Tile: <color=red>{player.Token.CurrentTile.TileName}</color>";
+            tileText.text = $"Tile: <color=green>{player.Token.CurrentTile.TileName}</color>";
         }
     }
 }

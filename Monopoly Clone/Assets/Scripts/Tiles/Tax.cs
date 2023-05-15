@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace Tiles
@@ -7,8 +8,15 @@ namespace Tiles
     {
         public event Action<Tile, int> OnTaxTileLanded;
         
+        [SerializeField] private TMP_Text taxOwedText;
         [SerializeField] private int tax = 250;
         
+        protected override void Start()
+        {
+            base.Start();
+            taxOwedText.text = $"Pay £{tax.ToString()}";
+        }
+
         public override void OnLanded(Player player)
         {
             player.BankAccount.Withdraw(tax);

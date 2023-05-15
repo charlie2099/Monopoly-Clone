@@ -37,8 +37,7 @@ public class PropertyManager : MonoBehaviour
     private void PurchaseProperty()
     {
         Player currentPlayer = GameManager.Instance.ActivePlayer;
-        //currentPlayer.BuyProperty(currentTile as IPurchasable);
-        ICommand buyPropertyCommand = new BuyPropertyCommand(currentPlayer, currentTile as IProperty);
+        ICommand buyPropertyCommand = new BuyPropertyCommand(currentPlayer, (IPurchasable)currentTile);
         buyPropertyCommand.Execute();
         //PlayerTurn turn = new PlayerTurn();
         //turn.AddCommand(buyPropertyCommand);

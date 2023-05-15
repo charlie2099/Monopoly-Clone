@@ -9,7 +9,6 @@ namespace Tiles
 {
     public class Street : Tile, IProperty
     {
-        public event Action<Tile> OnPropertyTileLanded;
         public PropertyData PropertyData => _decorableProperty.PropertyData;
 
         [Header("Property Data")]
@@ -22,31 +21,27 @@ namespace Tiles
         protected override void Start()
         {
             base.Start();
-            streetCostText.text = propertyData.purchaseData.purchaseCost.ToString();
+            streetCostText.text = $"£{propertyData.purchaseData.purchaseCost.ToString()}";
             streetColourBar.material.color = propertyData.colourBlock.colour;
         }
 
         public override void OnLanded(Player player)
         {
             base.OnLanded(player);
-
+            
             if (_owner != null)
             {
-                if (player == _owner)
+                if (player != _owner)
                 {
-                    player.BankAccount.Deposit(propertyData.rentData.GetRentLevel(RentLevel.NoHouses));
-                }
-                else
-                {
-                    player.BankAccount.Withdraw(propertyData.rentData.GetRentLevel(RentLevel.NoHouses));
+                    Debug.Log($"{player.Username} paid {propertyData.rentData.GetRentLevel(RentLevel.NoHouses)} to {_owner.Username}");
+                    player.BankAccount.Pay(_owner.BankAccount, propertyData.rentData.GetRentLevel(RentLevel.NoHouses));
                 }
             }
-            OnPropertyTileLanded?.Invoke(this);
         }
 
         public void Purchase()
         {
-            Debug.Log("Property purchased");
+            Debug.Log("Street purchased");
             _owner.BankAccount.Withdraw(propertyData.purchaseData.purchaseCost);
         }
 

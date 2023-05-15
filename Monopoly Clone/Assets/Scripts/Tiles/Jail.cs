@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-
-namespace Tiles
+﻿namespace Tiles
 {
     public class Jail : Tile
     {
-        /*public override void OnLanded()
+        public override void OnLanded(Player player)
         {
-            Debug.Log("Landed on: " + TileName);
-        }*/
+            base.OnLanded(player);
+        }
     }
 }

@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public event Action<Tile> OnTokenMoved;
     public event Action<Player> OnTurnChanged;
     public List<Tile> Tiles => _tiles;
+    public List<Player> Players => _players;
     public Player ActivePlayer => _activePlayer;
+    public int PlayerCount => _players.Count;
 
     public Dictionary<Player, WaypointSequence> playerPathDict;
     private DiceResultCalculator _diceResultCalculator;
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     private int _turnIndex;
     private int _targetTileIndex;
     private bool _tokenIsMoving;
+    private bool _passedGo;
 
     private void Awake()
     {
@@ -68,7 +71,14 @@ public class GameManager : MonoBehaviour
             {
                 int nextTileNum = playerToken.CurrentTile.TileNum + 1;
                 if (nextTileNum >= _tiles.Count)
-                    nextTileNum = 0; // loop back to the beginning of the list
+                {
+                    if (!_passedGo)
+                    {
+                        Bank.Deposit(_activePlayer.BankAccount, 250);
+                        _passedGo = true;
+                    }
+                    nextTileNum = 0;
+                }
 
                 Waypoint nextTileWaypoint = playerPathDict[_activePlayer].GetWaypoint(nextTileNum);
                 playerToken.transform.position = Vector3.MoveTowards(playerToken.transform.position, nextTileWaypoint.transform.position, 5.0f * Time.deltaTime);
@@ -101,6 +111,7 @@ public class GameManager : MonoBehaviour
         //ICommand moveCommand = new MoveCommand(_activePlayer, _tiles[_targetTileIndex], _tiles.ToArray());
         //playerTurn.AddCommand(moveCommand);
         _tokenIsMoving = true;
+        _passedGo = false;
     }
 
     public void EndTurn() 

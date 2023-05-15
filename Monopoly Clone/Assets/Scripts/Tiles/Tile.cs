@@ -16,7 +16,7 @@ namespace Tiles
         [SerializeField] private TileData tileData;
 
         protected virtual void Start()
-        { 
+        {
             tileNameText.text = tileData.TileName;
         }
 

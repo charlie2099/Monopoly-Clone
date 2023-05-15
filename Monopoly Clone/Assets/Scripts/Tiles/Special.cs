@@ -16,9 +16,9 @@ namespace Tiles
             //
         }
         
-        /*public override void OnLanded()
+        public override void OnLanded(Player player)
         {
-            Debug.Log("Landed on: " + TileName);
-        }*/
+            base.OnLanded(player);
+        }
     }
 }

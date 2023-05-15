@@ -20,11 +20,26 @@
         BalanceRemaining = amount;
     }
 
+    /// <summary>
+    /// For paying money directly into another bank account
+    /// </summary>
+    public void Pay(BankAccount bankAccount, int amount)
+    {
+        BalanceRemaining -= amount;
+        bankAccount.Deposit(amount);
+    }
+    
+    /// <summary>
+    /// For withdrawing funds from account
+    /// </summary>
     public void Withdraw(int cost)
     {
         BalanceRemaining -= cost;
     }
         
+    /// <summary>
+    /// For depositing funds into account
+    /// </summary>
     public void Deposit(int amount)
     {
         BalanceRemaining += amount;

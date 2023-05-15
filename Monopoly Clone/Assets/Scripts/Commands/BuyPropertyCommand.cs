@@ -5,9 +5,9 @@ namespace Commands
     public class BuyPropertyCommand : ICommand
     {
         private Player _player;
-        private IProperty _property;
+        private IPurchasable _property;
         
-        public BuyPropertyCommand(Player player, IProperty property)
+        public BuyPropertyCommand(Player player, IPurchasable property)
         {
             _player = player;
             _property = property;

@@ -22,11 +22,11 @@ public class DiceRollUi : MonoBehaviour
 
     private void UpdateDiceRollText(int sumOfDiceRoll)
     {
-        diceRollText.text = $"Dice Roll: <color=red>{sumOfDiceRoll}</color>";
+        diceRollText.text = $"Dice Roll: <color=#00FFFF>{sumOfDiceRoll}</color>";
     }
     
     private void UpdateDiceRollText_OnTurnChanged(Player player)
     {
-        diceRollText.text = $"Dice Roll:";
+        diceRollText.text = "Dice Roll:";
     }
 }
