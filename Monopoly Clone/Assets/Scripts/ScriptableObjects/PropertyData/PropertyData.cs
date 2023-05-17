@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjects.PropertyData
 {
@@ -8,7 +9,7 @@ namespace ScriptableObjects.PropertyData
     {
         public PurchaseData purchaseData;
         public RentData rentData;
-        public ColourBlock colourBlock;
+        [FormerlySerializedAs("colourBlock")] public ColourGroup colourGroup;
     }
 
     [Serializable]

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ColourBlockData", menuName = "ScriptableObjects/ColourBlockData")]
-public class ColourBlock : ScriptableObject
+public class ColourGroup : ScriptableObject
 {
     public Color colour;
 }

@@ -22,7 +22,7 @@ namespace Tiles
         {
             base.Start();
             streetCostText.text = $"£{propertyData.purchaseData.purchaseCost.ToString()}";
-            streetColourBar.material.color = propertyData.colourBlock.colour;
+            streetColourBar.material.color = propertyData.colourGroup.colour;
         }
 
         public override void OnLanded(Player player)

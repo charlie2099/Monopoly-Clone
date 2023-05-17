@@ -27,4 +27,27 @@ public class Player : MonoBehaviour
         property.SetOwner(this);
         property.Purchase();
     }
+    
+    /*public bool HasMonopoly(List<ColourBlock> colourBlock)
+    {
+        foreach (var colorGroup in colourBlock)
+        {
+            bool monopoly = true;
+            foreach (Property property in colorGroup.properties)
+            {
+                if (property.ownerID != playerID)
+                {
+                    monopoly = false;
+                    break;
+                }
+            }
+
+            if (monopoly)
+            {
+                return true; // Player has a monopoly
+            }
+        }
+
+        return false; // Player doesn't have a monopoly
+    }*/
 }
